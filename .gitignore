@@ -1,0 +1,18 @@
+# Dependencias
+node_modules/
+
+# Archivos de compilación
+dist/
+
+# Configuración del editor o IDE
+.vscode/
+.idea/
+
+# Archivos del sistema
+.DS_Store
+
+# Caché y logs
+.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

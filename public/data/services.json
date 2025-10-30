@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "slug": "accidentes-laborales",
+    "nombre": "Accidentes laborales",
+    "descripcion": "Asesoramiento integral en casos de accidentes ocurridos en el lugar de trabajo o in itinere.",
+    "contenido": "<p>Brindamos representación legal en accidentes laborales, ya sean accidentes que ocurren en el lugar de trabajo o <em>in itinere</em> (en el camino hacia o desde el trabajo). Nos encargamos de reclamar ante la ART y el empleador para garantizar la cobertura médica, el pago de salarios durante la baja y la indemnización que corresponda según la legislación vigente.</p><p>Nuestro equipo se ocupa de recopilar la documentación necesaria, iniciar los trámites administrativos y, de ser necesario, accionar judicialmente para proteger tus derechos.</p>",
+    "image": "servicio-accidentes.webp",
+    "categoria": "accidentes"
+  },
+  {
+    "id": 2,
+    "slug": "enfermedades-profesionales",
+    "nombre": "Enfermedades profesionales",
+    "descripcion": "Defensa de trabajadores que padecen enfermedades causadas por su actividad laboral.",
+    "contenido": "<p>Las enfermedades profesionales son aquellas que se originan como consecuencia directa del trabajo realizado. Para que la ART las cubra es necesario denunciarlas correctamente y demostrar la relación de causalidad con la actividad laboral.</p><p>Te asesoramos en la denuncia, recopilamos los estudios médicos y pericias necesarias, y te acompañamos en todo el proceso para que recibas el tratamiento y la compensación que te corresponde.</p>",
+    "image": "servicio-enfermedades.webp",
+    "categoria": "enfermedades"
+  },
+  {
+    "id": 3,
+    "slug": "reclamo-art",
+    "nombre": "Reclamo a la ART",
+    "descripcion": "Apelación y reclamación frente a rechazos o bajas de la ART.",
+    "contenido": "<p>Cuando la ART rechaza un siniestro o da el alta médica sin que estés totalmente recuperado, es posible recurrir esa decisión. Intervenimos para presentar recursos administrativos y judiciales, procurando que la ART cumpla con sus obligaciones.</p><p>Analizamos cada caso en detalle, preparamos la fundamentación legal y te representamos en las audiencias y trámites correspondientes.</p>",
+    "image": "servicio-reclamo-art.webp",
+    "categoria": "reclamo-art"
+  },
+  {
+    "id": 4,
+    "slug": "recursos-y-apelaciones",
+    "nombre": "Recursos y apelaciones",
+    "descripcion": "Representación en recursos administrativos y judiciales contra decisiones de la ART.",
+    "contenido": "<p>Si considerás que la resolución de la ART o de la Comisión Médica no es justa, contamos con amplia experiencia en interponer recursos y apelaciones ante las instancias correspondientes.</p><p>Nuestro objetivo es lograr que se reconozcan tus derechos y obtengas la prestación económica y médica que merecés.</p>",
+    "image": "servicio-recursos.webp",
+    "categoria": "recursos"
+  },
+  {
+    "id": 5,
+    "slug": "calculo-indemnizacion",
+    "nombre": "Cálculo de indemnización",
+    "descripcion": "Calculamos de forma precisa la indemnización que corresponde por accidente o enfermedad.",
+    "contenido": "<p>Utilizamos herramientas y tablas actualizadas para estimar la indemnización que corresponde según tu grado de incapacidad, salario y demás variables establecidas por la ley.</p><p>Esta información te permite conocer de antemano el valor aproximado de tu reclamo y planificar tus acciones legales.</p>",
+    "image": "servicio-calculo.webp",
+    "categoria": "recursos"
+  }
+]

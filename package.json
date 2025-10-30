@@ -1,0 +1,25 @@
+{
+  "name": "estudio-juridico-accidentes",
+  "version": "1.0.0",
+  "description": "Sitio web institucional para el Estudio Jurídico de Braian Geréz especializado en accidentes de trabajo y enfermedades profesionales en Río Grande, Tierra del Fuego.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint --ext .js,.vue src"
+  },
+  "dependencies": {
+    "vue": "^3.4.0",
+    "vue-router": "^4.2.5",
+    "pinia": "^2.1.4",
+    "chart.js": "^4.4.2"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "@vitejs/plugin-vue": "^5.0.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.1.1"
+  }
+}

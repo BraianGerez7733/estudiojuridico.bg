@@ -1,0 +1,21 @@
+{
+  "casesRepresented": 120,
+  "resultsFavorable": 85,
+  "averageResponseDays": 10,
+  "averageCompensation": 1500000,
+  "monthlyLabels": [
+    "Ene",
+    "Feb",
+    "Mar",
+    "Abr",
+    "May",
+    "Jun",
+    "Jul",
+    "Ago",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dic"
+  ],
+  "monthlyCases": [10, 12, 8, 15, 13, 11, 14, 12, 9, 16, 10, 7]
+}
