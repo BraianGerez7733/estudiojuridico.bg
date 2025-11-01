@@ -4,7 +4,7 @@
     <div class="hero-content">
       <h1 class="hero-title">Defendemos tus derechos laborales</h1>
       <p class="hero-text">
-        Hola, soy Pepe. Soy abogado matriculado en Río Grande y estoy
+        Hola, soy Pepe grillo. Soy abogado matriculado en Río Grande y estoy
         especializado en accidentes de trabajo y enfermedades profesionales.
         Defiendo los derechos de los trabajadores para que obtengan la
         indemnización y atención médica que les corresponde. Si sufriste un
