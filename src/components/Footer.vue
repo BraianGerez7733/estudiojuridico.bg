@@ -37,11 +37,11 @@
         <h4>Contacto</h4>
         <p>Don Bosco 715, Río Grande<br />
           Tierra del Fuego, Argentina</p>
-        <p>Tel: +54 2964 000000</p>
+        <p>Cel/WhatsApp: +54 2964 540752</p>
         <p>Email: <a href="mailto:estudiojuridicobg.clientes@gmail.com">estudiojuridicobg.clientes@gmail.com</a></p>
         <div class="social-icons">
-          <a href="https://wa.me/5492964000000" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="https://www.facebook.com/estudiojuridicobg" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://wa.me/5492964540752" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100063453618182" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
           <a href="https://www.instagram.com/estudiojuridicobg" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="https://twitter.com" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
         </div>

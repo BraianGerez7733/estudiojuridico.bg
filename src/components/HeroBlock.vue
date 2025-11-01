@@ -8,7 +8,7 @@
         Mi nombre es Braian Geréz, me especializo en defender los derechos 
         de los trabajadores accidentados o con enfermedades profesionales. 
         Por el momento solo trabajo en la ciudad de Río Grande.
-        Brindo atención personalizada, asistencia a todas las audiencias
+        Brindo atención personalizada, asistencia a todas las audiencias.
         Realizo mi trabajo con pasión, a gran velocidad para la realización 
         de los escritos y presentaciones, y con tecnología de última generación.<br><br>
 
