@@ -10,7 +10,7 @@
         Por el momento solo trabajo en la ciudad de Río Grande.
         Brindo atención personalizada, asistencia a todas las audiencias
         Realizo mi trabajo con pasión, a gran velocidad para la realización 
-        de los escritos y presentaciones, y con tecnología de última generación.
+        de los escritos y presentaciones, y con tecnología de última generación.<br>
 
         Para conocernos más por favor sigue los enlaces cuidadosamente preparados
         para usted!
