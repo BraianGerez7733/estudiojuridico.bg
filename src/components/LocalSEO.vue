@@ -4,7 +4,7 @@
       <h2>¿Dónde estamos?</h2>
       <p>Nos encontramos en la ciudad de Río Grande, Tierra del Fuego.</p>
       <p><strong>Dirección:</strong> Don Bosco 715</p>
-      <p><strong>Teléfono:</strong> +54 2964 000000</p>
+      <p><strong>Teléfono:</strong> +54 2964 540752</p>
       <p><strong>Horario de atención:</strong> Lunes a Viernes de 9:00 a 17:00</p>
     </div>
     <div class="map">

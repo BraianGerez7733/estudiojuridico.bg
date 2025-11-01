@@ -31,7 +31,7 @@ const slug = computed(() => route.params.slug);
 const service = computed(() => store.getServiceBySlug(slug.value));
 
 function openWhatsApp() {
-  window.open('https://wa.me/5492964000000', '_blank');
+  window.open('https://wa.me/5492964540752', '_blank');
 }
 
 onMounted(() => {

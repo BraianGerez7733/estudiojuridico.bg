@@ -18,7 +18,7 @@
           >Ver detalles</router-link
         >
         <a
-          href="https://wa.me/5492964000000"
+          href="https://wa.me/5492964540752"
           target="_blank"
           class="link-whatsapp"
         >
