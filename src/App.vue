@@ -11,7 +11,7 @@
     <!-- Botones flotantes de WhatsApp -->
     <div class="whatsapp-buttons">
       <a
-        href="https://wa.me/5492964000000"
+        href="https://wa.me/5492964540752"
         target="_blank"
         aria-label="Chatear por WhatsApp"
         class="whatsapp-button top-left"
@@ -19,7 +19,7 @@
         <i class="fab fa-whatsapp"></i>
       </a>
       <a
-        href="https://wa.me/5492964000000"
+        href="https://wa.me/5492964540752"
         target="_blank"
         aria-label="Chatear por WhatsApp"
         class="whatsapp-button top-right"
@@ -27,7 +27,7 @@
         <i class="fab fa-whatsapp"></i>
       </a>
       <a
-        href="https://wa.me/5492964000000"
+        href="https://wa.me/5492964540752"
         target="_blank"
         aria-label="Chatear por WhatsApp"
         class="whatsapp-button bottom-right"
