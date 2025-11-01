@@ -12,7 +12,6 @@
         te brindamos asesoramiento legal integral y acompañamiento en todo el
         proceso.
       </p>
-      <button class="cta-button" @click="goToApps">Agendar consulta gratuita</button>
     </div>
   </section>
 </template>
