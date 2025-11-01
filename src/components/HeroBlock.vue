@@ -4,13 +4,16 @@
     <div class="hero-content">
       <h1 class="hero-title">Defendemos tus derechos laborales</h1>
       <p class="hero-text">
-        Hola, soy Pepe grillo. Soy abogado matriculado en Río Grande y estoy
-        especializado en accidentes de trabajo y enfermedades profesionales.
-        Defiendo los derechos de los trabajadores para que obtengan la
-        indemnización y atención médica que les corresponde. Si sufriste un
-        accidente laboral o tenés una enfermedad relacionada con tu trabajo,
-        te brindamos asesoramiento legal integral y acompañamiento en todo el
-        proceso.
+        Hola, gracias por visitar mi sitio web, espdero te sea de agrado.
+        Mi nombre es Braian Geréz, me especializo en defender los derechos 
+        de los trabajadores accidentados o con enfermedades profesionales. 
+        Por el momento solo trabajo en la ciudad de Río Grande.
+        Brindo atención personalizada, asistencia a todas las audiencias
+        Realizo mi trabajo con pasión, a gran velocidad para la realización 
+        de los escritos y presentaciones, y con tecnología de última generación.
+
+        Para conocernos más por favor sigue los enlaces cuidadosamente preparados
+        para usted!
       </p>
     </div>
   </section>
