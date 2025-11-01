@@ -4,7 +4,7 @@
     <div class="hero-content">
       <h1 class="hero-title">Defendemos tus derechos laborales</h1>
       <p class="hero-text">
-        Hola, gracias por visitar mi sitio web, espdero te sea de agrado.
+        Hola, gracias por visitar mi sitio web, espero le sea de agrado.
         Mi nombre es Braian Geréz, me especializo en defender los derechos 
         de los trabajadores accidentados o con enfermedades profesionales. 
         Por el momento solo trabajo en la ciudad de Río Grande.
