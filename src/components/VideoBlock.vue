@@ -4,7 +4,7 @@
       <iframe
         width="100%"
         height="200"
-        :src="'https://www.youtube.com/embed/GWXty9fOrR8'"
+        :src="'https://www.youtube-nocookie.com/embed/GWXty9fOrR8'"
         title="Video educativo"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -19,7 +19,7 @@
 // Videos educativos de YouTube. Cambiar IDs según contenido relevante.
 const videos = [
   {
-    id: '3cT6KQoOwY8',
+    id: 'GWXty9fOrR8',
     titulo: 'Derechos del trabajador en casos de accidente laboral'
   },
   {
