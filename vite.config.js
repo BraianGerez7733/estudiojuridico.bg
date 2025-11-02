@@ -18,5 +18,10 @@ export default defineConfig({
     alias: {
       '@': '/src'
     }
+  },
+  preview: {
+    headers: {
+      'Cache-Control': 'no-store'
+    }
   }
 });
