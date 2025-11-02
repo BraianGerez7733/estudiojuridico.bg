@@ -8,7 +8,7 @@
         :alt="service.nombre"
         class="service-image"
       />
-      <div v-html="service.contenido" class="service-content" />
+      <div v-html="service.contenido" class="service-content servicio-detalle"></div>
     </div>
     <button class="cta-button" @click="openWhatsApp">
       Solicitar asistencia
@@ -47,6 +47,13 @@ onMounted(() => {
   max-width: 800px;
   margin: 0 auto;
 }
+
+.servicio-detalle,
+.servicio-detalle p,
+.servicio-detalle li {
+  text-align: justify;
+}
+
 .service-title {
   margin-bottom: 16px;
   font-size: 2rem;

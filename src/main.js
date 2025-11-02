@@ -2,6 +2,8 @@ import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import App from './App.vue';
 import router from './router';
+import './assets/main.css'
+
 
 // Root entry point for the Vue application. This file creates the app
 // instance, registers the Pinia store and the router, and mounts the
