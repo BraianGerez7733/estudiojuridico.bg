@@ -135,10 +135,12 @@
 .brand-video-container {
   display: flex;
   align-items: center;
+  margin-right: 10px;
 }
 
+
 .brand-video {
-  width: 120px;
+  width: 160px;
   height: auto;
   border-radius: 8px;
   object-fit: cover;
