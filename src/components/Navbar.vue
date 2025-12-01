@@ -38,7 +38,7 @@ import { onMounted } from 'vue';
 onMounted(() => {
   const video = document.querySelector('.brand-video');
   if (video) {
-    video.playbackRate = 0.6; // Velocidad al 60% (más lento)
+    video.playbackRate = 0.8; // Velocidad al 60% (más lento)
   }
 });
 </script>
