@@ -33,8 +33,16 @@
 </template>
 
 <script setup>
-// No script logic needed for the navbar. Navigation is handled by vue‑router.
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  const video = document.querySelector('.brand-video');
+  if (video) {
+    video.playbackRate = 0.6; // Velocidad al 60% (más lento)
+  }
+});
 </script>
+// modificamos la velocidad del video sin modificar el archivo original
 
 <style scoped>
 .navbar {
