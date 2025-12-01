@@ -30,7 +30,7 @@ function goToApps() {
 <style scoped>
 .hero {
   position: relative;
-  background-image: url('/assets/hero-bg.png');
+  background-image: url('/assets/estudio1.png');
   background-size: cover;
   background-position: center;
   color: var(--light-color);
