@@ -153,4 +153,9 @@ onMounted(() => {
   border-radius: 8px;
   object-fit: cover;
 }
+.hero-video {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
 </style>
