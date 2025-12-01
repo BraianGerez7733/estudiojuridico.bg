@@ -1,12 +1,14 @@
 <template>
   <header class="navbar">
     <div class="container">
-      <div class="brand">
-        <router-link to="/" class="brand-link">
-          Estudio Jurídico Accidentes Laborales<br />
-          <small>Braian Geréz, abogado</small>
+      <div class="brand-video-container">
+        <router-link to="/">
+          <video autoplay muted loop playsinline class="brand-video">
+          <source src="/assets/Logo-3-[remix].mp4" type="video/mp4" />
+          </video>
         </router-link>
       </div>
+
       <nav class="nav">
         <ul class="nav-list">
           <li><router-link to="/">Inicio</router-link></li>
@@ -128,5 +130,17 @@
     display: none;
   }
   /* Mobile navigation can be implemented here if required. */
+}
+
+.brand-video-container {
+  display: flex;
+  align-items: center;
+}
+
+.brand-video {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
 </style>
