@@ -1,16 +1,14 @@
 <template>
   <section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1 class="hero-title">Defendemos tus derechos laborales</h1>
-      <p class="hero-text"> Bienvenido a mi sitio web. Mi nombre es Braian Geréz y me dedico a la defensa de los derechos de los trabajadores accidentados o afectados por enfermedades profesionales. Actualmente ejerzo en la ciudad de Río Grande, ofreciendo atención personalizada, acompañamiento integral y representación en todas las instancias.
-      <br><br>  
-      Trabajo con compromiso, rigor técnico y celeridad en cada escrito y presentación, aplicando herramientas de última generación para garantizar un servicio jurídico eficaz y responsable.
-      <br><br> 
-      Para obtener más información, lo invito a explorar los diferentes enlaces disponibles en este sitio.
-      </p>
-    </div>
-  </section>
+  <div class="overlay"></div>
+
+  <div class="hero-video-container">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="/assets/Logo-3-[remix].mp4" type="video/mp4" />
+    </video>
+  </div>
+
+</section>
 </template>
 
 <script setup>
@@ -43,21 +41,6 @@ function goToApps() {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
 }
-.hero-content {
-  position: relative;
-  max-width: 800px;
-  z-index: 1;
-}
-.hero-title {
-  font-size: 2.5rem;
-  margin-bottom: 16px;
-  color: var(--primary-color);
-}
-.hero-text {
-  font-size: 1.1rem;
-  margin-bottom: 24px;
-  line-height: 1.6;
-}
 .cta-button {
   padding: 14px 28px;
   background-color: var(--primary-color);
@@ -71,4 +54,18 @@ function goToApps() {
 .cta-button:hover {
   filter: brightness(0.9);
 }
+.hero-video-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-video {
+  width: 380px;
+  max-width: 90%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
 </style>
