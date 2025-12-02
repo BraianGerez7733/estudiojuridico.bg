@@ -56,7 +56,7 @@ function goToApps() {
 }
 
 .hero-title-box {
-  position: absolute;
+  position: relative; /* CAMBIO: Necesario para posicionar los pseudo-elementos */
   z-index: 3;
   text-align: center;
   color: white;
@@ -76,8 +76,6 @@ function goToApps() {
   font-size: 2rem;
   margin-top: 10px;
 }
-/* ... (Sus otros estilos) */
-
 /* 🌟 NUEVO ESTILO PARA EL VIDEO DE FONDO 🌟 */
 .hero-video-background {
   position: absolute; /* Permite posicionarlo con precisión */
@@ -99,4 +97,32 @@ function goToApps() {
   background: rgba(0, 0, 0, 0.5);
   z-index: 2; /* Asegúrese de que este valor sea mayor al del video (1) */
 }
+/* --- DIAGONALES BLANCAS --- */
+
+.hero-title-box::before,
+.hero-title-box::after {
+  content: '';
+  position: absolute;
+  top: 50%; /* Centra verticalmente */
+  width: 150px; /* Ancho de la línea (puede ajustarlo) */
+  height: 2px; /* Grosor de la línea */
+  background-color: white;
+  z-index: 4; /* Debe estar por encima del título */
+}
+
+/* Diagonales IZQUIERDA (::before) */
+.hero-title-box::before {
+  right: 100%; /* Posiciona a la izquierda del hero-title-box */
+  margin-right: 20px; /* Distancia del borde del hero-title-box */
+  transform: translateY(-50%) rotate(10deg); /* Inclinar ligeramente */
+}
+
+/* Diagonales DERECHA (::after) */
+.hero-title-box::after {
+  left: 100%; /* Posiciona a la derecha del hero-title-box */
+  margin-left: 20px; /* Distancia del borde del hero-title-box */
+  transform: translateY(-50%) rotate(-10deg); /* Inclinar en dirección opuesta */
+}
+
+/* --- FIN DIAGONALES --- */
 </style>
