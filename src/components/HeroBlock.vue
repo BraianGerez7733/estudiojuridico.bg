@@ -113,4 +113,10 @@ function goToApps() {
 .hero-diagonal-2 {
   clip-path: polygon(100% 0, 30% 100%, 100% 100%);
 }
+@media (max-width: 768px) {
+  .hero-diagonal-1,
+  .hero-diagonal-2 {
+    height: 20vh; /* Baja de 35vh a 20vh o prueba 15-25vh según tu gusto */
+  }
+}
 </style>
