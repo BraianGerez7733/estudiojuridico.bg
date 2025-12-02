@@ -1,5 +1,9 @@
 <template>
   <section class="hero">
+  <video class="hero-video-background" autoplay muted loop playsinline>
+      <source src="/assets/Balanza_de_fondo.mp4" type="video/mp4">
+      Tu navegador no soporta el tag de video.
+    </video>
   <div class="overlay"></div>
   <div class="hero-title-box">
   <h1 class="hero-main-title">ESTUDIO JURÍDICO</h1>
@@ -19,8 +23,7 @@ function goToApps() {
 <style scoped>
 .hero {
   position: relative;
-  background-image: url('/assets/estudio1.png');
-  background-size: cover;
+   background-size: cover;
   background-position: center;
   color: var(--light-color);
   min-height: 70vh;
@@ -51,19 +54,7 @@ function goToApps() {
 .cta-button:hover {
   filter: brightness(0.9);
 }
-.hero-video-container {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-}
 
-.hero-video {
-  width: 380px;
-  max-width: 90%;
-  border-radius: 12px;
-  object-fit: cover;
-}
 .hero-title-box {
   position: absolute;
   z-index: 3;
@@ -85,5 +76,27 @@ function goToApps() {
   font-size: 2rem;
   margin-top: 10px;
 }
+/* ... (Sus otros estilos) */
 
+/* 🌟 NUEVO ESTILO PARA EL VIDEO DE FONDO 🌟 */
+.hero-video-background {
+  position: absolute; /* Permite posicionarlo con precisión */
+  top: 0;
+  left: 0;
+  width: 100%; /* Cubre todo el ancho del contenedor .hero */
+  height: 100%; /* Cubre toda la altura del contenedor .hero */
+  object-fit: cover; /* Asegura que el video cubra sin distorsionarse */
+  z-index: 1; /* Debe estar bajo el overlay (z-index: 2) y el título (z-index: 3) */
+}
+
+/* Es importante que el overlay tenga z-index: 2 para que se vea la sombra sobre el video */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2; /* Asegúrese de que este valor sea mayor al del video (1) */
+}
 </style>
