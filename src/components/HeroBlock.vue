@@ -5,11 +5,12 @@
       Tu navegador no soporta el tag de video.
     </video>
   <div class="overlay"></div>
+  <div class="hero-diagonal-1"></div>
+  <div class="hero-diagonal-2"></div>
   <div class="hero-title-box">
   <h1 class="hero-main-title">ESTUDIO JURÍDICO</h1>
   <h2 class="hero-sub-title">Braian Geréz</h2>
   </div>
-  <div class="hero-diagonal"></div>
 </section>
 </template>
 
@@ -98,14 +99,27 @@ function goToApps() {
   background: rgba(0, 0, 0, 0.5);
   z-index: 2; /* Asegúrese de que este valor sea mayor al del video (1) */
 }
-.hero-diagonal {
+/* Primera diagonal (más alta) */
+.hero-diagonal-1 {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 40vh;
+  height: 45vh;
   background: white;
   z-index: 3;
-  clip-path: polygon(0 40%, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 55%, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Segunda diagonal (más baja y más inclinada) */
+.hero-diagonal-2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 32vh;
+  background: white;
+  z-index: 4;
+  clip-path: polygon(0 70%, 100% 10%, 100% 100%, 0 100%);
 }
 </style>
