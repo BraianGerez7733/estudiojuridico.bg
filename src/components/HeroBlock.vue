@@ -9,6 +9,7 @@
   <h1 class="hero-main-title">ESTUDIO JURÍDICO</h1>
   <h2 class="hero-sub-title">Braian Geréz</h2>
   </div>
+  <div class="hero-diagonal"></div>
 </section>
 </template>
 
@@ -96,5 +97,15 @@ function goToApps() {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 2; /* Asegúrese de que este valor sea mayor al del video (1) */
+}
+.hero-diagonal {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  background: white;
+  z-index: 3;
+  clip-path: polygon(0 40%, 100% 0, 100% 100%, 0% 100%);
 }
 </style>
