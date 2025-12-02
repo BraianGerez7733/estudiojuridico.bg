@@ -56,7 +56,7 @@ function goToApps() {
 }
 
 .hero-title-box {
-  position: relative; /* CAMBIO: Necesario para posicionar los pseudo-elementos */
+  position: absolute;
   z-index: 3;
   text-align: center;
   color: white;
