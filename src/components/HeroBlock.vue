@@ -99,27 +99,27 @@ function goToApps() {
   background: rgba(0, 0, 0, 0.5);
   z-index: 2; /* Asegúrese de que este valor sea mayor al del video (1) */
 }
-/* Primera diagonal (más alta) */
+/* Diagonal 1 (más grande) */
 .hero-diagonal-1 {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 45vh;
+  height: 35vh;
   background: white;
-  z-index: 3;
-  clip-path: polygon(0 55%, 100% 0, 100% 100%, 0 100%);
+  z-index: 2; /* Debajo del título */
+  clip-path: polygon(0 85%, 100% 45%, 100% 100%, 0 100%);
 }
 
-/* Segunda diagonal (más baja y más inclinada) */
+/* Diagonal 2 (más inclinada) */
 .hero-diagonal-2 {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 32vh;
+  height: 25vh;
   background: white;
-  z-index: 4;
-  clip-path: polygon(0 70%, 100% 10%, 100% 100%, 0 100%);
+  z-index: 2; /* Igual que la otra */
+  clip-path: polygon(0 95%, 100% 55%, 100% 100%, 0 100%);
 }
 </style>
