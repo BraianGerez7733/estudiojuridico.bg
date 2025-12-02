@@ -106,11 +106,11 @@ function goToApps() {
 
 /* Diagonal izquierda */
 .hero-diagonal-1 {
-  clip-path: polygon(0 0, 40% 100%, 0 100%);
+  clip-path: polygon(0 0, 30% 100%, 0 100%);
 }
 
 /* Diagonal derecha */
 .hero-diagonal-2 {
-  clip-path: polygon(100% 0, 40% 100%, 100% 100%);
+  clip-path: polygon(100% 0, 30% 100%, 100% 100%);
 }
 </style>
