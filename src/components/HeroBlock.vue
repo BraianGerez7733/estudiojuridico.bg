@@ -58,15 +58,15 @@ function goToApps() {
 }
 
 .hero-title-box {
-  position: absolute;
-  z-index: 3;
+  position: relative;
+  z-index: 5; /* Antes era 3 → debe estar por encima de las diagonales */
   text-align: center;
   color: white;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
 
 .hero-main-title {
   font-size: 3.5rem;
