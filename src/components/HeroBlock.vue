@@ -68,10 +68,11 @@ function goToApps() {
   position: absolute;
   z-index: 3;
   text-align: center;
-  color: yellow;
+  color: white;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .hero-main-title {
