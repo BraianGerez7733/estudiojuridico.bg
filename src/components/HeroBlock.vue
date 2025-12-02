@@ -58,7 +58,7 @@ function goToApps() {
 }
 
 .hero-title-box {
-  position: relative;
+  position: absolute;
   z-index: 5; /* Antes era 3 → debe estar por encima de las diagonales */
   text-align: center;
   color: white;
