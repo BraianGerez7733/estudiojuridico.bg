@@ -104,13 +104,13 @@ function goToApps() {
   z-index: 3; /* Por encima del overlay para que se vea bien */
 }
 
-/* Diagonal izquierda: desde arriba-izquierda hasta centro-abajo */
+/* Diagonal izquierda */
 .hero-diagonal-1 {
-  clip-path: polygon(0 0, 50% 100%, 0 100%);
+  clip-path: polygon(0 0, 40% 100%, 0 100%);
 }
 
-/* Diagonal derecha: desde arriba-derecha hasta centro-abajo */
+/* Diagonal derecha */
 .hero-diagonal-2 {
-  clip-path: polygon(100% 0, 50% 100%, 100% 100%);
+  clip-path: polygon(100% 0, 40% 100%, 100% 100%);
 }
 </style>
