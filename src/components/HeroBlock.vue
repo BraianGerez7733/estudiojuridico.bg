@@ -35,14 +35,7 @@ function goToApps() {
   text-align: center;
   padding: 40px 20px;
 }
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-}
+
 .cta-button {
   padding: 14px 28px;
   background-color: var(--primary-color);
@@ -59,7 +52,7 @@ function goToApps() {
 
 .hero-title-box {
   position: absolute;
-  z-index: 3;
+  z-index: 5;
   text-align: center;
   color: white;
   top: 50%;
@@ -99,27 +92,25 @@ function goToApps() {
   background: rgba(0, 0, 0, 0.5);
   z-index: 2; /* Asegúrese de que este valor sea mayor al del video (1) */
 }
-/* Diagonal 1 (más grande) */
-.hero-diagonal-1 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 35vh;
-  background: white;
-  z-index: 2; /* Debajo del título */
-  clip-path: polygon(0 85%, 100% 45%, 100% 100%, 0 100%);
-}
-
-/* Diagonal 2 (más inclinada) */
+/* Diagonales unidas en el centro inferior (forma de V simétrica) */
+.hero-diagonal-1,
 .hero-diagonal-2 {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 25vh;
+  height: 35vh; /* Altura igual para simetría */
   background: white;
-  z-index: 2; /* Igual que la otra */
-  clip-path: polygon(0 95%, 100% 55%, 100% 100%, 0 100%);
+  z-index: 3; /* Por encima del overlay para que se vea bien */
+}
+
+/* Diagonal izquierda: desde arriba-izquierda hasta centro-abajo */
+.hero-diagonal-1 {
+  clip-path: polygon(0 0, 50% 100%, 0 100%);
+}
+
+/* Diagonal derecha: desde arriba-derecha hasta centro-abajo */
+.hero-diagonal-2 {
+  clip-path: polygon(100% 0, 50% 100%, 100% 100%);
 }
 </style>
