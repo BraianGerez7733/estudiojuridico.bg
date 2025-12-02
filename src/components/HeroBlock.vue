@@ -1,6 +1,10 @@
 <template>
   <section class="hero">
   <div class="overlay"></div>
+  <div class="hero-title-box">
+  <h1 class="hero-main-title">ESTUDIO JURÍDICO</h1>
+  <h2 class="hero-sub-title">Braian Geréz</h2>
+  </div>
 
   <div class="hero-video-container">
     <video autoplay muted loop playsinline class="hero-video">
@@ -66,6 +70,26 @@ function goToApps() {
   max-width: 90%;
   border-radius: 12px;
   object-fit: cover;
+}
+.hero-title-box {
+  position: absolute;
+  z-index: 3;
+  text-align: center;
+  color: yellow;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-main-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.hero-sub-title {
+  font-size: 2rem;
+  margin-top: 10px;
 }
 
 </style>
