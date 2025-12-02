@@ -5,13 +5,6 @@
   <h1 class="hero-main-title">ESTUDIO JURÍDICO</h1>
   <h2 class="hero-sub-title">Braian Geréz</h2>
   </div>
-
-  <div class="hero-video-container">
-    <video autoplay muted loop playsinline class="hero-video">
-      <source src="/assets/Logo-3-[remix].mp4" type="video/mp4" />
-    </video>
-  </div>
-
 </section>
 </template>
 
