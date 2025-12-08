@@ -105,3 +105,4 @@
                                               height: 20vh; /* Baja de 35vh a 20vh o prueba 15-25vh según tu gusto */
                                         }
                                         }
+                                        </style scoped>
