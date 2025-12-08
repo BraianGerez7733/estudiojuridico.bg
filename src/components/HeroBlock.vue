@@ -1,6 +1,6 @@
 <template>
   <section class="hero">
-    <video class="hero-video-background" autoplay muted loop playsinline>
+    <video class="hero-video-background" autoplay muted playsinline>
           <source src="/assets/Balanza_de_fondo.mp4" type="video/mp4">
                 Tu navegador no soporta el tag de video.
                     </video>
