@@ -44,4 +44,13 @@
     "image": "servicio-calculo.webp",
     "categoria": "recursos"
   }
+    {
+    "id": 6,
+    "slug": "Asistencia-Comisión-Médica",
+    "nombre": "Asistencia Comisión Médica",
+    "descripcion": "Lo Asistimos en personalmente en todas las audiencias ante la Comisión Médica",
+    "contenido": "<p>Cuando recive un alta médica, o un rechazo parcial de la ART, y necesita de más tratamiento, es preciso acudir en forma obligatoria ante la Comisión Médica más cercana. Para ser atendido en estas audiencias, es preciso que primeramente requiera un turno, y luego llevar su DNI, más Alta médica o bien carta documento de rechazo parcial.</p><p>Ante estas audiencia, el patrocinio letrado no es obligatorio, pero si es una buena práctica, que sea acompañado por su letrado de confianza, de lo contrario, podría incurrir en errores, como omisión de documentación esencial, en especial la que hace a ordenes médica o pruebas objetivas de su problema de salud como un estudio médico de importancia, como un EMG (Electromiograma), ECO (ecografía), RNM (Resonancia magnética), como así cual quier otro que sea necesario.</p><p>Recuerde que el objetivo de la audiencia puede variar según la situación sea de Alta médica, Rechazo parcial de enfermedad profesional, Rechazo parcial de enfermedad NO profesional, o bien rechazo parcial de afecciones en caso de accidente de trabajo.</p>",
+    "image": "servicio-calculo.webp",
+    "categoria": "recursos"
+  }
 ]
