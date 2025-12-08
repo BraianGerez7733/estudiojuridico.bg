@@ -15,11 +15,7 @@
                                   </template>
                                   
                                   <script setup>
-                                  import { useRouter } from 'vue-router';
-                                  const router = useRouter();
-                                  function goToApps() {
-                                      router.push('/aplicaciones');
-                                  }
+                                  
                                   </script>
 
                                   <style scoped>
@@ -35,17 +31,7 @@
                                                        text-align: center;
                                                          padding: 40px 20px;
                                   }
-
-                                  .cta-button {
-                                      padding: 14px 28px;
-                                        background-color: var(--primary-color);
-                                          color: var(--secondary-color);
-                                            border: none;
-                                              border-radius: 4px;
-                                                font-size: 1rem;
-                                                  cursor: pointer;
-                                                    transition: filter 0.3s;
-                                  }
+                                  
                                   .cta-button:hover {
                                       filter: brightness(0.9);
                                   }
@@ -119,16 +105,3 @@
                                               height: 20vh; /* Baja de 35vh a 20vh o prueba 15-25vh según tu gusto */
                                         }
                                         }
-                                  }
-                                  }
-                                  }
-                                  }
-                                  }
-                                  }
-                                  }
-                                  }
-                                  }
-                                  }
-                                  }
-                                  }
-                                  }>
