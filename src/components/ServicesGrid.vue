@@ -1,41 +1,77 @@
 <template>
-  <div class="services-grid">
-    <div
-      v-for="service in filteredServices"
-      :key="service.id"
-      class="service-card"
-    >
-      <img
-        v-if="service.image"
-        :src="`/assets/${service.image}`"
-        :alt="service.nombre"
-        class="service-image"
-      />
-      <h3 class="service-name">{{ service.nombre }}</h3>
-      <p class="service-description">{{ service.descripcion }}</p>
-      <div class="service-actions">
-        <router-link :to="`/servicios/${service.slug}`" class="link-detail"
-          >Ver detalles</router-link
-        >
-        <a
-          href="https://wa.me/5492964540752"
-          target="_blank"
-          class="link-whatsapp"
-        >
-          Solicitar asistencia
-        </a>
+  <div>
+    <!-- Tabs -->
+    <div class="tabs">
+      <button
+        type="button"
+        class="tab"
+        :class="{ active: activeStage === 'administrativa' }"
+        @click="activeStage = 'administrativa'"
+      >
+        Etapa Administrativa
+      </button>
+
+      <button
+        type="button"
+        class="tab"
+        :class="{ active: activeStage === 'judicial' }"
+        @click="activeStage = 'judicial'"
+      >
+        Etapa Judicial
+      </button>
+    </div>
+
+    <!-- Grid -->
+    <div class="services-grid">
+      <div
+        v-for="service in filteredServices"
+        :key="service.id"
+        class="service-card"
+      >
+        <img
+          v-if="service.image"
+          :src="`/assets/${service.image}`"
+          :alt="service.nombre"
+          class="service-image"
+        />
+        <h3 class="service-name">{{ service.nombre }}</h3>
+        <p class="service-description">{{ service.descripcion }}</p>
+        <div class="service-actions">
+          <router-link :to="`/servicios/${service.slug}`" class="link-detail">
+            Ver detalles
+          </router-link>
+
+          <a
+            href="https://wa.me/5492964540752"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-whatsapp"
+          >
+            Solicitar asistencia
+          </a>
+        </div>
+      </div>
+
+      <!-- Placeholder si Judicial está vacío -->
+      <div
+        v-if="filteredServices.length === 0 && activeStage === 'judicial'"
+        class="empty-state"
+      >
+        Los servicios de la etapa judicial estarán disponibles próximamente.
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { computed, onMounted } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { useServicesStore } from '@/stores/services';
 
 const route = useRoute();
 const store = useServicesStore();
+
+const activeStage = ref('administrativa');
 
 const category = computed(() => {
   const query = route.query.categoria;
@@ -44,8 +80,15 @@ const category = computed(() => {
 
 const filteredServices = computed(() => {
   if (!store.services.length) return [];
-  if (!category.value) return store.services;
-  return store.services.filter((s) => s.categoria === category.value);
+
+  // 1) filtro por etapa (tabs)
+  let list = store.services.filter(
+    (s) => (s.etapa || 'administrativa') === activeStage.value
+  );
+
+  // 2) filtro por categoría (query existente)
+  if (!category.value) return list;
+  return list.filter((s) => s.categoria === category.value);
 });
 
 onMounted(() => {
@@ -56,6 +99,26 @@ onMounted(() => {
 </script>
 
 <style scoped>
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.tab {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+.tab.active {
+  border-color: var(--secondary-color);
+}
+
+/* Tu CSS original */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -115,5 +178,15 @@ onMounted(() => {
 }
 .link-whatsapp:hover {
   filter: brightness(0.9);
+}
+
+/* Estado vacío */
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 18px;
+  background: #fafafa;
+  border-radius: 8px;
+  color: #666;
+  text-align: center;
 }
 </style>

@@ -6,7 +6,8 @@
     "descripcion": "Asesoramiento integral en casos de accidentes ocurridos en el lugar de trabajo o in itinere.",
     "contenido": "<p>Según la Ley 24.557 sobre Riesgos del Trabajo (art. 6°), se considera <em>accidente de trabajo</em> a “todo acontecimiento súbito y violento ocurrido por el hecho o en ocasión del trabajo, o en el trayecto entre el domicilio del trabajador y el lugar de trabajo, siempre que el damnificado no hubiere interrumpido o alterado dicho trayecto por causas ajenas al trabajo”. Fuente: <a href=\"https://www.argentina.gob.ar/normativa/nacional/27971/texto\" target=\"_blank\" rel=\"noopener noreferrer\">Argentina.gob.ar</a>.</p><p><p><strong>Brindamos asesoramiento y representación legal en accidentes laborales</strong>, tanto los ocurridos <strong>en el lugar de trabajo</strong> como los <em>in itinere</em> (en el trayecto hacia o desde el empleo). Acompañamos al trabajador desde la denuncia del siniestro, guiándolo en cada etapa del proceso y asegurando que reciba atención médica inmediata y gratuita.</p><p>Nos ocupamos de que la ART cumpla con su obligación de otorgar <strong>cobertura médica integral</strong>, que incluya consultas, tratamientos, medicamentos, estudios e intervenciones quirúrgicas necesarias para la recuperación total. Supervisamos cada instancia para evitar demoras, rechazos o interrupciones injustificadas.</p><p>Durante la licencia laboral, gestionamos el <strong>pago de salarios y prestaciones dinerarias</strong>, garantizando que los ingresos del trabajador se mantengan conforme a la ley. También revisamos las liquidaciones y reclamamos diferencias cuando corresponda.</p><p>Nuestro estudio se encarga de <strong>reunir la documentación médica y laboral</strong>, iniciar los trámites administrativos y, si es necesario, <strong>actuar judicialmente</strong> para hacer valer los derechos del trabajador. Procuramos resolver el conflicto con celeridad, priorizando su salud y estabilidad económica.</p><p>Todo proceso por accidente laboral persigue dos fines esenciales:</p><ul><li><strong>Prestaciones médicas integrales:</strong> cobertura completa de tratamientos, medicamentos, rehabilitación, prótesis y estudios complementarios.</li><li><strong>Prestaciones dinerarias:</strong> indemnización justa según el grado de incapacidad o daño sufrido, conforme a la legislación y jurisprudencia vigente.</li></ul><p>También brindamos acompañamiento ante la <strong>Comisión Médica</strong>, controlando que la evaluación del daño físico o psicológico sea objetiva y ajustada a derecho. Cuando el dictamen no refleja la realidad del trabajador, interponemos el recurso correspondiente ante el fuero laboral.</p><p>En síntesis, nuestro compromiso es <strong>proteger la salud y los derechos económicos del trabajador accidentado</strong>, garantizando una defensa profesional y un seguimiento constante hasta obtener el resultado que le corresponde por ley.</p>",
     "image": "servicio-accidentes.webp",
-    "categoria": "accidentes"
+    "categoria": "accidentes",
+    "etapa": "administrativa"
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "descripcion": "Defensa de trabajadores que padecen enfermedades causadas por su actividad laboral.",
     "contenido": "<p>Las <strong>enfermedades profesionales</strong> son aquellas que se originan como consecuencia directa del trabajo realizado o de la exposición a agentes de riesgo en el ámbito laboral. Su reconocimiento por parte de la ART es fundamental para acceder a la cobertura médica, la rehabilitación y las prestaciones económicas que prevé la ley.</p><p>Te asesoramos desde el primer momento para realizar la denuncia correctamente, aportando los estudios médicos y la documentación necesaria que acredite la relación entre tu enfermedad y las condiciones laborales. Supervisamos el proceso ante la ART y la <strong>Comisión Médica</strong> para garantizar una evaluación objetiva y completa.</p><p>Cuando la aseguradora rechaza el caso o no brinda la atención adecuada, iniciamos las acciones administrativas y judiciales correspondientes, reclamando la <strong>cobertura médica integral</strong> y la <strong>indemnización por incapacidad</strong> que corresponde según la normativa vigente.</p><p>Nuestro objetivo es que cada trabajador afectado por una enfermedad laboral reciba un tratamiento oportuno, gratuito y un resarcimiento justo que le permita continuar su vida con dignidad y seguridad.</p>",
     "image": "servicio-enfermedades.webp",
-    "categoria": "enfermedades"
+    "categoria": "enfermedades",
+    "etapa": "administrativa"
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "descripcion": "Apelación y reclamación frente a rechazos o bajas de la ART.",
     "contenido": "<p>Cuando la ART rechaza un siniestro o da el alta médica sin que estés totalmente recuperado, es posible recurrir esa decisión. Intervenimos para presentar recursos administrativos y judiciales, procurando que la ART cumpla con sus obligaciones.</p><p>Analizamos cada caso en detalle, preparamos la fundamentación legal y te representamos en las audiencias y trámites correspondientes.</p>",
     "image": "servicio-reclamo-art.webp",
-    "categoria": "reclamo-art"
+    "categoria": "reclamo-art",
+    "etapa": "administrativa"
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "descripcion": "Representación en recursos administrativos y judiciales contra decisiones de la ART.",
     "contenido": "<p>Si considerás que la resolución de la ART o de la Comisión Médica no es justa, contamos con amplia experiencia en interponer recursos y apelaciones ante las instancias correspondientes.</p><p>Nuestro objetivo es lograr que se reconozcan tus derechos y obtengas la prestación económica y médica que merecés.</p>",
     "image": "servicio-recursos.webp",
-    "categoria": "recursos"
+    "categoria": "recursos",
+    "etapa": "administrativa"
   },
   {
     "id": 5,
@@ -42,24 +46,27 @@
     "descripcion": "Calculamos de forma precisa la indemnización que corresponde por accidente o enfermedad.",
     "contenido": "<p>Utilizamos herramientas y tablas actualizadas para estimar la indemnización que corresponde según tu grado de incapacidad, salario y demás variables establecidas por la ley.</p><p>Esta información te permite conocer de antemano el valor aproximado de tu reclamo y planificar tus acciones legales.</p>",
     "image": "servicio-calculo.webp",
-    "categoria": "recursos"
+    "categoria": "recursos",
+    "etapa": "administrativa"
   },
-    {
+  {
     "id": 6,
-    "slug": "Asistencia-Comisión-Médica",
+    "slug": "asistencia-comision-medica",
     "nombre": "Asistencia Comisión Médica",
     "descripcion": "Lo Asistimos en personalmente en todas las audiencias ante la Comisión Médica",
     "contenido": "<p>Cuando recive un alta médica, o un rechazo parcial de la ART, y necesita de más tratamiento, es preciso acudir en forma obligatoria ante la Comisión Médica más cercana. Para ser atendido en estas audiencias, es preciso que primeramente requiera un turno, y luego llevar su DNI, más Alta médica o bien carta documento de rechazo parcial.</p><p>Ante estas audiencia, el patrocinio letrado no es obligatorio, pero si es una buena práctica, que sea acompañado por su letrado de confianza, de lo contrario, podría incurrir en errores, como omisión de documentación esencial, en especial la que hace a ordenes médica o pruebas objetivas de su problema de salud como un estudio médico de importancia, como un EMG (Electromiograma), ECO (ecografía), RNM (Resonancia magnética), como así cual quier otro que sea necesario.</p><p>Recuerde que el objetivo de la audiencia puede variar según la situación sea de Alta médica, Rechazo parcial de enfermedad profesional, Rechazo parcial de enfermedad NO profesional, o bien rechazo parcial de afecciones en caso de accidente de trabajo.</p>",
     "image": "servicio-calculo.webp",
-    "categoria": "recursos"
+    "categoria": "recursos",
+    "etapa": "administrativa"
   },
-   {
+  {
     "id": 7,
-    "slug": "Reclamo-por-documentación",
+    "slug": "reclamo-por-documentacion",
     "nombre": "Reclamo por documentación",
     "descripcion": "Ante problemas con su documentación, lo asistimos en cada aspecto.",
     "contenido": "<p>Toda solicitud ante un Ente Administrativo conlleva el necesario paso previo, de entrega de documentació, recepción por parte de la Entidad Administrativa (en este caso la Comisión Médica), y el adecuado ingreso por parte de este último. Muchas veces es la propia ART la que se niega a proporcionar esa documentación, en otros casos, la propia Comisión Médica retarda su ingresa, y todo eso vulnera los derechos del trabajador. Y si no cuenta con adecuado asesoramiento la espera puede ser muy larga y angustiosa.</p> <p>Para sortear estos obstáculos, asesorese con nosotros, y lo guiarmeos para una pronta y eficaz tramitación de su reclamo.</p> <p>Ante los inconvenientes mencionados, el sistema prevé tres vías administrativas para realizar el reclamo, 1° La presentación que debe realizar su abogado en el sistema E-ventanilla electrónica ante la SEcretaría General de la Superintendencia; 2° La remisión de email al correo electrónico: ayuda@srt.gob.ar; y 3° el ingreso de su reclamo mediante la carga del formulario Web proporcionado por la propia Superintendencia de Riesgos del Trabajo (SRT). Puede ingresar al mismo a través del siguiente link(<a href=\"https://www.srt.gob.ar/arg/contacto_srt.php\">Formulario Web SRT</a>). </p> <p>Tales alternativas suelen seer eficaces, no obstante, recuerde que siempre puede consultar con su abogado y que el Juez del Trbajo de Río Grande es el Juez comoetente para resolver cualquier inconveniente, incluso ordenar a la Comisión Médica el cumplimiento de sus funciones.</p>",
     "image": "servicio-calculo.webp",
-    "categoria": "recursos"
+    "categoria": "recursos",
+    "etapa": "administrativa"
   }
 ]

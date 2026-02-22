@@ -1,6 +1,11 @@
 <template>
-  <section class="section" v-if="service">
+  <section class="section" v-if="isLoading">
+    <p>Cargando servicio...</p>
+  </section>
+
+  <section class="section" v-else-if="service">
     <h1 class="service-title">{{ service.nombre }}</h1>
+
     <div class="service-meta">
       <img
         v-if="service.image"
@@ -8,36 +13,60 @@
         :alt="service.nombre"
         class="service-image"
       />
-      <div v-html="service.contenido" class="service-content servicio-detalle"></div>
+
+      <div
+        v-html="service.contenido"
+        class="service-content servicio-detalle"
+      ></div>
     </div>
+
     <button class="cta-button" @click="openWhatsApp">
       Solicitar asistencia
     </button>
   </section>
+
   <section class="section" v-else>
     <p>No se encontró el servicio solicitado.</p>
   </section>
 </template>
 
 <script setup>
-import { onMounted, computed } from 'vue';
+import { onMounted, computed, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useServicesStore } from '@/stores/services';
 
 const route = useRoute();
 const store = useServicesStore();
 
+const isLoading = ref(false);
+
 const slug = computed(() => route.params.slug);
 const service = computed(() => store.getServiceBySlug(slug.value));
 
 function openWhatsApp() {
-  window.open('https://wa.me/5492964540752', '_blank');
+  window.open('https://wa.me/5492964540752', '_blank', 'noopener,noreferrer');
+}
+
+async function ensureServicesLoaded() {
+  if (store.services.length) return;
+  isLoading.value = true;
+  try {
+    await store.fetchServices();
+  } finally {
+    isLoading.value = false;
+  }
 }
 
 onMounted(() => {
-  if (!store.services.length) {
-    store.fetchServices();
-  }
+  ensureServicesLoaded();
+});
+
+/**
+ * Si navegás entre servicios sin recargar la página (misma view),
+ * aseguramos que esté cargado igual.
+ */
+watch(slug, () => {
+  ensureServicesLoaded();
 });
 </script>
 
@@ -85,7 +114,6 @@ onMounted(() => {
   transition: filter 0.3s;
 }
 .cta-button:hover {
-  /* Oscurece ligeramente el color primario en hover */
   filter: brightness(0.9);
 }
 </style>
