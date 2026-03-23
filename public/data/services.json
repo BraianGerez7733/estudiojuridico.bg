@@ -35,45 +35,5 @@
     "image": "servicio-reclamo-art.webp",
     "categoria": "reclamo-art",
     "etapa": "administrativa"
-  },
-  {
-    "id": 4,
-    "slug": "recursos-y-apelaciones",
-    "nombre": "Recursos y apelaciones",
-    "descripcion": "Representación en recursos administrativos y judiciales contra decisiones de la ART.",
-    "contenido": "<p>Si considerás que la resolución de la ART o de la Comisión Médica no es justa, contamos con amplia experiencia en la interposición de recursos y apelaciones ante las instancias correspondientes.</p><p>Trabajamos para que se revise integralmente el caso y se reconozcan los derechos del trabajador, tanto en materia de cobertura médica como de prestaciones económicas.</p>",
-    "image": "servicio-recursos.webp",
-    "categoria": "recursos",
-    "etapa": "administrativa"
-  },
-  {
-    "id": 5,
-    "slug": "calculo-indemnizacion",
-    "nombre": "Cálculo de indemnización",
-    "descripcion": "Determinación precisa de la indemnización que corresponde por accidente o enfermedad laboral.",
-    "contenido": "<p>Realizamos el cálculo de la indemnización conforme a las pautas legales vigentes, teniendo en cuenta el grado de incapacidad, el salario del trabajador y las variables aplicables en cada caso.</p><p>Este análisis permite conocer el monto aproximado del reclamo y evaluar la conveniencia de las distintas alternativas disponibles.</p>",
-    "image": "servicio-calculo.webp",
-    "categoria": "recursos",
-    "etapa": "administrativa"
-  },
-  {
-    "id": 6,
-    "slug": "asistencia-comision-medica",
-    "nombre": "Asistencia Comisión Médica",
-    "descripcion": "Asistencia y acompañamiento en audiencias ante la Comisión Médica.",
-    "contenido": "<p>Cuando el trabajador recibe un alta médica o un rechazo parcial por parte de la ART y necesita continuar con tratamiento, debe concurrir obligatoriamente a la Comisión Médica correspondiente.</p><p>Si bien el patrocinio letrado no es obligatorio, resulta altamente recomendable contar con asistencia profesional para evitar omisiones de documentación relevante y asegurar una correcta evaluación del cuadro médico.</p>",
-    "image": "servicio-calculo.webp",
-    "categoria": "recursos",
-    "etapa": "administrativa"
-  },
-  {
-    "id": 7,
-    "slug": "reclamo-por-documentacion",
-    "nombre": "Reclamo por documentación",
-    "descripcion": "Asistencia ante demoras o negativas en la entrega de documentación.",
-    "contenido": "<p>En muchos casos, la ART o la Comisión Médica demoran o dificultan la entrega e ingreso de documentación esencial, lo que vulnera los derechos del trabajador.</p><p>Asesoramos y gestionamos los reclamos por las vías administrativas correspondientes, con el objetivo de lograr una tramitación eficaz y evitar dilaciones innecesarias.</p>",
-    "image": "servicio-calculo.webp",
-    "categoria": "recursos",
-    "etapa": "administrativa"
   }
 ]
