@@ -1,4 +1,3 @@
-```vue
 <template>
   <div>
     <!-- Hero -->
@@ -7,7 +6,7 @@
     <!-- Dashboard -->
     <Dashboard />
 
-    <!-- INTRO COMPLETA -->
+    <!-- INTRO -->
     <section class="intro-section">
       <h2 class="intro-title">
         Asesoramiento integral en accidentes y enfermedades laborales
@@ -41,7 +40,7 @@
         Siempre es mejor adelantarse, contar con información clara y con el acompañamiento de especialistas dedicados a la defensa de los derechos del trabajador.
       </p>
 
-      <!-- BLOQUE ETAPAS -->
+      <!-- ETAPAS -->
       <div class="intro-steps">
         <div class="step">
           <h3>Etapa Administrativa</h3>
@@ -58,14 +57,24 @@
         </div>
       </div>
 
-      <!-- CTA -->
-      <a 
-        href="https://wa.me/5492964540752" 
-        target="_blank" 
-        class="cta-btn"
-      >
-        Consultar por WhatsApp
-      </a>
+      <!-- BOTONES -->
+      <div class="cta-container">
+        <a 
+          href="https://wa.me/5492964540752" 
+          target="_blank" 
+          class="cta-btn"
+        >
+          Consultar por WhatsApp
+        </a>
+
+        <a 
+          href="https://www.facebook.com/profile.php?id=100063453618182&locale=es_LA" 
+          target="_blank" 
+          class="fb-btn"
+        >
+          <i class="fab fa-facebook"></i> Facebook
+        </a>
+      </div>
     </section>
 
     <!-- Servicios -->
@@ -103,7 +112,6 @@ import LocalSEO from '@/components/LocalSEO.vue';
 .intro-section {
   max-width: 900px;
   margin: 40px auto;
-  text-align: center;
   padding: 20px;
 }
 
@@ -111,13 +119,15 @@ import LocalSEO from '@/components/LocalSEO.vue';
   font-size: 1.8rem;
   margin-bottom: 20px;
   color: var(--secondary-color);
+  text-align: center;
 }
 
 .intro-text {
   font-size: 0.95rem;
   color: #555;
   margin-bottom: 14px;
-  line-height: 1.5;
+  line-height: 1.6;
+  text-align: justify;
 }
 
 .intro-highlight {
@@ -147,10 +157,16 @@ import LocalSEO from '@/components/LocalSEO.vue';
   color: var(--primary-color);
 }
 
-/* BOTÓN */
-.cta-btn {
-  display: inline-block;
+/* BOTONES */
+.cta-container {
   margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
   background: #25D366;
   color: white;
   padding: 12px 22px;
@@ -163,5 +179,21 @@ import LocalSEO from '@/components/LocalSEO.vue';
 .cta-btn:hover {
   background: #1ebe5d;
 }
+
+.fb-btn {
+  background: #1877F2;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fb-btn:hover {
+  background: #0f5dc2;
+}
 </style>
-```
