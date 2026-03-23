@@ -1,7 +1,7 @@
 <template>
   <section class="hero">
     <video class="hero-video-background" autoplay muted loop playsinline>
-          <source src="/assets/Balanza_de_fondo.mp4" type="video/mp4">
+          <source src="/assets/Balanza_comprimido.mp4" type="video/mp4">
                 Tu navegador no soporta el tag de video.
                     </video>
                       <div class="overlay"></div>
