@@ -1,35 +1,59 @@
 ```vue
 <template>
   <div>
-    <!-- Bloque principal -->
+    <!-- Hero -->
     <HeroBlock />
 
     <!-- Dashboard -->
     <Dashboard />
 
-    <!-- INTRO -->
+    <!-- INTRO COMPLETA -->
     <section class="intro-section">
       <h2 class="intro-title">
         Asesoramiento integral en accidentes y enfermedades laborales
       </h2>
 
       <p class="intro-text">
-        Brindamos asesoramiento especializado para trabajadores que han sufrido accidentes laborales o enfermedades profesionales.
-        Lo acompañamos en cada etapa del proceso para garantizar una reparación justa.
+        Gracias por visitarnos. Aquí encontrará asesoramiento y recursos útiles para defender adecuadamente sus derechos frente a un accidente de trabajo o una enfermedad profesional.
       </p>
 
+      <p class="intro-text">
+        En términos generales, con la denuncia del siniestro se inicia la etapa administrativa, en la que se evalúa el problema de salud del trabajador y se determinan las prestaciones médicas y/o dinerarias correspondientes.
+      </p>
+
+      <p class="intro-text">
+        En esta instancia resulta fundamental describir correctamente el cuadro médico, ya que sobre esa base se desarrollará todo el trámite y, eventualmente, la instancia judicial.
+      </p>
+
+      <p class="intro-text">
+        Ante el rechazo, la demora o la insuficiencia de las prestaciones, queda habilitada la vía judicial para garantizar el acceso a la cobertura médica necesaria y reclamar la indemnización que corresponda.
+      </p>
+
+      <p class="intro-text">
+        En este sitio encontrará una guía clara y práctica sobre los procedimientos administrativos y judiciales vinculados a los reclamos contra las ART.
+      </p>
+
+      <p class="intro-text">
+        Puede continuar informándose aquí o, si lo prefiere, consultarnos sin compromiso para recibir asesoramiento inmediato y profesional.
+      </p>
+
+      <p class="intro-text intro-highlight">
+        Siempre es mejor adelantarse, contar con información clara y con el acompañamiento de especialistas dedicados a la defensa de los derechos del trabajador.
+      </p>
+
+      <!-- BLOQUE ETAPAS -->
       <div class="intro-steps">
         <div class="step">
           <h3>Etapa Administrativa</h3>
           <p>
-            Intervenimos ante la Comisión Médica, controlando el proceso y defendiendo sus derechos desde el inicio.
+            Se desarrolla ante la Comisión Médica, donde se analiza el cuadro de salud y se determinan las prestaciones correspondientes.
           </p>
         </div>
 
         <div class="step">
           <h3>Etapa Judicial</h3>
           <p>
-            Si el resultado no es justo, iniciamos acciones judiciales para obtener la indemnización correspondiente.
+            Se inicia cuando el resultado administrativo no es adecuado, permitiendo reclamar judicialmente la cobertura y la indemnización.
           </p>
         </div>
       </div>
@@ -85,21 +109,29 @@ import LocalSEO from '@/components/LocalSEO.vue';
 
 .intro-title {
   font-size: 1.8rem;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   color: var(--secondary-color);
 }
 
 .intro-text {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #555;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
+  line-height: 1.5;
 }
 
+.intro-highlight {
+  font-weight: 600;
+  color: #333;
+}
+
+/* ETAPAS */
 .intro-steps {
   display: flex;
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 25px;
 }
 
 .step {
@@ -115,13 +147,13 @@ import LocalSEO from '@/components/LocalSEO.vue';
   color: var(--primary-color);
 }
 
-/* BOTÓN WHATSAPP */
+/* BOTÓN */
 .cta-btn {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 25px;
   background: #25D366;
   color: white;
-  padding: 12px 20px;
+  padding: 12px 22px;
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
