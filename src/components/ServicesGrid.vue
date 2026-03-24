@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- Tabs -->
     <div class="tabs">
       <button
         type="button"
@@ -21,7 +20,6 @@
       </button>
     </div>
 
-    <!-- Grid -->
     <div class="services-grid">
       <div
         v-for="service in filteredServices"
@@ -30,7 +28,7 @@
       >
         <img
           v-if="service.image"
-          :src="`/assets/${service.image}`"
+          :src="service.image"
           :alt="service.nombre"
           class="service-image"
         />
@@ -52,7 +50,6 @@
         </div>
       </div>
 
-      <!-- Placeholder si Judicial está vacío -->
       <div
         v-if="filteredServices.length === 0 && activeStage === 'judicial'"
         class="empty-state"
@@ -81,12 +78,10 @@ const category = computed(() => {
 const filteredServices = computed(() => {
   if (!store.services.length) return [];
 
-  // 1) filtro por etapa (tabs)
   let list = store.services.filter(
     (s) => (s.etapa || 'administrativa') === activeStage.value
   );
 
-  // 2) filtro por categoría (query existente)
   if (!category.value) return list;
   return list.filter((s) => s.categoria === category.value);
 });
@@ -99,7 +94,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* Tabs */
 .tabs {
   display: flex;
   gap: 10px;
@@ -118,7 +112,6 @@ onMounted(() => {
   border-color: var(--secondary-color);
 }
 
-/* Tu CSS original */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -180,7 +173,6 @@ onMounted(() => {
   filter: brightness(0.9);
 }
 
-/* Estado vacío */
 .empty-state {
   grid-column: 1 / -1;
   padding: 18px;
