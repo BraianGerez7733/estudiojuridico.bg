@@ -13,7 +13,9 @@
       </h2>
 
       <p class="intro-text">
-        Gracias por visitarnos. Aquí encontrará asesoramiento y recursos útiles para defender adecuadamente sus derechos frente a un accidente de trabajo o una enfermedad profesional.
+        Gracias por visitarnos.</p> 
+        
+      <p class="intro-text"> Aquí encontrará asesoramiento y recursos útiles para defender adecuadamente sus derechos frente a un accidente de trabajo o una enfermedad profesional.
       </p>
 
       <p class="intro-text">
