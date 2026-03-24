@@ -11,7 +11,7 @@
     <div class="service-meta">
       <img
         v-if="service.image"
-        :src="`/assets/${service.image}`"
+        :src="service.image"
         :alt="service.nombre"
         class="service-image"
       />
