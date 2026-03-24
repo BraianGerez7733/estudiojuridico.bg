@@ -35,5 +35,35 @@
     "image": "servicio-reclamo-art.webp",
     "categoria": "reclamo-art",
     "etapa": "administrativa"
+  },
+  {
+    "id": 4,
+    "slug": "demanda-judicial-accidente",
+    "nombre": "Demanda judicial por accidente de trabajo",
+    "descripcion": "Acción judicial para obtener cobertura médica e indemnización ante incumplimientos de la ART.",
+    "contenido": "<p>Cuando la ART rechaza el accidente, demora las prestaciones o otorga el alta médica sin recuperación completa, corresponde iniciar la acción judicial.</p><p>En esta instancia se produce prueba pericial médica a fin de determinar la incapacidad y su relación con el accidente laboral.</p><p>El proceso judicial permite reclamar tanto las prestaciones médicas necesarias como la indemnización correspondiente conforme a la normativa vigente.</p>",
+    "image": "servicio-accidentes.webp",
+    "categoria": "accidentes",
+    "etapa": "judicial"
+  },
+  {
+    "id": 5,
+    "slug": "demanda-enfermedad-profesional",
+    "nombre": "Demanda por enfermedad profesional",
+    "descripcion": "Reclamo judicial para el reconocimiento de enfermedades laborales rechazadas por la ART.",
+    "contenido": "<p>Cuando la ART rechaza una enfermedad profesional o niega su origen laboral, puede promoverse la acción judicial para acreditar la relación causal con el trabajo.</p><p>Mediante prueba médica y pericial se determina la existencia de la patología, su vinculación con las tareas y el grado de incapacidad.</p><p>El proceso judicial permite obtener la cobertura médica, el tratamiento adecuado y la indemnización correspondiente.</p>",
+    "image": "servicio-enfermedades.webp",
+    "categoria": "enfermedades",
+    "etapa": "judicial"
+  },
+  {
+    "id": 6,
+    "slug": "medidas-cautelares-art",
+    "nombre": "Medidas cautelares contra la ART",
+    "descripcion": "Solicitudes urgentes para obtener tratamiento médico inmediato ante incumplimientos de la ART.",
+    "contenido": "<p>Cuando la ART no brinda tratamiento médico o lo interrumpe, puede solicitarse una medida cautelar para garantizar la atención en forma inmediata.</p><p>Estas medidas permiten acceder rápidamente a estudios, intervenciones y tratamientos indispensables para la salud del trabajador.</p><p>Su finalidad es evitar el agravamiento del cuadro clínico mientras se desarrolla el proceso principal.</p>",
+    "image": "servicio-reclamo-art.webp",
+    "categoria": "reclamo-art",
+    "etapa": "judicial"
   }
 ]
