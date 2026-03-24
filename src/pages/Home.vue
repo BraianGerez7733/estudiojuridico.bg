@@ -17,22 +17,6 @@
       </p>
 
       <p class="intro-text">
-        En términos generales, con la denuncia del siniestro se inicia la etapa administrativa, en la que se evalúa el problema de salud del trabajador y se determinan las prestaciones médicas y/o dinerarias correspondientes.
-      </p>
-
-      <p class="intro-text">
-        En esta instancia resulta fundamental describir correctamente el cuadro médico, ya que sobre esa base se desarrollará todo el trámite y, eventualmente, la instancia judicial.
-      </p>
-
-      <p class="intro-text">
-        Ante el rechazo, la demora o la insuficiencia de las prestaciones, queda habilitada la vía judicial para garantizar el acceso a la cobertura médica necesaria y reclamar la indemnización que corresponda.
-      </p>
-
-      <p class="intro-text">
-        En este sitio encontrará una guía clara y práctica sobre los procedimientos administrativos y judiciales vinculados a los reclamos contra las ART.
-      </p>
-
-      <p class="intro-text">
         Puede continuar informándose aquí o, si lo prefiere, consultarnos sin compromiso para recibir asesoramiento inmediato y profesional.
       </p>
 
