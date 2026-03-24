@@ -21,28 +21,6 @@
     </div>
     <p v-if="submitted" class="success-message">Gracias por su mensaje. Nos pondremos en contacto a la brevedad.</p>
   </form>
-
-  <div class="map-container">
-    <h3>Ubicación</h3>
-    <p>Don Bosco 715, Río Grande</p>
-
-    <iframe
-      src="https://www.google.com/maps?q=Don%20Bosco%20715%20Rio%20Grande&output=embed"
-      width="100%"
-      height="300"
-      style="border:0; border-radius:8px;"
-      loading="lazy">
-    </iframe>
-
-    <a
-      href="https://maps.app.goo.gl/p6wW6HAxqx2YUetj9"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="location-button"
-    >
-      Cómo llegar
-    </a>
-  </div>
 </template>
 
 <script setup>
@@ -57,7 +35,10 @@ const form = reactive({
 const submitted = ref(false);
 
 function submitForm() {
+  // En un sitio real se enviaría la información a un servidor o servicio de correo.
+  // Aquí simplemente simulamos el envío.
   submitted.value = true;
+  // Reset form after a short delay
   setTimeout(() => {
     form.name = '';
     form.email = '';
@@ -114,18 +95,5 @@ textarea:focus {
   color: green;
   margin-top: 12px;
   font-size: 0.9rem;
-}
-.map-container {
-  margin-top: 30px;
-}
-.location-button {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 10px 16px;
-  background: var(--primary-color);
-  color: black;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
 }
 </style>
