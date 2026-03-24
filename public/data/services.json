@@ -1,41 +1,31 @@
 [
   {
     "id": 1,
-    "slug": "accidentes-laborales",
     "nombre": "Accidentes de trabajo",
+    "slug": "accidentes-de-trabajo",
     "descripcion": "Asesoramiento y representación legal ante accidentes de trabajo e in itinere.",
-    "contenido": {
-      "general": "En estos casos resulta fundamental que el siniestro sea denunciado de inmediato ante el empleador y/o la ART. En caso de no poder hacerlo en el momento, la denuncia debe efectuarse dentro del plazo legal de 3 días.\n\nLa denuncia puede realizarse de forma telefónica, presencial o a través del área de Recursos Humanos del empleador, que es el mecanismo más habitual. En forma excepcional, también puede efectuarse mediante telegrama.",
-      "tabs": {
-        "aceptacion_total": "Cuando la ART acepta el siniestro en forma íntegra, debe garantizar la cobertura médica completa y las prestaciones dinerarias durante el período de incapacidad laboral. En esta etapa controlamos que no existan demoras, interrupciones, derivaciones inadecuadas o altas prematuras.",
-        "rechazo_parcial": "Se configura cuando la ART reconoce el accidente pero limita la cobertura, negando patologías asociadas o restringiendo tratamientos. En estos casos analizamos la documentación médica, reunimos pruebas y promovemos la revisión administrativa para lograr una evaluación integral.",
-        "rechazo_total": "Ocurre cuando la ART desconoce el accidente y niega toda cobertura. En este supuesto diseñamos la estrategia probatoria y articulamos la impugnación administrativa previa obligatoria, impulsando luego la instancia judicial si persiste la negativa."
-      }
-    },
-    "image": "servicio-accidentes.webp",
-    "categoria": "accidentes",
+    "image": "/assets/servicio-accidentes.webp",
+    "categoria": "laboral",
     "etapa": "administrativa"
   },
   {
     "id": 2,
-    "slug": "enfermedades-profesionales",
     "nombre": "Enfermedades profesionales",
+    "slug": "enfermedades-profesionales",
     "descripcion": "Defensa integral de trabajadores afectados por enfermedades derivadas de su actividad laboral.",
-    "contenido": "<p>Las <strong>enfermedades profesionales</strong> son aquellas que se originan como consecuencia directa de las tareas desarrolladas por el trabajador o de la exposición a agentes de riesgo presentes en el ámbito laboral, tales como movimientos repetitivos, sobreesfuerzos, posturas forzadas o exigencias físicas propias del puesto. En la Argentina, el listado oficial de enfermedades profesionales fue aprobado por el Decreto 658/96, conforme al artículo 6, inciso 2, de la Ley 24.557, y ha sido objeto de modificaciones posteriores.</p><p>Por otro lado, existen las denominadas <strong>enfermedades no profesionales o no listadas</strong>, expresión que suele utilizarse para referirse a patologías que no se encuentran incluidas en ese listado oficial o que son rechazadas por la ART por considerar que no tienen suficiente vinculación con el trabajo. Entre los ejemplos más frecuentes pueden mencionarse las afecciones cervicales, las hernias de disco múltiples, las lumbalgias crónicas inespecíficas, la artrosis y otras patologías degenerativas.</p><p>Sin embargo, que una enfermedad sea calificada como “no listada” o “no profesional” no significa, por sí sola, que el trabajador quede sin protección. Cuando existan elementos médicos y laborales que permitan acreditar la relación causal o concausal con las tareas desarrolladas, corresponde reclamar las prestaciones en especie necesarias —atención médica, estudios, tratamiento y rehabilitación— y, en su caso, las prestaciones dinerarias previstas por la normativa vigente.</p><p>El reconocimiento de la contingencia por parte de la ART resulta fundamental, ya que habilita el acceso oportuno a la cobertura médica y a la eventual reparación económica correspondiente. En caso de rechazo, resulta indispensable contar con estudios médicos idóneos que permitan acreditar el diagnóstico, la relación de causalidad con el trabajo, la necesidad de tratamiento y, en su caso, las limitaciones funcionales derivadas de la patología.</p>",
-    "image": "servicio-enfermedades.webp",
-    "categoria": "enfermedades",
+    "image": "/assets/servicio-enfermedades.webp",
+    "categoria": "laboral",
     "etapa": "administrativa"
   },
   {
     "id": 3,
-    "slug": "reclamo-art",
     "nombre": "Reclamo a la ART previo a la etapa judicial",
+    "slug": "reclamo-art",
     "descripcion": "Impugnación de rechazos, altas indebidas y decisiones injustificadas de la ART.",
-    "contenido": "<p>En términos generales, el reclamo ante la ART comienza con la denuncia del siniestro que da inicio a la etapa administrativa, en la que se evalúa el problema de salud del trabajador y se determinan las prestaciones médicas y/o dinerarias correspondientes.</p><p>En esta instancia resulta fundamental describir correctamente el cuadro médico, ya que sobre esa base se desarrollará todo el trámite y, eventualmente, la instancia judicial.</p><p>Así si la denuncia ante RRHH o telegrama versa sobre una tendinitis de hombro derecho o izquierda o bilateral, toda la contienda administrativa y judicial versará exclusivamente sobre zona del cuerpo; lo mismo sucedería si denuncia Túnel Carpiano u otra patología, siempre identifique con cuidado la zona del cuerpo afectada.</p><p>En casos de accidentes de trabajo siempre denuncie en forma amplia, porque hay afecciones a la salud que pueden aparecer con posterioridad.</p><p>Ahora bien, ante el rechazo, la demora o la insuficiencia de las prestaciones, se debe iniciar un expediente administrativo ante la Comisión Médica correspondiente, y si este no emite Dictamen Médico o lo hace fuera de los plazos legales, queda habilitada la vía judicial para garantizar el acceso a la cobertura médica necesaria y reclamar la indemnización que corresponda.</p>",
-    "image": "servicio-reclamo-art.webp",
-    "categoria": "reclamo-art",
+    "image": "/assets/servicio-reclamo-art.webp",
+    "categoria": "laboral",
     "etapa": "administrativa"
-  },
+  }
 {
   "id": 4,
   "slug": "medidas-cautelares-art",
