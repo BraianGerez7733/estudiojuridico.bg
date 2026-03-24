@@ -18,11 +18,27 @@
         </option>
       </select>
     </div>
+
     <div class="faq-list">
       <div v-for="faq in filteredFaqs" :key="faq.id" class="faq-card">
         <h3>{{ faq.pregunta }}</h3>
         <p v-html="faq.respuesta"></p>
-        <button class="faq-button" @click="openWhatsApp">Consultar ahora</button>
+
+        <div class="faq-buttons">
+          <button class="faq-button" @click="openWhatsApp">
+            Consultar ahora
+          </button>
+
+          <a
+            v-if="faq.id === 1"
+            href="https://www.srt.gob.ar/arg/art_busqueda_art-08.php"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="faq-button faq-button-secondary"
+          >
+            Consultar ART en SRT
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -40,9 +56,11 @@ const categories = computed(() => faqStore.categories);
 
 const filteredFaqs = computed(() => {
   let faqs = faqStore.faqs;
+
   if (selectedCategory.value) {
     faqs = faqs.filter((f) => f.categoria === selectedCategory.value);
   }
+
   if (searchQuery.value) {
     const q = searchQuery.value.toLowerCase();
     faqs = faqs.filter(
@@ -51,6 +69,7 @@ const filteredFaqs = computed(() => {
         f.respuesta.toLowerCase().includes(q)
     );
   }
+
   return faqs;
 });
 
@@ -71,11 +90,13 @@ onMounted(() => {
   flex-direction: column;
   gap: 20px;
 }
+
 .faq-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
+
 .faq-search {
   flex: 1;
   padding: 8px 12px;
@@ -83,17 +104,20 @@ onMounted(() => {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+
 .faq-select {
   padding: 8px 12px;
   font-size: 0.9rem;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+
 .faq-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
+
 .faq-card {
   background: #f8f8f8;
   border-radius: 8px;
@@ -103,17 +127,26 @@ onMounted(() => {
   flex-direction: column;
   justify-content: space-between;
 }
+
 .faq-card h3 {
   margin: 0 0 12px;
   font-size: 1.2rem;
   color: var(--secondary-color);
 }
+
 .faq-card p {
   flex-grow: 1;
   font-size: 0.9rem;
   color: #555;
   margin-bottom: 16px;
 }
+
+.faq-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .faq-button {
   align-self: flex-start;
   padding: 8px 16px;
@@ -124,8 +157,21 @@ onMounted(() => {
   font-size: 0.85rem;
   cursor: pointer;
   transition: filter 0.3s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
 }
+
 .faq-button:hover {
   filter: brightness(0.9);
+}
+
+.faq-button-secondary {
+  background-color: #444;
+  color: #fff;
+}
+
+.faq-button-secondary:hover {
+  filter: brightness(1.1);
 }
 </style>

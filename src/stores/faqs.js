@@ -1,25 +1,19 @@
 import { defineStore } from 'pinia';
 
-/**
- * Store para preguntas frecuentes. Incluye un conjunto de preguntas y
- * respuestas predefinidas sobre accidentes de trabajo y enfermedades
- * profesionales.
- */
 export const useFaqStore = defineStore('faqs', {
   state: () => ({
     faqs: []
   }),
   actions: {
     loadFaqs() {
-      // Se pueden cargar desde un archivo JSON o API. Aquí las definimos
-      // directamente siguiendo las indicaciones del usuario.
       this.faqs = [
         {
           id: 1,
           categoria: 'General',
           pregunta: '¿Qué es la ART?',
           respuesta:
-            'La Aseguradora de Riesgos del Trabajo (ART) es la aseguradora que debe cubrir los accidentes y enfermedades laborales; está obligada a brindar atención médica, pagar salarios durante la baja y determinar la incapacidad.'
+            'La Aseguradora de Riesgos del Trabajo (ART) es la aseguradora que debe cubrir los accidentes y enfermedades laborales; está obligada a brindar atención médica, pagar salarios durante la baja y determinar la incapacidad.',
+          linkSRT: 'https://www.srt.gob.ar/arg/art_busqueda_art-08.php'
         },
         {
           id: 2,
