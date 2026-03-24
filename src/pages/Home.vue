@@ -1,12 +1,9 @@
 <template>
   <div>
-    <!-- Hero -->
     <HeroBlock />
 
-    <!-- Dashboard -->
     <Dashboard />
 
-    <!-- INTRO -->
     <section class="intro-section">
       <h2 class="intro-title">
         Asesoramiento integral en accidentes y enfermedades laborales
@@ -24,7 +21,6 @@
         Siempre es mejor adelantarse, contar con información clara y con el acompañamiento de especialistas dedicados a la defensa de los derechos del trabajador.
       </p>
 
-      <!-- ETAPAS -->
       <div class="intro-steps">
         <div class="step">
           <h3>Etapa Administrativa</h3>
@@ -41,19 +37,18 @@
         </div>
       </div>
 
-      <!-- BOTONES -->
       <div class="cta-container">
-        <a 
-          href="https://wa.me/5492964540752" 
-          target="_blank" 
+        <a
+          href="https://wa.me/5492964540752"
+          target="_blank"
           class="cta-btn"
         >
           Consultar por WhatsApp
         </a>
 
-        <a 
-          href="https://www.facebook.com/profile.php?id=100063453618182&locale=es_LA" 
-          target="_blank" 
+        <a
+          href="https://www.facebook.com/profile.php?id=100063453618182&locale=es_LA"
+          target="_blank"
           class="fb-btn"
         >
           <i class="fab fa-facebook"></i> Facebook
@@ -61,14 +56,35 @@
       </div>
     </section>
 
-    <!-- Servicios -->
     <section class="section">
       <h2 class="section-title">Nuestros servicios</h2>
       <ServicesGrid />
     </section>
 
-    <!-- Contacto -->
-    <LocalSEO />
+    <section class="location-section">
+      <div class="location-container">
+        <div class="location-info">
+          <h2 class="location-title">¿Dónde estamos?</h2>
+          <p class="location-text">
+            Nos encontramos en la ciudad de Río Grande, Tierra del Fuego.
+          </p>
+          <p class="location-text"><strong>Dirección:</strong> Don Bosco 715</p>
+          <p class="location-text"><strong>Teléfono:</strong> +54 2964 540752</p>
+          <p class="location-text"><strong>Horario de atención:</strong> Lunes a Viernes de 9:00 a 17:00</p>
+        </div>
+
+        <div class="location-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d294.6742145241244!2d-67.7096846!3d-53.7824798!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbc4b17000e2de44f%3A0xc6fa507670c04e59!2sEstudio%20Jur%C3%ADdico%20Braian%20Ger%C3%A9z!5e0!3m2!1ses-419!2sar!4v1774364355363!5m2!1ses-419!2sar"
+            width="100%"
+            height="350"
+            style="border:0;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -76,7 +92,6 @@
 import HeroBlock from '@/components/HeroBlock.vue';
 import Dashboard from '@/components/Dashboard.vue';
 import ServicesGrid from '@/components/ServicesGrid.vue';
-import LocalSEO from '@/components/LocalSEO.vue';
 </script>
 
 <style scoped>
@@ -92,7 +107,6 @@ import LocalSEO from '@/components/LocalSEO.vue';
   color: var(--secondary-color);
 }
 
-/* INTRO */
 .intro-section {
   max-width: 900px;
   margin: 40px auto;
@@ -119,7 +133,6 @@ import LocalSEO from '@/components/LocalSEO.vue';
   color: #333;
 }
 
-/* ETAPAS */
 .intro-steps {
   display: flex;
   gap: 20px;
@@ -141,7 +154,6 @@ import LocalSEO from '@/components/LocalSEO.vue';
   color: var(--primary-color);
 }
 
-/* BOTONES */
 .cta-container {
   margin-top: 25px;
   display: flex;
@@ -179,5 +191,42 @@ import LocalSEO from '@/components/LocalSEO.vue';
 
 .fb-btn:hover {
   background: #0f5dc2;
+}
+
+.location-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.location-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.location-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+}
+
+.location-text {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.location-map iframe {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 768px) {
+  .location-container {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
