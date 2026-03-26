@@ -64,10 +64,20 @@
 
       <!-- CONTENIDO CLÁSICO (resto de los servicios) -->
       <div
-        v-else
+        v-else-if="typeof service.contenido === 'string'"
         v-html="service.contenido"
         class="service-content servicio-detalle"
       ></div>
+
+      <div
+        v-else-if="service.contenido_html"
+        v-html="service.contenido_html"
+        class="service-content servicio-detalle"
+      ></div>
+
+      <p v-else class="service-content servicio-detalle">
+        {{ service.descripcion }}
+      </p>
     </div>
 
     <button class="cta-button" @click="openWhatsApp">
