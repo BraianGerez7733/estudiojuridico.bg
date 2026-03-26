@@ -1,35 +1,45 @@
 [
   {
     "id": 1,
+    "slug": "accidentes-laborales",
     "nombre": "Accidentes de trabajo",
-    "slug": "accidentes-de-trabajo",
     "descripcion": "Asesoramiento y representación legal ante accidentes de trabajo e in itinere.",
-    "contenido": "<p>Asesoramiento y representación legal ante accidentes de trabajo e in itinere.</p>",
-    "image": "/assets/servicio-accidentes.webp",
-    "categoria": "laboral",
+    "contenido": {
+      "general": "En estos casos resulta fundamental que el siniestro sea denunciado de inmediato ante el empleador y/o la ART. En caso de no poder hacerlo en el momento, la denuncia debe efectuarse dentro del plazo legal de 3 días.\n\nLa denuncia puede realizarse de forma telefónica, presencial o a través del área de Recursos Humanos del empleador, que es el mecanismo más habitual. En forma excepcional, también puede efectuarse mediante telegrama.",
+      "tabs": {
+        "aceptacion_total": "Cuando la ART acepta el siniestro en forma íntegra, debe garantizar la cobertura médica completa y las prestaciones dinerarias durante el período de incapacidad laboral. En esta etapa controlamos que no existan demoras, interrupciones, derivaciones inadecuadas o altas prematuras.",
+        "rechazo_parcial": "Se configura cuando la ART reconoce el accidente pero limita la cobertura, negando patologías asociadas o restringiendo tratamientos. En estos casos analizamos la documentación médica, reunimos pruebas y promovemos la revisión administrativa para lograr una evaluación integral.",
+        "rechazo_total": "Ocurre cuando la ART desconoce el accidente y niega toda cobertura. En este supuesto diseñamos la estrategia probatoria y articulamos la impugnación administrativa previa obligatoria, impulsando luego la instancia judicial si persiste la negativa."
+      }
+    },
+    "contenido_html": "<p>En estos casos resulta fundamental que el siniestro sea denunciado de inmediato ante el empleador y/o la ART. En caso de no poder hacerlo en el momento, la denuncia debe efectuarse dentro del plazo legal de 3 días.</p><p>La denuncia puede realizarse de forma telefónica, presencial o a través del área de Recursos Humanos del empleador, que es el mecanismo más habitual. En forma excepcional, también puede efectuarse mediante telegrama.</p>",
+    "image": "servicio-accidentes.webp",
+    "categoria": "accidentes",
     "etapa": "administrativa"
   },
   {
     "id": 2,
-    "nombre": "Enfermedades profesionales",
     "slug": "enfermedades-profesionales",
+    "nombre": "Enfermedades profesionales",
     "descripcion": "Defensa integral de trabajadores afectados por enfermedades derivadas de su actividad laboral.",
-    "contenido": "<p>Defensa integral de trabajadores afectados por enfermedades derivadas de su actividad laboral.</p>",
-    "image": "/assets/servicio-enfermedades.webp",
-    "categoria": "laboral",
+    "contenido": "<p>Las <strong>enfermedades profesionales</strong> son aquellas que se originan como consecuencia directa de las tareas desarrolladas por el trabajador...</p>",
+    "contenido_html": "<p>Las <strong>enfermedades profesionales</strong> son aquellas que se originan como consecuencia directa de las tareas desarrolladas por el trabajador...</p>",
+    "image": "servicio-enfermedades.webp",
+    "categoria": "enfermedades",
     "etapa": "administrativa"
   },
   {
     "id": 3,
-    "nombre": "Reclamo a la ART previo a la etapa judicial",
     "slug": "reclamo-art",
+    "nombre": "Reclamo a la ART previo a la etapa judicial",
     "descripcion": "Impugnación de rechazos, altas indebidas y decisiones injustificadas de la ART.",
-    "contenido": "<p>Impugnación de rechazos, altas indebidas y decisiones injustificadas de la ART.</p>",
-    "image": "/assets/servicio-reclamo-art.webp",
-    "categoria": "laboral",
+    "contenido": "<p>En términos generales, el reclamo ante la ART comienza con la denuncia del siniestro...</p>",
+    "contenido_html": "<p>En términos generales, el reclamo ante la ART comienza con la denuncia del siniestro...</p>",
+    "image": "servicio-reclamo-art.webp",
+    "categoria": "reclamo-art",
     "etapa": "administrativa"
   },
-  {
+{
     "id": 4,
     "slug": "medidas-cautelares-art",
     "nombre": "Medidas cautelares contra la ART",
