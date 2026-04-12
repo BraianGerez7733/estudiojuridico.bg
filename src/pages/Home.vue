@@ -29,7 +29,7 @@
           target="_blank"
           class="cta-btn"
         >
-          Consultar por WhatsApp
+          <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
         </a>
 
         <a
@@ -148,34 +148,45 @@ import Timeline from '@/components/Timeline.vue';
 }
 
 .cta-btn {
-  background: #25D366;
+  background: linear-gradient(135deg, #25D366, #128C7E);
   color: white;
-  padding: 12px 22px;
-  border-radius: 6px;
+  padding: 14px 28px;
+  border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s;
-}
-
-.cta-btn:hover {
-  background: #1ebe5d;
-}
-
-.fb-btn {
-  background: #1877F2;
-  color: white;
-  padding: 12px 22px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+  background: linear-gradient(135deg, #1ebe5d, #0f7a6d);
+}
+
+.fb-btn {
+  background: linear-gradient(135deg, #1877F2, #0d5bb5);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .fb-btn:hover {
-  background: #0f5dc2;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(24, 119, 242, 0.5);
+  background: linear-gradient(135deg, #0f5dc2, #094082);
 }
 
 .location-section {

@@ -58,21 +58,32 @@ import Footer from '@/components/Footer.vue';
 }
 
 .whatsapp-button {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  width: 48px;
-  height: 48px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1.8rem;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
   pointer-events: auto;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
 .whatsapp-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.15) translateY(-5px);
+  animation: none;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+  background: linear-gradient(135deg, #1ebe5d, #0f7a6d);
 }
 
 .top-left {
