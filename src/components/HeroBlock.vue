@@ -24,7 +24,7 @@
                                          background-size: cover;
                                            background-position: center;
                                              color: var(--light-color);
-                                               min-height: 70vh;
+                                               min-height: 50vh;
                                                  display: flex;
                                                    align-items: center;
                                                      justify-content: center;
@@ -85,7 +85,7 @@
                                         bottom: 0;
                                           left: 0;
                                             width: 100%;
-                                              height: 35vh; /* Altura igual para simetría */
+                                              height: 20vh; /* Altura igual para simetría */
                                                 background: white;
                                                   z-index: 3; /* Por encima del overlay para que se vea bien */
                                   }

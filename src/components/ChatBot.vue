@@ -181,7 +181,8 @@ function scrollToBottom() {
   right: 0;
   width: 350px;
   max-width: calc(100vw - 48px);
-  height: 500px;
+  height: 450px;
+  max-height: calc(100vh - 120px);
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
