@@ -1,7 +1,14 @@
 <template>
-  <div>
+  <div class="home-wrapper">
+    <!-- Componente Hero original -->
     <HeroBlock />
 
+    <!-- Nuevo Carrusel de Imágenes -->
+    <section class="carousel-section">
+      <Carousel />
+    </section>
+
+    <!-- Nuevo Dashboard con Enlaces Externos -->
     <Dashboard />
 
     <section class="intro-section">
@@ -92,9 +99,20 @@
 import HeroBlock from '@/components/HeroBlock.vue';
 import Dashboard from '@/components/Dashboard.vue';
 import ServicesGrid from '@/components/ServicesGrid.vue';
+import Carousel from '@/components/Carousel.vue';
 </script>
 
 <style scoped>
+.home-wrapper {
+  background-color: #fafbfc;
+}
+
+.carousel-section {
+  padding: 0 20px;
+  margin-top: -30px;
+  position: relative;
+  z-index: 5;
+}
 .section {
   padding: 40px 20px;
   max-width: 1200px;
