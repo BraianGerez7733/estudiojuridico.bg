@@ -9,23 +9,28 @@
         </router-link>
       </div>
 
-      <nav class="nav">
+      <!-- Botón de menú hamburguesa para móviles -->
+      <button class="hamburger-btn" @click="toggleMenu" aria-label="Menú">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav class="nav" :class="{ 'menu-open': isMenuOpen }">
         <ul class="nav-list">
-          <li><router-link to="/">Inicio</router-link></li>
+          <li><router-link to="/" @click="closeMenu">Inicio</router-link></li>
           <li class="dropdown">
             <span>Servicios</span>
             <ul class="dropdown-menu">
-              <li><router-link to="/servicios?categoria=accidentes">Accidentes laborales</router-link></li>
-              <li><router-link to="/servicios?categoria=enfermedades">Enfermedades profesionales</router-link></li>
-              <li><router-link to="/servicios?categoria=reclamo-art">Reclamación a la ART</router-link></li>
-              <li><router-link to="/servicios?categoria=recursos">Recursos</router-link></li>
+              <li><router-link to="/servicios?categoria=accidentes" @click="closeMenu">Accidentes laborales</router-link></li>
+              <li><router-link to="/servicios?categoria=enfermedades" @click="closeMenu">Enfermedades profesionales</router-link></li>
+              <li><router-link to="/servicios?categoria=reclamo-art" @click="closeMenu">Reclamación a la ART</router-link></li>
+              <li><router-link to="/servicios?categoria=recursos" @click="closeMenu">Recursos</router-link></li>
             </ul>
           </li>
-          <li><router-link to="/faqs">Preguntas</router-link></li>
-          <li><router-link to="/articulos">Artículos</router-link></li>
-          <li><router-link to="/aplicaciones">Aplicaciones</router-link></li>
-          <li><router-link to="/contacto">Contacto</router-link></li>
-          <li><router-link to="/donde-estamos">¿Dónde estamos?</router-link></li>
+          <li><router-link to="/faqs" @click="closeMenu">Preguntas</router-link></li>
+          <li><router-link to="/articulos" @click="closeMenu">Artículos</router-link></li>
+          <li><router-link to="/aplicaciones" @click="closeMenu">Aplicaciones</router-link></li>
+          <li><router-link to="/contacto" @click="closeMenu">Contacto</router-link></li>
+          <li><router-link to="/donde-estamos" @click="closeMenu">¿Dónde estamos?</router-link></li>
         </ul>
       </nav>
     </div>
@@ -33,7 +38,17 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
+
+const isMenuOpen = ref(false);
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+
+const closeMenu = () => {
+  isMenuOpen.value = false;
+};
 
 onMounted(() => {
   const video = document.querySelector('.brand-video');
@@ -134,10 +149,50 @@ onMounted(() => {
 }
 
 @media (max-width: 768px) {
+  .hamburger-btn {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--light-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .nav.menu-open {
+    display: block;
+  }
+
   .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    gap: 15px;
+    display: flex;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background-color: rgba(255,255,255,0.05);
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger-btn {
     display: none;
   }
-  /* Mobile navigation can be implemented here if required. */
 }
 
 .brand-video-container {
