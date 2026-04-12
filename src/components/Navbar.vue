@@ -29,6 +29,7 @@
           <li><router-link to="/faqs" @click="closeMenu">Preguntas</router-link></li>
           <li><router-link to="/articulos" @click="closeMenu">Artículos</router-link></li>
           <li><router-link to="/aplicaciones" @click="closeMenu">Aplicaciones</router-link></li>
+          <li><router-link to="/almanaque" @click="closeMenu">Calendario</router-link></li>
           <li><router-link to="/contacto" @click="closeMenu">Contacto</router-link></li>
           <li><router-link to="/donde-estamos" @click="closeMenu">¿Dónde estamos?</router-link></li>
         </ul>
@@ -65,9 +66,12 @@ onMounted(() => {
   color: var(--light-color);
   padding: 12px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 999;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 9999;
 }
 
 .container {

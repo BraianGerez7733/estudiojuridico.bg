@@ -8,33 +8,8 @@
     </main>
     <!-- Pie de página -->
     <Footer v-if="!isWorkspace" />
-    <!-- Botones flotantes de WhatsApp -->
-    <div class="whatsapp-buttons" v-if="!isWorkspace">
-      <a
-        href="https://wa.me/5492964540752"
-        target="_blank"
-        aria-label="Chatear por WhatsApp"
-        class="whatsapp-button top-left"
-      >
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <a
-        href="https://wa.me/5492964540752"
-        target="_blank"
-        aria-label="Chatear por WhatsApp"
-        class="whatsapp-button top-right"
-      >
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <a
-        href="https://wa.me/5492964540752"
-        target="_blank"
-        aria-label="Chatear por WhatsApp"
-        class="whatsapp-button bottom-right"
-      >
-        <i class="fab fa-whatsapp"></i>
-      </a>
-    </div>
+    <!-- Widget de Chat Interactivo -->
+    <ChatBot />
   </div>
 </template>
 
@@ -43,6 +18,7 @@ import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
+import ChatBot from '@/components/ChatBot.vue';
 
 const route = useRoute();
 const isWorkspace = computed(() => route.path.startsWith('/veredicta'));
@@ -59,7 +35,7 @@ const isWorkspace = computed(() => route.path.startsWith('/veredicta'));
 
 .main-content {
   min-height: calc(100vh - 160px);
-  /* Deja espacio para header y footer */
+  padding-top: 85px; /* Compensa la navbar fija */
   display: flex;
   flex-direction: column;
 }
