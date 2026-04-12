@@ -18,7 +18,7 @@
         <ul class="nav-list">
           <li><router-link to="/" @click="closeMenu">Inicio</router-link></li>
           <li class="dropdown">
-            <span>Servicios</span>
+            <span class="dropbtn">Servicios <i class="fas fa-caret-down"></i></span>
             <ul class="dropdown-menu">
               <li><router-link to="/servicios?categoria=accidentes" @click="closeMenu">Accidentes laborales</router-link></li>
               <li><router-link to="/servicios?categoria=enfermedades" @click="closeMenu">Enfermedades profesionales</router-link></li>

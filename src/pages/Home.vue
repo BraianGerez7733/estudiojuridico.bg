@@ -20,21 +20,8 @@
         Siempre es mejor adelantarse, contar con información clara y con el acompañamiento de especialistas dedicados a la defensa de los derechos del trabajador.
       </p>
 
-      <div class="intro-steps">
-        <div class="step">
-          <h3>Etapa Administrativa</h3>
-          <p>
-            Se desarrolla ante la Comisión Médica, donde se analiza el cuadro de salud y se determinan las prestaciones correspondientes.
-          </p>
-        </div>
-
-        <div class="step">
-          <h3>Etapa Judicial</h3>
-          <p>
-            Se inicia cuando el resultado administrativo no es adecuado, permitiendo reclamar judicialmente la cobertura y la indemnización.
-          </p>
-        </div>
-      </div>
+      <!-- Nueva Cronología Integrada -->
+      <Timeline />
 
       <div class="cta-container">
         <a
@@ -100,6 +87,7 @@ import HeroBlock from '@/components/HeroBlock.vue';
 import Dashboard from '@/components/Dashboard.vue';
 import ServicesGrid from '@/components/ServicesGrid.vue';
 import Carousel from '@/components/Carousel.vue';
+import Timeline from '@/components/Timeline.vue';
 </script>
 
 <style scoped>
@@ -149,27 +137,6 @@ import Carousel from '@/components/Carousel.vue';
 .intro-highlight {
   font-weight: 600;
   color: #333;
-}
-
-.intro-steps {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 25px;
-}
-
-.step {
-  background: #f8f8f8;
-  padding: 16px;
-  border-radius: 8px;
-  max-width: 350px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-}
-
-.step h3 {
-  margin-bottom: 8px;
-  color: var(--primary-color);
 }
 
 .cta-container {
