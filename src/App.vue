@@ -1,15 +1,15 @@
 <template>
   <div class="app-wrapper">
     <!-- Navegación principal -->
-    <Navbar />
+    <Navbar v-if="!isWorkspace" />
     <!-- Contenido de la página activa -->
-    <main class="main-content">
+    <main :class="isWorkspace ? 'workspace-content' : 'main-content'">
       <router-view />
     </main>
     <!-- Pie de página -->
-    <Footer />
+    <Footer v-if="!isWorkspace" />
     <!-- Botones flotantes de WhatsApp -->
-    <div class="whatsapp-buttons">
+    <div class="whatsapp-buttons" v-if="!isWorkspace">
       <a
         href="https://wa.me/5492964540752"
         target="_blank"
@@ -39,11 +39,24 @@
 </template>
 
 <script setup>
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
+
+const route = useRoute();
+const isWorkspace = computed(() => route.path.startsWith('/veredicta'));
 </script>
 
 <style scoped>
+.workspace-content {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
 .main-content {
   min-height: calc(100vh - 160px);
   /* Deja espacio para header y footer */

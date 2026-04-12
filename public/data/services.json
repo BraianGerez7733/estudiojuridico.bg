@@ -13,7 +13,7 @@
       }
     },
     "contenido_html": "<p>En estos casos resulta fundamental que el siniestro sea denunciado de inmediato ante el empleador y/o la ART. En caso de no poder hacerlo en el momento, la denuncia debe efectuarse dentro del plazo legal de 3 días.</p><p>La denuncia puede realizarse de forma telefónica, presencial o a través del área de Recursos Humanos del empleador, que es el mecanismo más habitual. En forma excepcional, también puede efectuarse mediante telegrama.</p>",
-    "image": "/assets/servicio-accidentes.webp",
+    "iconType": "shield",
     "categoria": "accidentes",
     "etapa": "administrativa"
   },
@@ -23,7 +23,7 @@
     "nombre": "Enfermedades profesionales",
     "descripcion": "Defensa integral de trabajadores afectados por enfermedades derivadas de su actividad laboral.",
     "contenido": "<p>Las <strong>enfermedades profesionales</strong> son aquellas que se originan como consecuencia directa de las tareas desarrolladas por el trabajador o de la exposición a agentes de riesgo presentes en el ámbito laboral, tales como movimientos repetitivos, sobreesfuerzos, posturas forzadas o exigencias físicas propias del puesto. En la Argentina, el listado oficial de enfermedades profesionales fue aprobado por el Decreto 658/96, conforme al artículo 6, inciso 2, de la Ley 24.557, y ha sido objeto de modificaciones posteriores.</p><p>Por otro lado, existen las denominadas <strong>enfermedades no profesionales o no listadas</strong>, expresión que suele utilizarse para referirse a patologías que no se encuentran incluidas en ese listado oficial o que son rechazadas por la ART por considerar que no tienen suficiente vinculación con el trabajo. Entre los ejemplos más frecuentes pueden mencionarse las afecciones cervicales, las hernias de disco múltiples, las lumbalgias crónicas inespecíficas, la artrosis y otras patologías degenerativas.</p><p>Sin embargo, que una enfermedad sea calificada como “no listada” o “no profesional” no significa, por sí sola, que el trabajador quede sin protección. Cuando existan elementos médicos y laborales que permitan acreditar la relación causal o concausal con las tareas desarrolladas, corresponde reclamar las prestaciones en especie necesarias —atención médica, estudios, tratamiento y rehabilitación— y, en su caso, las prestaciones dinerarias previstas por la normativa vigente.</p><p>El reconocimiento de la contingencia por parte de la ART resulta fundamental, ya que habilita el acceso oportuno a la cobertura médica y a la eventual reparación económica correspondiente. En caso de rechazo, resulta indispensable contar con estudios médicos idóneos que permitan acreditar el diagnóstico, la relación de causalidad con el trabajo, la necesidad de tratamiento y, en su caso, las limitaciones funcionales derivadas de la patología.</p>",
-    "image": "/assets/servicio-enfermedades.webp",
+    "iconType": "health",
     "categoria": "enfermedades",
     "etapa": "administrativa"
   },
@@ -33,7 +33,7 @@
     "nombre": "Reclamo a la ART previo a la etapa judicial",
     "descripcion": "Impugnación de rechazos, altas indebidas y decisiones injustificadas de la ART.",
     "contenido": "<p>En términos generales, el reclamo ante la ART comienza con la denuncia del siniestro que da inicio a la etapa administrativa, en la que se evalúa el problema de salud del trabajador y se determinan las prestaciones médicas y/o dinerarias correspondientes.</p><p>En esta instancia resulta fundamental describir correctamente el cuadro médico, ya que sobre esa base se desarrollará todo el trámite y, eventualmente, la instancia judicial.</p><p>Así si la denuncia ante RRHH o telegrama versa sobre una tendinitis de hombro derecho o izquierda o bilateral, toda la contienda administrativa y judicial versará exclusivamente sobre zona del cuerpo; lo mismo sucedería si denuncia Túnel Carpiano u otra patología, siempre identifique con cuidado la zona del cuerpo afectada.</p><p>En casos de accidentes de trabajo siempre denuncie en forma amplia, porque hay afecciones a la salud que pueden aparecer con posterioridad.</p><p>Ahora bien, ante el rechazo, la demora o la insuficiencia de las prestaciones, se debe iniciar un expediente administrativo ante la Comisión Médica correspondiente, y si este no emite Dictamen Médico o lo hace fuera de los plazos legales, queda habilitada la vía judicial para garantizar el acceso a la cobertura médica necesaria y reclamar la indemnización que corresponda.</p>",
-    "image": "/assets/servicio-reclamo-art.webp",
+    "iconType": "document",
     "categoria": "reclamo-art",
     "etapa": "administrativa"
   },
@@ -43,7 +43,7 @@
     "nombre": "Medidas cautelares contra la ART",
     "descripcion": "Acciones urgentes para garantizar tratamiento médico inmediato.",
     "contenido": "<p>Cuando la ART no brinda el tratamiento médico correspondiente o lo interrumpe de manera indebida, puede solicitarse una medida cautelar a fin de garantizar la continuidad de la atención en forma inmediata.</p><p>Estas medidas tienen por objeto asegurar, con carácter urgente, el acceso a estudios, intervenciones, medicación y tratamientos necesarios para la recuperación del trabajador, aun antes de que se resuelva el fondo del reclamo.</p><p>Su finalidad es evitar el agravamiento del cuadro clínico, prevenir secuelas irreversibles y garantizar la tutela efectiva del derecho a la salud mientras se desarrolla el proceso principal.</p><p>Para su procedencia, resulta indispensable contar con un certificado médico que determine: 1) un diagnóstico preciso de la patología o afección de salud; 2) la indicación del tratamiento en forma clara y concreta; y 3) la existencia de riesgo de irreversibilidad del cuadro o la urgencia de la medida.</p><p>Ante la negativa o demora de la ART, podés contactarte con nosotros para evaluar tu caso y promover las acciones necesarias a fin de asegurar el acceso inmediato al tratamiento correspondiente.</p>",
-    "image": "/assets/hero-bg.png",
+    "iconType": "urgent",
     "categoria": "reclamo-art",
     "etapa": "judicial"
   },
@@ -53,7 +53,7 @@
     "nombre": "Demanda judicial por accidente de trabajo",
     "descripcion": "Acción judicial para reclamar prestaciones e indemnización.",
     "contenido": "<p>Cuando la ART rechaza el accidente o la enfermedad profesional, demora en el otorgamiento de prestaciones, o dispone el alta médica sin que el trabajador se encuentre plenamente recuperado, corresponde promover la acción judicial a fin de obtener el reconocimiento efectivo de sus derechos.</p><p>En esta instancia, el proceso se orienta a una revisión integral del caso, donde se analiza tanto la existencia de la contingencia como sus consecuencias sobre la salud del trabajador. A tal efecto, adquiere especial relevancia la <strong>pericia médica judicial</strong>, que constituye la prueba central para determinar el diagnóstico, el grado de incapacidad y la relación de causalidad con el accidente o la enfermedad laboral.</p><p>Asimismo, pueden producirse otras medidas probatorias, tales como prueba documental, informativa y testimonial, orientadas a acreditar las tareas desarrolladas, las condiciones de trabajo y la exposición a factores de riesgo.</p><p>El proceso judicial permite reclamar no solo la continuidad o el otorgamiento de las prestaciones médicas necesarias, sino también la indemnización correspondiente por incapacidad laboral, calculada conforme a la Ley 24.557, la Ley 27.348 y sus normas reglamentarias.</p><p>En determinados supuestos, incluso, pueden solicitarse medidas cautelares a fin de garantizar el acceso inmediato a tratamientos o prestaciones médicas indispensables, evitando el agravamiento del cuadro clínico mientras se sustancia el proceso.</p><p>De este modo, la vía judicial constituye una herramienta fundamental para asegurar la tutela efectiva del derecho a la salud y a la reparación integral del trabajador afectado.</p>",
-    "image": "/assets/demandajudicial.png",
+    "iconType": "scale",
     "categoria": "accidentes",
     "etapa": "judicial"
   },
@@ -63,7 +63,7 @@
     "nombre": "Demanda por enfermedad profesional",
     "descripcion": "Acción judicial para acreditar el origen laboral de la enfermedad y obtener las prestaciones correspondientes.",
     "contenido": "<p>Cuando la ART rechaza una enfermedad profesional o niega su origen laboral, y dicho rechazo es confirmado por la Comisión Médica, corresponde promover la acción judicial a fin de acreditar la relación causal o concausal con las tareas desarrolladas.</p><p>En esta instancia, el proceso se orienta a una evaluación integral del caso, donde se analizan las condiciones de trabajo, la exposición a agentes de riesgo y la evolución clínica del trabajador. La <strong>prueba médica y pericial</strong> adquiere un rol central, ya que permite determinar la existencia de la patología, su vinculación con la actividad laboral y el grado de incapacidad resultante.</p><p>Asimismo, pueden producirse otras medidas probatorias, tales como prueba documental, informativa y testimonial, destinadas a acreditar las tareas efectivamente realizadas y las condiciones ergonómicas del puesto.</p><p>El proceso judicial permite obtener tanto la cobertura médica adecuada —incluyendo estudios, tratamientos y rehabilitación— como la indemnización correspondiente por incapacidad laboral, conforme a la normativa vigente.</p><p>Se recomienda contar previamente con los recibos de sueldo y la historia laboral emitida por ANSES, a fin de acreditar ingresos, antigüedad y demás datos relevantes para la determinación de las prestaciones.</p><p>En caso de necesidad, también pueden solicitarse medidas cautelares a fin de garantizar el acceso inmediato a prestaciones médicas, evitando el agravamiento del cuadro clínico mientras se desarrolla el proceso.</p>",
-    "image": "/assets/indemnizacion.png",
+    "iconType": "building",
     "categoria": "enfermedades",
     "etapa": "judicial"
   }

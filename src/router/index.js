@@ -12,6 +12,7 @@ const Article = () => import('@/pages/Article.vue');
 const Apps = () => import('@/pages/Apps.vue');
 const Contact = () => import('@/pages/Contact.vue');
 const Where = () => import('@/pages/Where.vue');
+const Veredicta = () => import('@/pages/Veredicta.vue');
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -22,7 +23,8 @@ const routes = [
   { path: '/articulos/:slug', name: 'ArticuloDetalle', component: Article, props: true },
   { path: '/aplicaciones', name: 'Aplicaciones', component: Apps },
   { path: '/contacto', name: 'Contacto', component: Contact },
-  { path: '/donde-estamos', name: 'DondeEstamos', component: Where }
+  { path: '/donde-estamos', name: 'DondeEstamos', component: Where },
+  { path: '/veredicta', name: 'Veredicta', component: Veredicta }
 ];
 
 const router = createRouter({
