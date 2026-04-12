@@ -21,8 +21,19 @@
           v-for="date in daysInMonth" 
           :key="'date-' + date"
           :class="{ 'today': isToday(date) }"
+          @click="addEvent(date)"
+          title="Haz clic para agregar una tarea o audiencia"
         >
           <span class="date-number">{{ date }}</span>
+          <div class="events-container">
+            <div 
+              class="event-badge" 
+              v-for="(event, idx) in getEvents(date)" 
+              :key="idx"
+            >
+              {{ event }}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -65,6 +76,27 @@ const prevMonth = () => {
 
 const nextMonth = () => {
   dateObj.value = new Date(currentYear.value, currentMonth.value + 1, 1);
+};
+
+// --- LÓGICA DE EVENTOS (LocalStorage) ---
+const events = ref(JSON.parse(localStorage.getItem('almanaque_events')) || {});
+
+const getEvents = (date) => {
+  const key = `${currentYear.value}-${currentMonth.value}-${date}`;
+  return events.value[key] || [];
+};
+
+const addEvent = (date) => {
+  const text = window.prompt(`Nueva tarea/audiencia para el día ${date}:`);
+  if (!text || text.trim() === '') return;
+  
+  const key = `${currentYear.value}-${currentMonth.value}-${date}`;
+  if (!events.value[key]) {
+    events.value[key] = [];
+  }
+  
+  events.value[key].push(text.trim());
+  localStorage.setItem('almanaque_events', JSON.stringify(events.value));
 };
 </script>
 
@@ -142,8 +174,32 @@ const nextMonth = () => {
   min-height: 120px;
   padding: 10px;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
   transition: background-color 0.2s;
+  position: relative;
+}
+
+.events-container {
+  width: 100%;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.event-badge {
+  background-color: var(--primary-color, #f7c70a);
+  color: #1a202c;
+  font-size: 0.75rem;
+  padding: 4px 6px;
+  border-radius: 4px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
 .day-cell:hover:not(.empty) {

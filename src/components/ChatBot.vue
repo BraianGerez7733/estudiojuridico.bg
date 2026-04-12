@@ -7,7 +7,7 @@
       :class="{ 'pulse': !isOpen && !hasInteracted }"
       aria-label="Abrir chat de ayuda"
     >
-      <i v-if="!isOpen" class="fas fa-comment-dots"></i>
+      <i v-if="!isOpen" class="fab fa-whatsapp"></i>
       <i v-else class="fas fa-times"></i>
     </button>
 
@@ -16,7 +16,7 @@
       <div v-if="isOpen" class="chat-window">
         <div class="chat-header">
           <div class="avatar">
-            <i class="fas fa-robot"></i>
+            <i class="fab fa-whatsapp"></i>
           </div>
           <div>
             <h4>Asistente Virtual</h4>
@@ -148,7 +148,7 @@ function scrollToBottom() {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: var(--primary-color, #0077b6);
+  background: #25d366;
   color: white;
   border: none;
   box-shadow: 0 4px 15px rgba(0, 119, 182, 0.4);
@@ -162,7 +162,7 @@ function scrollToBottom() {
 
 .chat-toggle-btn:hover {
   transform: scale(1.1);
-  background: #0096c7;
+  background: #1ebe5d;
 }
 
 .pulse {
@@ -170,9 +170,9 @@ function scrollToBottom() {
 }
 
 @keyframes pulse-glow {
-  0% { box-shadow: 0 0 0 0 rgba(0, 119, 182, 0.7); }
-  70% { box-shadow: 0 0 0 15px rgba(0, 119, 182, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(0, 119, 182, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
 .chat-window {
@@ -192,7 +192,7 @@ function scrollToBottom() {
 }
 
 .chat-header {
-  background: var(--secondary-color, #2d3748);
+  background: #075e54;
   color: #fff;
   padding: 16px;
   display: flex;
@@ -236,7 +236,7 @@ function scrollToBottom() {
   flex-grow: 1;
   padding: 16px;
   overflow-y: auto;
-  background: #f7fafc;
+  background: #efeae2;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -265,7 +265,7 @@ function scrollToBottom() {
 }
 
 .message-wrapper.user .message-bubble {
-  background: var(--primary-color, #f7c70a);
+  background: #dcf8c6;
   color: #2d3748;
   border-bottom-right-radius: 0;
 }
@@ -296,13 +296,13 @@ function scrollToBottom() {
 }
 
 .chat-footer input:focus {
-  border-color: var(--primary-color);
+  border-color: #075e54;
 }
 
 .chat-footer button {
   background: none;
   border: none;
-  color: var(--primary-color, #0077b6);
+  color: #075e54;
   font-size: 1.2rem;
   margin-left: 10px;
   cursor: pointer;
