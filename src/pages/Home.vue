@@ -3,14 +3,6 @@
     <!-- Componente Hero original -->
     <HeroBlock />
 
-    <!-- Nuevo Carrusel de Imágenes -->
-    <section class="carousel-section">
-      <Carousel />
-    </section>
-
-    <!-- Nuevo Dashboard con Enlaces Externos -->
-    <Dashboard />
-
     <section class="intro-section">
       <h2 class="intro-title">
         Asesoramiento integral en accidentes y enfermedades laborales
@@ -66,6 +58,14 @@
     <section class="section">
       <h2 class="section-title">Nuestros servicios</h2>
       <ServicesGrid />
+    </section>
+
+    <!-- Nuevo Dashboard con Enlaces Externos -->
+    <Dashboard />
+
+    <!-- Nuevo Carrusel de Imágenes -->
+    <section class="carousel-section">
+      <Carousel />
     </section>
 
     <section class="location-section">
