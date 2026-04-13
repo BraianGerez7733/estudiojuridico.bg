@@ -38,7 +38,7 @@
           <input 
             type="text" 
             v-model="userInput" 
-            placeholder="Escribe 1, 2 o 3..." 
+            placeholder="Escribe tu respuesta..." 
             aria-label="Mensaje"
           />
           <button type="submit" :disabled="!userInput.trim()">
@@ -51,7 +51,7 @@
 </template>
 
 <script setup>
-import { ref, watch, nextTick, onMounted } from 'vue';
+import { ref, watch, nextTick, reactive } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
@@ -60,16 +60,25 @@ const hasInteracted = ref(false);
 const userInput = ref('');
 const chatBody = ref(null);
 
-// Mismo filtro que en App.vue para ocultarlo en Veredicta (workspace)
 const isWorkspace = ref(false);
 watch(() => route.path, (newPath) => {
   isWorkspace.value = newPath.startsWith('/veredicta');
 }, { immediate: true });
 
+const step = ref(0);
+const formData = reactive({
+  name: '',
+  phone: '',
+  caseType: '',
+  artName: '',
+  medicalBoard: '',
+  message: ''
+});
+
 const messages = ref([
   {
     sender: 'bot',
-    text: "¡Hola! Bienvenido al asistente automático del Estudio Jurídico.\n\nPara asesorarte rápidamente, dime ¿cuál de estas opciones se ajusta a tu caso? (Escribe el número):\n\n1️⃣ Accidente de Trabajo\n2️⃣ Enfermedad Profesional u otro reclamo\n3️⃣ Hablar ahora mismo con un abogado por WhatsApp"
+    text: "¡Hola! Bienvenido al asistente automático del Estudio Jurídico.\n\nPara poder asesorarte te haré unas breves preguntas guiadas (como el formulario de la web).\n\nEscribe **1** para comenzar la guía.\nEscribe **2** para saltar todo e ir directo a WhatsApp."
   }
 ]);
 
@@ -97,25 +106,89 @@ function sendMessage() {
 function processBotReply(input) {
   let reply = "";
   
-  if (input === '1') {
-    reply = "📌 Has seleccionado **Accidente de Trabajo**.\nEn estos casos es fundamental actuar rápido y notificar a la ART. ¿Te gustaría que un abogado revise tus estudios o el rechazo?\nEscribe **3** para enviarnos un WhatsApp con tus detalles.";
+  if (step.value === 0) {
+    if (input === '1') {
+      step.value = 1;
+      reply = "¡Perfecto! Empecemos. Escribe tu **Nombre y Apellido**:";
+    } else if (input === '2') {
+      reply = "Redirigiendo a WhatsApp... 📲";
+      setTimeout(() => {
+        window.open("https://wa.me/5492964540752?text=Hola,%20quisiera%20hacer%20una%20consulta.", '_blank');
+      }, 1000);
+    } else {
+      reply = "Por favor, escribe **1** o **2**.";
+    }
   } 
-  else if (input === '2') {
-    reply = "📌 Has seleccionado **Enfermedad Profesional / Extralaboral**.\nReclamar enfermedades (como hernias, tendinitis, estrés) es muy factible, pero necesitamos evaluar tu puesto de trabajo.\nEscribe **3** para pasarnos los datos precisos por WhatsApp.";
-  } 
-  else if (input === '3') {
-    reply = "Redirigiendo a nuestro canal de atención por WhatsApp... 📲";
-    // Redirección simulada a WhatsApp (abre en nueva pestaña)
+  else if (step.value === 1) {
+    formData.name = input;
+    step.value = 2;
+    reply = `¡Gracias **${formData.name}**!\n\n¿Cuál es tu número de **Teléfono / WhatsApp**?`;
+  }
+  else if (step.value === 2) {
+    formData.phone = input;
+    step.value = 3;
+    reply = "¿Qué tipo de caso tienes? (Escribe el número):\n**1** - Accidente de trabajo\n**2** - Enfermedad profesional\n**3** - Rechazo de ART / Alta\n**4** - Otro (Despido, sueldos, etc)";
+  }
+  else if (step.value === 3) {
+    const valid = ['1', '2', '3', '4'];
+    if (!valid.includes(input)) {
+      reply = "Por favor, responde solamente con **1**, **2**, **3** o **4**.";
+    } else {
+      const types = {
+        '1': 'Accidente de trabajo',
+        '2': 'Enfermedad profesional',
+        '3': 'Rechazo/Alta de ART',
+        '4': 'Otro caso laboral'
+      };
+      formData.caseType = types[input];
+      
+      if (input === '4') {
+        step.value = 5; // Salta ART
+        reply = "Entendido. Por favor, escribe un **breve relato** de lo que pasó o cuál es tu consulta principal:";
+      } else {
+        step.value = 4;
+        reply = "¿A qué **ART** te encuentras afiliado/a?\n(Ej. Provincia, Prevención. Si no sabes escribe 'No sé')";
+      }
+    }
+  }
+  else if (step.value === 4) {
+    formData.artName = input;
+    step.value = 4.5;
+    reply = "¿Ya pasaste por Comisión Médica? (Escribe el número):\n**1** - No, aún no\n**2** - En trámite\n**3** - Con dictamen final";
+  }
+  else if (step.value === 4.5) {
+    const valid = ['1', '2', '3'];
+    if (!valid.includes(input)) {
+      reply = "Responde con **1**, **2** o **3** por favor.";
+    } else {
+      const boards = {'1': 'Aún no', '2': 'En trámite', '3': 'Finalizado'};
+      formData.medicalBoard = boards[input];
+      step.value = 5;
+      reply = "Casi terminamos. Por favor, escribe un **breve relato** de lo que te pasó (hechos, dolores o estado actual):";
+    }
+  }
+  else if (step.value === 5) {
+    formData.message = input;
+    step.value = 6;
+    reply = "¡Excelente! Hemos recopilado tu información. \nEscribe cualquier tecla para generar el mensaje final y enviarlo por WhatsApp al 100%.";
+  }
+  else if (step.value === 6) {
+    reply = "Abriendo WhatsApp con tus datos... 📲";
+    const text = `*Nueva Consulta Asistente Virtual*\n\n*Nombre:* ${formData.name}\n*Teléfono:* ${formData.phone}\n*Caso:* ${formData.caseType}`
+      + (formData.caseType !== 'Otro caso laboral' ? `\n*ART:* ${formData.artName}\n*Comisión Médica:* ${formData.medicalBoard}` : '')
+      + `\n*Detalles:* ${formData.message}`;
+    
     setTimeout(() => {
-      window.open("https://wa.me/5492964540752?text=Hola,%20me%20gustar%C3%ADa%20hablar%20con%20un%20abogado%20sobre%20mi%20caso.", '_blank');
+      window.open(`https://wa.me/5492964540752?text=${encodeURIComponent(text)}`, '_blank');
+      // Reset chatbot form optional
+      step.value = 0;
     }, 1000);
-  } 
-  else {
-    reply = "🤔 No he entendido esa opción. Por favor, escribe solamente un número válido:\n**1** (Accidente), **2** (Enfermedades), o **3** (WhatsApp directo).";
   }
 
-  messages.value.push({ sender: 'bot', text: reply });
-  scrollToBottom();
+  if (reply) {
+    messages.value.push({ sender: 'bot', text: reply });
+    scrollToBottom();
+  }
 }
 
 function formatText(text) {
