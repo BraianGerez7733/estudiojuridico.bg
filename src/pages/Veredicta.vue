@@ -1,5 +1,18 @@
 <template>
-  <div class="veredicta-layout">
+  <div v-if="!isAuthenticated" class="login-screen">
+    <div class="login-box">
+      <div class="logo-container" style="justify-content: center; margin-bottom: 24px;">
+        <i class="fas fa-layer-group logo-icon"></i>
+        <span class="logo-text">Veredicta Admin</span>
+      </div>
+      <p>Acceso restringido al panel privado.</p>
+      <input type="password" v-model="passwordInput" placeholder="Contraseña de administrador" class="login-input" @keyup.enter="login" />
+      <button @click="login" class="login-btn">Ingresar</button>
+      <p v-if="authError" class="error-msg">Contraseña incorrecta.</p>
+    </div>
+  </div>
+
+  <div v-else class="veredicta-layout">
     <aside class="sidebar">
       <div class="sidebar-header">
         <div class="logo-container">
@@ -11,10 +24,11 @@
       <div class="workspace-selector">
         <div class="workspace-avatar">ME</div>
         <div class="workspace-info">
+        <div class="workspace-info" style="cursor: default;">
           <span class="workspace-name">Mi espacio</span>
           <span class="workspace-role">Espacio de trabajo</span>
         </div>
-        <i class="fas fa-chevron-down"></i>
+        <i class="fas fa-sign-out-alt" @click="logout" title="Cerrar sesión" style="cursor: pointer;"></i>
       </div>
       
       <nav class="sidebar-nav">
@@ -91,9 +105,89 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
+
+const isAuthenticated = ref(false);
+const passwordInput = ref('');
+const authError = ref(false);
+
+onMounted(() => {
+  if (localStorage.getItem('veredicta_auth') === 'true') {
+    isAuthenticated.value = true;
+  }
+});
+
+const login = () => {
+  if (passwordInput.value === 'braian123') { // CONTRASEÑA
+    isAuthenticated.value = true;
+    authError.value = false;
+    localStorage.setItem('veredicta_auth', 'true');
+  } else {
+    authError.value = true;
+  }
+};
+
+const logout = () => {
+  isAuthenticated.value = false;
+  localStorage.removeItem('veredicta_auth');
+  passwordInput.value = '';
+};
 </script>
 
 <style scoped>
+.login-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f0f4f8;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.login-box {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px;
+  margin: 20px 0 15px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.login-btn:hover {
+  background-color: #333;
+}
+
+.error-msg {
+  color: #e53e3e;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
 .veredicta-layout {
   display: flex;
   height: 100vh;

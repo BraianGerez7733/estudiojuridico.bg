@@ -74,10 +74,12 @@
 
 <style scoped>
 .dashboard-section {
-  padding: 60px 20px;
-  max-width: 1200px;
+  padding: 40px 20px;
+  max-width: 1000px; /* Más angosto estéticamente */
   margin: 0 auto;
   font-family: var(--font-family);
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .dashboard-header {
@@ -100,8 +102,11 @@
 
 .dashboard-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* Reducido a 240px para asegurar que entre en cualquier celular (ej. 320px ancho) con sus márgenes */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .dash-card {
@@ -119,6 +124,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .dash-card:hover {
@@ -177,7 +183,7 @@
 
 @media (max-width: 768px) {
   .dashboard-section {
-    padding: 40px 20px;
+    padding: 30px 15px; /* Menos padding lateral en móvil */
   }
   
   .dashboard-header h2 {
