@@ -33,7 +33,7 @@
               @click.stop="removeEvent(date, idx)"
               title="Clic para borrar esta tarea"
             >
-              <span class="event-text">{{ event }}</span>
+              <span class="event-text">{{ event.text }}</span>
               <i class="fas fa-times delete-icon"></i>
             </div>
           </div>
@@ -44,7 +44,8 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
+import { supabase } from '../supabase';
 
 const weekDays = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
 
@@ -81,35 +82,87 @@ const nextMonth = () => {
   dateObj.value = new Date(currentYear.value, currentMonth.value + 1, 1);
 };
 
-// --- LÓGICA DE EVENTOS (LocalStorage) ---
-const events = ref(JSON.parse(localStorage.getItem('almanaque_events')) || {});
+// --- LÓGICA DE EVENTOS (Supabase) ---
+// Requiere en Supabase una tabla 'almanaque_events' con columnas: 'id' (uuid o int8), 'date_key' (text), 'text' (text).
+const events = ref({});
+
+const fetchEvents = async () => {
+  const { data, error } = await supabase.from('almanaque_events').select('*');
+  if (error) {
+    console.error('Error obteniendo eventos de Supabase:', error);
+    return;
+  }
+  
+  const loadedEvents = {};
+  if (data) {
+    data.forEach((evt) => {
+      if (!loadedEvents[evt.date_key]) {
+        loadedEvents[evt.date_key] = [];
+      }
+      loadedEvents[evt.date_key].push(evt);
+    });
+  }
+  events.value = loadedEvents;
+};
+
+onMounted(() => {
+  fetchEvents();
+});
 
 const getEvents = (date) => {
   const key = `${currentYear.value}-${currentMonth.value}-${date}`;
   return events.value[key] || [];
 };
 
-const addEvent = (date) => {
+const addEvent = async (date) => {
   const text = window.prompt(`Nueva tarea/audiencia para el día ${date}:`);
   if (!text || text.trim() === '') return;
   
   const key = `${currentYear.value}-${currentMonth.value}-${date}`;
+  
+  // Guardamos en Supabase
+  const { data, error } = await supabase
+    .from('almanaque_events')
+    .insert([{ date_key: key, text: text.trim() }])
+    .select();
+    
+  if (error) {
+    console.error('Error insertando evento:', error);
+    alert('Error al guardar el evento en Supabase.');
+    return;
+  }
+  
   if (!events.value[key]) {
     events.value[key] = [];
   }
   
-  events.value[key].push(text.trim());
-  localStorage.setItem('almanaque_events', JSON.stringify(events.value));
+  if (data && data.length > 0) {
+    events.value[key].push(data[0]);
+  }
 };
 
-const removeEvent = (date, idx) => {
+const removeEvent = async (date, idx) => {
   if (confirm('¿Deseas borrar esta auditoría/tarea?')) {
     const key = `${currentYear.value}-${currentMonth.value}-${date}`;
+    const eventToDelete = events.value[key][idx];
+    
+    if (eventToDelete && eventToDelete.id) {
+      const { error } = await supabase
+        .from('almanaque_events')
+        .delete()
+        .eq('id', eventToDelete.id);
+        
+      if (error) {
+        console.error('Error borrando evento:', error);
+        alert('Error al borrar el evento en Supabase.');
+        return;
+      }
+    }
+    
     events.value[key].splice(idx, 1);
     if (events.value[key].length === 0) {
       delete events.value[key];
     }
-    localStorage.setItem('almanaque_events', JSON.stringify(events.value));
   }
 };
 </script>
