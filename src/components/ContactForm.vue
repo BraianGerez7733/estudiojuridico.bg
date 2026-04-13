@@ -35,18 +35,27 @@
 
     <div class="form-row" v-if="form.caseType && form.caseType !== 'otro'">
       <div class="form-field">
-        <label>¿Ya pasaste por la Superintendencia de Riesgos (Comisión Médica)?</label>
+        <label>¿A qué ART te encuentras afiliado/a? (Si aplica)</label>
+        <input v-model="form.artName" placeholder="Ej. Provincia ART, Prevención ART, etc." />
+      </div>
+      <div class="form-field">
+        <label>¿Ya pasaste por Comisión Médica?</label>
         <select v-model="form.medicalBoard" class="form-select">
           <option value="no">No, aún no</option>
-          <option value="en_tramite">Sí, está en trámite actualmente</option>
-          <option value="finalizado">Sí, ya tengo el dictamen final</option>
+          <option value="en_tramite">En trámite</option>
+          <option value="finalizado">Con dictamen final</option>
         </select>
       </div>
     </div>
 
     <div class="form-field">
-      <label for="message">Detalles del caso *</label>
-      <textarea id="message" v-model="form.message" rows="4" required placeholder="Por favor, describe brevemente qué te pasó, diagnóstico (si lo sabes) o dudas que tengas..."></textarea>
+      <label for="medicalStudies">¿Te han realizado estudios médicos? Cuéntanos cuáles (Opcional)</label>
+      <input id="medicalStudies" v-model="form.medicalStudies" placeholder="Ej. Resonancia, Radiografías, Ecografías..." />
+    </div>
+
+    <div class="form-field">
+      <label for="message">Breve relato de lo que pasó *</label>
+      <textarea id="message" v-model="form.message" rows="4" required placeholder="Por favor, describe brevemente cómo sucedieron los hechos, diagnóstico o síntomas actuales..."></textarea>
     </div>
 
     <div class="form-field submit-container">
@@ -73,6 +82,8 @@ const form = reactive({
   phone: '',
   caseType: '',
   medicalBoard: 'no',
+  artName: '',
+  medicalStudies: '',
   message: ''
 });
 
@@ -97,6 +108,8 @@ function submitForm() {
       form.phone = '';
       form.caseType = '';
       form.medicalBoard = 'no';
+      form.artName = '';
+      form.medicalStudies = '';
       form.message = '';
       submitted.value = false;
     }, 5000);
