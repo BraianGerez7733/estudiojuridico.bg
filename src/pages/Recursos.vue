@@ -1,17 +1,40 @@
 <template>
   <div class="recursos-page">
     <div class="header-banner">
-      <h1>Muro de Recursos</h1>
+      <!-- 🤫 Doble clic aquí para abrir el panel secreto para subir imágenes -->
+      <h1 @dblclick="openSecretUpload" title="Doble clic para admin" style="user-select: none;">Muro de Recursos</h1>
       <p>Material, guías visuales y documentos legales selectos para nuestros clientes.</p>
     </div>
 
+    <!-- Panel de carga (Solo visible para el admin) -->
+    <div v-if="isAdmin" class="admin-panel">
+      <h3>Panel de Admin: Subir al Muro</h3>
+      <input type="text" v-model="newTitle" placeholder="Título de la imagen" class="admin-input" />
+      <input type="file" @change="handleFileUpload" accept="image/*" class="admin-input" />
+      <button :disabled="uploading" @click="uploadImage" class="admin-btn">
+        <i class="fas" :class="uploading ? 'fa-spinner fa-spin' : 'fa-upload'"></i> 
+        {{ uploading ? 'Subiendo...' : 'Publicar en el Muro' }}
+      </button>
+      <button @click="isAdmin = false" class="admin-btn cancel">Cerrar</button>
+    </div>
+
     <div class="masonry-container">
-      <!-- Item 1: La imagen provista -->
+      
+      <!-- Imágenes Dinámicas cargadas de Supabase -->
+      <div v-for="img in dynamicImages" :key="img.id" class="masonry-item highlight">
+        <img :src="img.image_data" :alt="img.title" class="resource-img" />
+        <div class="resource-info">
+          <h3>{{ img.title }}</h3>
+          <button @click="deleteImage(img.id)" v-if="isAdmin" class="delete-btn"><i class="fas fa-trash"></i> Eliminar</button>
+        </div>
+      </div>
+
+      <!-- Item 1: La imagen provista (Estático) -->
       <div class="masonry-item highlight">
         <img src="/assets/camino-juicios.png" alt="El camino de los juicios" class="resource-img" />
         <div class="resource-info">
           <h3>El Camino de los Juicios</h3>
-          <p>Conceptualización visual sobre los pasos fundamentales en un proceso judicial estructural.</p>
+          <p>Conceptualización visual sobre los pasos fundamentales en un proceso judicial.</p>
           <a href="/assets/camino-juicios.png" download class="download-btn"><i class="fas fa-download"></i> Descargar</a>
         </div>
       </div>
@@ -45,19 +68,86 @@
           <button class="download-btn"><i class="fas fa-lock"></i> Próximamente</button>
         </div>
       </div>
-
-       <!-- Item de relleno elegante -->
-       <div class="masonry-item">
-        <div class="resource-card text-card">
-          <i class="fas fa-chart-line icon"></i>
-          <h3>Calculadora de Indemnizaciones</h3>
-          <p>Fórmulas y parámetros legales vigentes dictados por la Superintendencia.</p>
-          <button class="download-btn"><i class="fas fa-lock"></i> Próximamente</button>
-        </div>
-      </div>
     </div>
   </div>
 </template>
+
+<script setup>
+import { ref, onMounted } from 'vue';
+import { supabase } from '@/supabase';
+
+const dynamicImages = ref([]);
+const isAdmin = ref(false);
+const newTitle = ref('');
+const newImageData = ref('');
+const uploading = ref(false);
+
+const openSecretUpload = () => {
+  const secret = prompt('Clave de administrador para subir imágenes:');
+  if (secret === 'braian123') { // CONTRASEÑA SECRETA
+    isAdmin.value = true;
+  } else if (secret !== null) {
+    alert('Clave incorrecta');
+  }
+};
+
+const handleFileUpload = (event) => {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    newImageData.value = e.target.result; // Base64 string
+  };
+  reader.readAsDataURL(file);
+};
+
+const fetchImages = async () => {
+  const { data, error } = await supabase
+    .from('image_wall')
+    .select('*')
+    .order('created_at', { ascending: false });
+  
+  if (!error && data) {
+    dynamicImages.value = data;
+  }
+};
+
+const uploadImage = async () => {
+  if (!newImageData.value || !newTitle.value) {
+    alert('Por favor agrega un título y selecciona una imagen.');
+    return;
+  }
+  
+  uploading.value = true;
+  const { error } = await supabase
+    .from('image_wall')
+    .insert([{ title: newTitle.value, image_data: newImageData.value }]);
+  
+  uploading.value = false;
+
+  if (error) {
+    console.error(error);
+    alert('Asegúrate de haber creado la tabla `image_wall` en Supabase con las columnas `title` (text) e `image_data` (text).');
+  } else {
+    newTitle.value = '';
+    newImageData.value = '';
+    isAdmin.value = false;
+    fetchImages(); // Refrescar muro
+  }
+};
+
+const deleteImage = async (id) => {
+  if(confirm('¿Eliminar esta imagen del muro?')){
+    await supabase.from('image_wall').delete().eq('id', id);
+    fetchImages();
+  }
+};
+
+onMounted(() => {
+  fetchImages();
+});
+</script>
 
 <style scoped>
 .recursos-page {
@@ -76,12 +166,56 @@
   color: var(--secondary-color, #2d3748);
   font-family: Georgia, serif;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .header-banner p {
   font-size: 1.1rem;
   color: #718096;
 }
+
+/* Panel Admin */
+.admin-panel {
+  max-width: 500px;
+  margin: 0 auto 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: 2px dashed #f7c70a;
+}
+
+.admin-panel h3 {
+  margin-top: 0;
+  color: #2d3748;
+}
+
+.admin-input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.admin-btn {
+  background-color: #25d366;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.admin-btn.cancel {
+  background-color: #e53e3e;
+}
+
+/* Fin Panel Admin */
 
 .masonry-container {
   columns: 1;
@@ -124,7 +258,6 @@
   object-fit: contain;
   background-color: #ffffff;
   border-bottom: 1px solid #edf2f7;
-  padding-top: 10px;
 }
 
 .resource-info {
@@ -163,6 +296,19 @@
 
 .download-btn:hover {
   background-color: #1a202c;
+}
+
+.delete-btn {
+  background-color: #e53e3e;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c53030;
 }
 
 .text-card {
