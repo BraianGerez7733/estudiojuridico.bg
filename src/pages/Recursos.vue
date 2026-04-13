@@ -16,6 +16,16 @@
         </div>
       </div>
 
+      <!-- Item 2: El Decálogo del Abogado -->
+      <div class="masonry-item highlight">
+        <img src="/assets/decalogo-abogado.jpg" alt="Decálogo del Abogado" class="resource-img" />
+        <div class="resource-info">
+          <h3>Decálogo del Abogado</h3>
+          <p>Los 10 mandamientos éticos y morales planteados por Eduardo Couture para el ejercicio del derecho.</p>
+          <a href="/assets/decalogo-abogado.jpg" download class="download-btn"><i class="fas fa-download"></i> Descargar</a>
+        </div>
+      </div>
+
       <!-- Item de relleno elegante -->
       <div class="masonry-item">
         <div class="resource-card text-card">

@@ -30,8 +30,11 @@
               class="event-badge" 
               v-for="(event, idx) in getEvents(date)" 
               :key="idx"
+              @click.stop="removeEvent(date, idx)"
+              title="Clic para borrar esta tarea"
             >
-              {{ event }}
+              <span class="event-text">{{ event }}</span>
+              <i class="fas fa-times delete-icon"></i>
             </div>
           </div>
         </div>
@@ -97,6 +100,17 @@ const addEvent = (date) => {
   
   events.value[key].push(text.trim());
   localStorage.setItem('almanaque_events', JSON.stringify(events.value));
+};
+
+const removeEvent = (date, idx) => {
+  if (confirm('¿Deseas borrar esta auditoría/tarea?')) {
+    const key = `${currentYear.value}-${currentMonth.value}-${date}`;
+    events.value[key].splice(idx, 1);
+    if (events.value[key].length === 0) {
+      delete events.value[key];
+    }
+    localStorage.setItem('almanaque_events', JSON.stringify(events.value));
+  }
 };
 </script>
 
@@ -194,12 +208,34 @@ const addEvent = (date) => {
   font-size: 0.75rem;
   padding: 4px 6px;
   border-radius: 4px;
-  text-align: left;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: filter 0.2s;
+}
+
+.event-badge:hover {
+  filter: brightness(0.9);
+}
+
+.event-text {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-weight: 600;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  flex-grow: 1;
+  text-align: left;
+}
+
+.delete-icon {
+  margin-left: 4px;
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+.event-badge:hover .delete-icon {
+  opacity: 1;
 }
 
 .day-cell:hover:not(.empty) {
