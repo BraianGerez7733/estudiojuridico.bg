@@ -39,6 +39,14 @@
         >
           <i class="fab fa-facebook"></i> Facebook
         </a>
+
+        <a
+          href="https://www.linkedin.com/in/braian-gerez-28a982202/"
+          target="_blank"
+          class="linkedin-btn"
+        >
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
       </div>
     </section>
 
@@ -187,6 +195,27 @@ import Timeline from '@/components/Timeline.vue';
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(24, 119, 242, 0.5);
   background: linear-gradient(135deg, #0f5dc2, #094082);
+}
+
+.linkedin-btn {
+  background: linear-gradient(135deg, #0077b5, #005582);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 15px rgba(0, 119, 181, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.linkedin-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 119, 181, 0.5);
+  background: linear-gradient(135deg, #005582, #003650);
 }
 
 .location-section {

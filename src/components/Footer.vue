@@ -44,6 +44,7 @@
           <a href="https://www.facebook.com/profile.php?id=100063453618182" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
           <a href="https://www.instagram.com/estudiojuridicobg" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="https://twitter.com" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/braian-gerez-28a982202/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
       </div>
     </div>
