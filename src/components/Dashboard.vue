@@ -6,6 +6,18 @@
     </div>
 
     <div class="dashboard-grid">
+      <!-- Tarjeta: Muro de Recursos (Imágenes) -->
+      <router-link to="/recursos" class="dash-card highlight-card" style="border: 2px solid #f7c70a;">
+        <div class="card-icon" style="background: #fff9c4; color: #fbc02d;">
+          <i class="fas fa-camera-retro"></i>
+        </div>
+        <div class="card-content">
+          <h3>Muro de Galería</h3>
+          <p>Sección fotográfica donde compartimos nuestras sentencias, actividades y novedades del estudio.</p>
+        </div>
+        <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
+      </router-link>
+
       <!-- Tarjeta: CSJN -->
       <a href="https://www.csjn.gov.ar/" target="_blank" rel="noopener noreferrer" class="dash-card">
         <div class="card-icon csjn-icon">
