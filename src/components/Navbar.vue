@@ -17,13 +17,11 @@
       <nav class="nav" :class="{ 'menu-open': isMenuOpen }">
         <ul class="nav-list">
           <li><router-link to="/" @click="closeMenu">Inicio</router-link></li>
-          <li class="dropdown">
-            <span class="dropbtn">Servicios <i class="fas fa-caret-down"></i></span>
-            <ul class="dropdown-menu">
-              <li><router-link to="/servicios?categoria=accidentes" @click="closeMenu">Accidentes laborales</router-link></li>
-              <li><router-link to="/servicios?categoria=enfermedades" @click="closeMenu">Enfermedades profesionales</router-link></li>
-              <li><router-link to="/servicios?categoria=reclamo-art" @click="closeMenu">Reclamación a la ART</router-link></li>
-              <li><router-link to="/servicios?categoria=recursos" @click="closeMenu">Recursos</router-link></li>
+          <li class="dropdown" @mouseenter="isServicesOpen = true" @mouseleave="isServicesOpen = false">
+            <router-link to="/servicios" @click="closeMenu">Servicios <i class="fas fa-caret-down"></i></router-link>
+            <ul class="dropdown-menu" v-show="isServicesOpen">
+              <li><router-link to="/servicios" @click="closeMenu">Categorías</router-link></li>
+              <li><router-link to="/recursos" @click="closeMenu">Muro de Recursos</router-link></li>
             </ul>
           </li>
           <li><router-link to="/faqs" @click="closeMenu">Preguntas</router-link></li>

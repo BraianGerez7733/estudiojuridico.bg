@@ -14,6 +14,7 @@ const Contact = () => import('@/pages/Contact.vue');
 const Where = () => import('@/pages/Where.vue');
 const Veredicta = () => import('@/pages/Veredicta.vue');
 const Almanaque = () => import('@/pages/Almanaque.vue');
+const Recursos = () => import('@/pages/Recursos.vue');
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -26,7 +27,8 @@ const routes = [
   { path: '/contacto', name: 'Contacto', component: Contact },
   { path: '/donde-estamos', name: 'DondeEstamos', component: Where },
   { path: '/veredicta', name: 'Veredicta', component: Veredicta },
-  { path: '/almanaque', name: 'Almanaque', component: Almanaque }
+  { path: '/almanaque', name: 'Almanaque', component: Almanaque },
+  { path: '/recursos', name: 'Recursos', component: Recursos }
 ];
 
 const router = createRouter({
