@@ -2,16 +2,25 @@
   <div class="perfil-section fade-in">
     <div class="perfil-container">
       <div class="perfil-foto-wrapper">
-        <img src="https://via.placeholder.com/300x300?text=Tu+Foto" alt="Dr. Braian Geréz" class="perfil-foto">
+        <img src="/assets/foto_perfil.jpg" alt="Dr. Braian Geréz" class="perfil-foto">
       </div>
       <div class="perfil-info">
         <h1>Dr. Braian Geréz</h1>
         <h2>Abogado Especialista en Accidentes Laborales</h2>
         <p>
-          [Aquí puedes escribir tu historia y experiencia profesional. Puedes comenzar redactando dónde te formaste y los motivos por los que decidiste especializarte en derecho laboral.]
+          Soy abogado con más de 16 años de experiencia en el ejercicio de la profesión, habiéndome recibido en el año 2009, momento desde el cual inicié de manera ininterrumpida mi actividad en el ámbito jurídico.
         </p>
         <p>
-          [Este espacio está especialmente diseñado para que cuentes tus valores y tu compromiso con los trabajadores de Tierra del Fuego. ¡Edita este texto cuando quieras agregando tu toque personal!]
+          A lo largo de mi trayectoria, he desarrollado una sólida especialización en derecho laboral. En los últimos años, he orientado mi práctica de manera exclusiva a la atención de casos de accidentes de trabajo y enfermedades profesionales, enfocando mi labor en la defensa integral del trabajador frente a las Aseguradoras de Riesgos del Trabajo (ART).
+        </p>
+        <p>
+          Mi forma de trabajo se distingue por una premisa fundamental: priorizar la salud del trabajador. Antes de cualquier reclamo indemnizatorio, considero esencial que la persona reciba el tratamiento médico adecuado y logre su recuperación en las mejores condiciones posibles. Recién a partir de allí, se evalúa y se impulsa el reclamo económico correspondiente, con el objetivo de obtener una reparación justa y acorde a derecho.
+        </p>
+        <p>
+          Asimismo, acompaño personalmente a cada trabajador en todas las audiencias que deba afrontar, ya sea ante las Comisiones Médicas o en sede judicial, brindando respaldo profesional y seguridad en cada instancia del proceso.
+        </p>
+        <p>
+          Brindo un acompañamiento cercano, técnico y comprometido en cada etapa, entendiendo que detrás de cada caso hay una persona que necesita respuestas claras, contención y una defensa firme de sus derechos.
         </p>
       </div>
     </div>
