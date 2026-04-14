@@ -53,6 +53,7 @@
 }
 .perfil-foto-wrapper {
   text-align: center;
+  padding-top: 24px;
 }
 .perfil-foto {
   width: 100%;
@@ -79,6 +80,7 @@
   line-height: 1.8;
   color: #555;
   margin-bottom: 15px;
+  text-align: justify;
 }
 @media (max-width: 768px) {
   .perfil-container {
