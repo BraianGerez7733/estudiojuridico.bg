@@ -23,7 +23,6 @@
       
       <div class="workspace-selector">
         <div class="workspace-avatar">ME</div>
-        <div class="workspace-info">
         <div class="workspace-info" style="cursor: default;">
           <span class="workspace-name">Mi espacio</span>
           <span class="workspace-role">Espacio de trabajo</span>
