@@ -2,7 +2,7 @@
   <div class="perfil-section fade-in">
     <div class="perfil-container">
       <div class="perfil-foto-wrapper">
-        <img src="/assets/foto_perfil.jpg" alt="Dr. Braian Geréz" class="perfil-foto">
+        <img src="/assets/perfil-admin.jpg" alt="Dr. Braian Geréz" class="perfil-foto">
       </div>
       <div class="perfil-info">
         <h1>Dr. Braian Geréz</h1>
