@@ -2,7 +2,7 @@
   <header class="navbar">
     <div class="container">
       <div class="brand-video-container">
-        <router-link to="/">
+        <router-link to="/veredicta" title="Acceso Administrativo">
           <video autoplay muted loop playsinline class="brand-video">
           <source src="/assets/Logo-3-[remix].mp4" type="video/mp4" />
           </video>

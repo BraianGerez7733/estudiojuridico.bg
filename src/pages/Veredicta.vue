@@ -1,6 +1,11 @@
 <template>
   <div v-if="!isAuthenticated" class="login-screen">
     <div class="login-box">
+      <!-- Foto de Perfil del Admin -->
+      <div class="admin-profile-container">
+        <img src="/assets/perfil-admin.jpg" alt="Perfil Admin" class="admin-profile-img" />
+      </div>
+
       <div class="logo-container" style="justify-content: center; margin-bottom: 24px;">
         <i class="fas fa-layer-group logo-icon"></i>
         <span class="logo-text">Veredicta Admin</span>
@@ -152,6 +157,21 @@ const logout = () => {
   text-align: center;
   max-width: 400px;
   width: 100%;
+}
+
+.admin-profile-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.admin-profile-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #f0f4f8;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 .login-input {
