@@ -8,9 +8,11 @@
                         <div class="hero-diagonal-1"></div>
                           <div class="hero-diagonal-2"></div>
                             <div class="hero-title-box">
-                              <h1 class="hero-main-title">ESTUDIO JURÍDICO</h1>
+                              <router-link to="/perfil" class="hero-link">
+                                <h1 class="hero-main-title">ESTUDIO JURÍDICO</h1>
                                 <h2 class="hero-sub-title">Braian Geréz</h2>
-                                  </div>
+                              </router-link>
+                            </div>
                                   </section>
                                   </template>
                                   
@@ -45,6 +47,17 @@
                                                 left: 50%;
                                                   transform: translate(-50%, -50%);
                                                     font-family: Georgia, 'Times New Roman', Times, serif;
+                                  }
+                                  
+                                  .hero-link {
+                                      color: inherit;
+                                      text-decoration: none;
+                                      display: block;
+                                      transition: all 0.3s ease;
+                                  }
+                                  .hero-link:hover {
+                                      opacity: 0.8;
+                                      transform: scale(1.02);
                                   }
 
                                   .hero-main-title {

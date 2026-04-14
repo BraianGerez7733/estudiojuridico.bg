@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil Profesional | Estudio Jurídico Geréz</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .perfil-section {
+      padding: 120px 20px 60px;
+      min-height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--bg-primary);
+    }
+    .perfil-container {
+      max-width: 900px;
+      width: 100%;
+      background: var(--bg-secondary);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      border: 1px solid var(--border-color);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .perfil-foto-wrapper {
+      text-align: center;
+    }
+    .perfil-foto {
+      width: 100%;
+      max-width: 250px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid var(--accent-light);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      background: var(--bg-primary);
+    }
+    .perfil-info h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    .perfil-info h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.2rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .perfil-info p {
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 15px;
+    }
+    @media (max-width: 768px) {
+      .perfil-container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        text-align: center;
+      }
+      .perfil-foto {
+        max-width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="index.html" style="text-decoration:none; color:inherit;">
+          <span class="logo-icon"><i class="fas fa-balance-scale"></i></span>
+          <span class="logo-text">Geréz <span class="accent">Abogados</span></span>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Volver al Inicio</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Modo Oscuro">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="perfil-section fade-in-up">
+    <div class="perfil-container">
+      <div class="perfil-foto-wrapper">
+        <!-- Puedes cambiar el src por la ruta de tu foto -->
+        <img src="https://via.placeholder.com/300x300?text=Tu+Foto" alt="Dr. Braian Geréz" class="perfil-foto">
+      </div>
+      <div class="perfil-info">
+        <h1>Dr. Braian Geréz</h1>
+        <h2>Abogado Especialista en Accidentes Laborales</h2>
+        <p>
+          [Aquí puedes escribir tu historia y experiencia profesional. Puedes comenzar redactando dónde te formaste y los motivos por los que decidiste especializarte en derecho laboral.]
+        </p>
+        <p>
+          [Este espacio está especialmente diseñado para que cuentes tus valores y tu compromiso con los trabajadores de Tierra del Fuego. ¡Edita este texto cuando quieras agregando tu toque personal!]
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-bottom" style="margin-top:0;">
+      <p>Estudio jurídico especializado en accidentes de trabajo y enfermedades profesionales en Río Grande, Tierra del Fuego, Argentina. &copy; 2026</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
