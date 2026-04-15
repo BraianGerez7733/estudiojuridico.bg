@@ -7,7 +7,7 @@
           <li><router-link to="/servicios?categoria=accidentes">Accidentes laborales</router-link></li>
           <li><router-link to="/servicios?categoria=enfermedades">Enfermedades profesionales</router-link></li>
           <li><router-link to="/servicios?categoria=reclamo-art">Reclamo a la ART</router-link></li>
-          <li><router-link to="/servicios?categoria=recursos">Recursos</router-link></li>
+          <li><router-link to="/herramientas">Recursos</router-link></li>
         </ul>
       </div>
       <div class="footer-col">

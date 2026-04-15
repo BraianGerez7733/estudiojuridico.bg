@@ -16,6 +16,7 @@ const Veredicta = () => import('@/pages/Veredicta.vue');
 const Almanaque = () => import('@/pages/Almanaque.vue');
 const Recursos = () => import('@/pages/Recursos.vue');
 const Perfil = () => import('@/pages/Perfil.vue');
+const Herramientas = () => import('@/pages/Herramientas.vue');
 
 
 const routes = [
@@ -31,7 +32,8 @@ const routes = [
   { path: '/veredicta', name: 'Veredicta', component: Veredicta },
   { path: '/almanaque', name: 'Almanaque', component: Almanaque },
   { path: '/recursos', name: 'Recursos', component: Recursos },
-  { path: '/perfil', name: 'Perfil', component: Perfil }
+  { path: '/perfil', name: 'Perfil', component: Perfil },
+  { path: '/herramientas', name: 'Herramientas', component: Herramientas }
 ];
 
 const router = createRouter({

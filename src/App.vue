@@ -32,7 +32,7 @@ import Footer from '@/components/Footer.vue';
 import ChatBot from '@/components/ChatBot.vue';
 
 const route = useRoute();
-const isWorkspace = computed(() => route.path.startsWith('/veredicta'));
+const isWorkspace = computed(() => route.path.startsWith('/veredicta') || route.path.startsWith('/herramientas'));
 
 const showSplash = ref(true);
 
