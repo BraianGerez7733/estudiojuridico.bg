@@ -3,9 +3,11 @@
     <!-- Splash Screen -->
     <transition name="fade">
       <div v-if="showSplash" class="splash-screen">
-        <video autoplay muted playsinline class="splash-video">
-          <source src="/assets/Logo-3-[remix].mp4" type="video/mp4" />
-        </video>
+        <div class="splash-video-crop">
+          <video autoplay muted playsinline class="splash-video">
+            <source src="/assets/Logo-3-[remix].mp4" type="video/mp4" />
+          </video>
+        </div>
       </div>
     </transition>
 
@@ -125,12 +127,20 @@ onMounted(() => {
   z-index: 100000;
 }
 
-.splash-video {
+.splash-video-crop {
   width: 320px;
   max-width: 80%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.splash-video {
+  width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  display: block;
+  margin-bottom: -15%; /* Recorta la parte inferior (marca de agua) encogiendo la máscara superior */
 }
 
 .fade-enter-active,
