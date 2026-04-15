@@ -31,6 +31,7 @@
         <ul>
           <li><router-link to="/aplicaciones">Calculadora de indemnización</router-link></li>
           <li><router-link to="/aplicaciones">Agendar consulta</router-link></li>
+          <li><router-link to="/almanaque">Calendario</router-link></li>
         </ul>
       </div>
       <div class="footer-col contact">
