@@ -1,5 +1,14 @@
 <template>
   <div class="app-wrapper">
+    <!-- Splash Screen -->
+    <transition name="fade">
+      <div v-if="showSplash" class="splash-screen">
+        <video autoplay muted playsinline class="splash-video">
+          <source src="/assets/Logo-3-[remix].mp4" type="video/mp4" />
+        </video>
+      </div>
+    </transition>
+
     <!-- Navegación principal -->
     <Navbar v-if="!isWorkspace" />
     <!-- Contenido de la página activa -->
@@ -14,7 +23,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
@@ -22,6 +31,15 @@ import ChatBot from '@/components/ChatBot.vue';
 
 const route = useRoute();
 const isWorkspace = computed(() => route.path.startsWith('/veredicta'));
+
+const showSplash = ref(true);
+
+onMounted(() => {
+  // El splash screen desaparecerá después de 2.5 segundos
+  setTimeout(() => {
+    showSplash.value = false;
+  }, 2500);
+});
 </script>
 
 <style scoped>
@@ -91,5 +109,38 @@ const isWorkspace = computed(() => route.path.startsWith('/veredicta'));
   bottom: 80px;
   right: 16px;
   position: absolute;
+}
+
+/* Splash Screen */
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--secondary-color, #1a1a1a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000;
+}
+
+.splash-video {
+  width: 320px;
+  max-width: 80%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  visibility: hidden;
 }
 </style>
