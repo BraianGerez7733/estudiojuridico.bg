@@ -82,27 +82,33 @@ const nextMonth = () => {
   dateObj.value = new Date(currentYear.value, currentMonth.value + 1, 1);
 };
 
-// --- LÓGICA DE EVENTOS (Supabase) ---
-// Requiere en Supabase una tabla 'almanaque_events' con columnas: 'id' (uuid o int8), 'date_key' (text), 'text' (text).
+// --- LÓGICA DE EVENTOS (Supabase + LocalStorage) ---
 const events = ref({});
 
 const fetchEvents = async () => {
-  const { data, error } = await supabase.from('almanaque_events').select('*');
-  if (error) {
-    console.error('Error obteniendo eventos de Supabase:', error);
-    return;
+  // 1. Cargar desde LocalStorage primero
+  const localData = localStorage.getItem('almanaque_events');
+  if (localData) {
+    events.value = JSON.parse(localData);
   }
-  
-  const loadedEvents = {};
-  if (data) {
-    data.forEach((evt) => {
-      if (!loadedEvents[evt.date_key]) {
-        loadedEvents[evt.date_key] = [];
-      }
-      loadedEvents[evt.date_key].push(evt);
-    });
+
+  // 2. Intentar sincronizar con Supabase
+  try {
+    const { data, error } = await supabase.from('almanaque_events').select('*');
+    if (!error && data) {
+      const loadedEvents = {};
+      data.forEach((evt) => {
+        if (!loadedEvents[evt.date_key]) {
+          loadedEvents[evt.date_key] = [];
+        }
+        loadedEvents[evt.date_key].push(evt);
+      });
+      events.value = loadedEvents;
+      localStorage.setItem('almanaque_events', JSON.stringify(events.value));
+    }
+  } catch (err) {
+    console.log('Trabajando en modo offline (LocalStorage)');
   }
-  events.value = loadedEvents;
 };
 
 onMounted(() => {
@@ -119,26 +125,25 @@ const addEvent = async (date) => {
   if (!text || text.trim() === '') return;
   
   const key = `${currentYear.value}-${currentMonth.value}-${date}`;
-  
-  // Guardamos en Supabase
-  const { data, error } = await supabase
-    .from('almanaque_events')
-    .insert([{ date_key: key, text: text.trim() }])
-    .select();
-    
-  if (error) {
-    console.error('Error insertando evento:', error);
-    alert('Error al guardar el evento en Supabase.');
-    return;
-  }
+  const newEvent = { id: Date.now().toString(), date_key: key, text: text.trim() };
   
   if (!events.value[key]) {
     events.value[key] = [];
   }
+  events.value[key].push(newEvent);
   
-  if (data && data.length > 0) {
-    events.value[key].push(data[0]);
-  }
+  // Guardamos en LocalStorage
+  localStorage.setItem('almanaque_events', JSON.stringify(events.value));
+
+  // Intentamos guardar en Supabase en segundo plano
+  try {
+    const { data, error } = await supabase.from('almanaque_events').insert([{ date_key: key, text: text.trim() }]).select();
+    if (!error && data && data.length > 0) {
+      // Actualizamos el ID local con el ID real de Supabase si funciona
+      events.value[key][events.value[key].length - 1] = data[0];
+      localStorage.setItem('almanaque_events', JSON.stringify(events.value));
+    }
+  } catch (err) {}
 };
 
 const removeEvent = async (date, idx) => {
@@ -146,22 +151,18 @@ const removeEvent = async (date, idx) => {
     const key = `${currentYear.value}-${currentMonth.value}-${date}`;
     const eventToDelete = events.value[key][idx];
     
-    if (eventToDelete && eventToDelete.id) {
-      const { error } = await supabase
-        .from('almanaque_events')
-        .delete()
-        .eq('id', eventToDelete.id);
-        
-      if (error) {
-        console.error('Error borrando evento:', error);
-        alert('Error al borrar el evento en Supabase.');
-        return;
-      }
-    }
-    
+    // Borramos localmente
     events.value[key].splice(idx, 1);
     if (events.value[key].length === 0) {
       delete events.value[key];
+    }
+    localStorage.setItem('almanaque_events', JSON.stringify(events.value));
+    
+    // Intentamos sincronizar con Supabase
+    if (eventToDelete && eventToDelete.id) {
+      try {
+        await supabase.from('almanaque_events').delete().eq('id', eventToDelete.id);
+      } catch (err) {}
     }
   }
 };
