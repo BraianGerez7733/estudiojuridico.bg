@@ -21,8 +21,8 @@
           v-for="date in daysInMonth" 
           :key="'date-' + date"
           :class="{ 'today': isToday(date) }"
-          @click="addEvent(date)"
-          title="Haz clic para agregar una tarea o audiencia"
+          @click="openDayModal(date)"
+          title="Haz clic para ver las tareas de este día"
         >
           <span class="date-number">{{ date }}</span>
           <div class="events-container">
@@ -40,6 +40,33 @@
         </div>
       </div>
     </div>
+
+    <!-- Modal para gestionar eventos de un día -->
+    <div class="modal-overlay" v-if="isModalOpen" @click.self="closeDayModal">
+      <div class="modal-content fade-in">
+        <div class="modal-header">
+          <h2>Eventos del <span class="highlight">{{ selectedDate }}</span> de {{ monthName.toLowerCase() }}</h2>
+          <button @click="closeDayModal" class="icon-btn-close"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <div class="modal-events-list">
+          <div v-if="getEvents(selectedDate).length === 0" class="no-events">
+            <i class="far fa-calendar-times"></i>
+            <p>No hay tareas ni audiencias para este día.</p>
+          </div>
+          <div class="modal-event-item" v-for="(event, idx) in getEvents(selectedDate)" :key="event.id || idx">
+            <span class="modal-event-text">{{ event.text }}</span>
+            <button class="delete-event-btn" @click="removeEvent(selectedDate, idx)" title="Borrar tarea"><i class="fas fa-trash-alt"></i></button>
+          </div>
+        </div>
+
+        <div class="modal-add-form">
+          <input type="text" v-model="newEventText" placeholder="Escribe una nueva nota, tarea o audiencia..." @keyup.enter="addNewEvent" class="modern-input" />
+          <button @click="addNewEvent" class="add-note-btn"><i class="fas fa-plus"></i> Añadir Nota</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -80,6 +107,22 @@ const prevMonth = () => {
 
 const nextMonth = () => {
   dateObj.value = new Date(currentYear.value, currentMonth.value + 1, 1);
+};
+
+const isModalOpen = ref(false);
+const selectedDate = ref(null);
+const newEventText = ref('');
+
+const openDayModal = (date) => {
+  selectedDate.value = date;
+  isModalOpen.value = true;
+  document.body.style.overflow = 'hidden'; // Evita scroll de fondo
+};
+
+const closeDayModal = () => {
+  isModalOpen.value = false;
+  newEventText.value = '';
+  document.body.style.overflow = '';
 };
 
 // --- LÓGICA DE EVENTOS (Supabase + LocalStorage) ---
@@ -124,26 +167,29 @@ const getEvents = (date) => {
   return events.value[key] || [];
 };
 
-const addEvent = async (date) => {
-  const text = window.prompt(`Nueva tarea/audiencia para el día ${date}:`);
-  if (!text || text.trim() === '') return;
+const addNewEvent = async () => {
+  const text = newEventText.value.trim();
+  if (!text) return;
   
+  const date = selectedDate.value;
   const key = `${currentYear.value}-${currentMonth.value}-${date}`;
-  const newEvent = { id: Date.now().toString(), date_key: key, text: text.trim() };
+  const newEvent = { id: Date.now().toString(), date_key: key, text };
   
   if (!events.value[key]) {
     events.value[key] = [];
   }
   events.value[key].push(newEvent);
   
+  // Limpiamos el input
+  newEventText.value = '';
+  
   // Guardamos en LocalStorage
   localStorage.setItem('almanaque_events', JSON.stringify(events.value));
 
   // Intentamos guardar en Supabase en segundo plano
   try {
-    const { data, error } = await supabase.from('almanaque_events').insert([{ date_key: key, text: text.trim() }]).select();
+    const { data, error } = await supabase.from('almanaque_events').insert([{ date_key: key, text }]).select();
     if (!error && data && data.length > 0) {
-      // Actualizamos solo el ID real de Supabase si funciona, para no perder el texto local
       const lastIndex = events.value[key].length - 1;
       events.value[key][lastIndex].id = data[0].id;
       localStorage.setItem('almanaque_events', JSON.stringify(events.value));
@@ -331,5 +377,181 @@ const removeEvent = async (date, idx) => {
   .month-title {
     font-size: 1.5rem;
   }
+}
+
+/* MODAL STYLES */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  background: white;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 15px;
+}
+
+.modal-header h2 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin: 0;
+  font-weight: 600;
+}
+.highlight {
+  color: var(--primary-color, #f7c70a);
+  font-weight: 700;
+}
+
+.icon-btn-close {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.icon-btn-close:hover {
+  color: #ef4444;
+}
+
+.modal-events-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.no-events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  padding: 40px 0;
+}
+.no-events i {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  opacity: 0.5;
+}
+
+.modal-event-item {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.modal-event-text {
+  font-size: 1rem;
+  color: #334155;
+  font-weight: 500;
+  word-break: break-word;
+  padding-right: 15px;
+}
+
+.delete-event-btn {
+  background-color: #fee2e2;
+  color: #ef4444;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.delete-event-btn:hover {
+  background-color: #ef4444;
+  color: white;
+}
+
+.modal-add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #f1f5f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.modern-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.modern-input:focus {
+  border-color: var(--primary-color, #f7c70a);
+  box-shadow: 0 0 0 3px rgba(247, 199, 10, 0.1);
+}
+
+.add-note-btn {
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+.add-note-btn:hover {
+  background-color: #333;
+}
+.fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 </style>
