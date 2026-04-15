@@ -101,7 +101,11 @@ const fetchEvents = async () => {
         if (!loadedEvents[evt.date_key]) {
           loadedEvents[evt.date_key] = [];
         }
-        loadedEvents[evt.date_key].push(evt);
+        // Aseguramos que siempre haya un texto visible
+        loadedEvents[evt.date_key].push({
+          ...evt,
+          text: evt.text || evt.title || evt.titulo || '(Nota sin texto)'
+        });
       });
       events.value = loadedEvents;
       localStorage.setItem('almanaque_events', JSON.stringify(events.value));
@@ -139,8 +143,9 @@ const addEvent = async (date) => {
   try {
     const { data, error } = await supabase.from('almanaque_events').insert([{ date_key: key, text: text.trim() }]).select();
     if (!error && data && data.length > 0) {
-      // Actualizamos el ID local con el ID real de Supabase si funciona
-      events.value[key][events.value[key].length - 1] = data[0];
+      // Actualizamos solo el ID real de Supabase si funciona, para no perder el texto local
+      const lastIndex = events.value[key].length - 1;
+      events.value[key][lastIndex].id = data[0].id;
       localStorage.setItem('almanaque_events', JSON.stringify(events.value));
     }
   } catch (err) {}
