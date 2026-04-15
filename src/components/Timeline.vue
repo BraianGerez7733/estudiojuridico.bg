@@ -7,28 +7,28 @@
 
     <div class="timeline">
       <div class="timeline-container t-left">
-        <div class="timeline-content">
+        <router-link to="/hechos" class="timeline-content interactive-timeline">
           <h3>1. El Hecho</h3>
           <p>Se produce el accidente o se detecta la enfermedad profesional.</p>
-        </div>
+        </router-link>
       </div>
       <div class="timeline-container t-right">
-        <div class="timeline-content">
+        <router-link to="/srt" class="timeline-content interactive-timeline">
           <h3>2. SRT y Comisión Médica</h3>
           <p>Evaluación administrativa del daño. Frecuentemente subestiman el grado de incapacidad.</p>
-        </div>
+        </router-link>
       </div>
       <div class="timeline-container t-left">
-        <div class="timeline-content highlight-yellow">
+        <router-link to="/impugnacion" class="timeline-content highlight-yellow interactive-timeline">
           <h3>3. Impugnación</h3>
           <p>Se rechaza el dictamen de la Comisión y se solicita revisión formal con nuestros médicos de parte.</p>
-        </div>
+        </router-link>
       </div>
       <div class="timeline-container t-right">
-        <div class="timeline-content highlight-cyan">
+        <router-link to="/via-judicial" class="timeline-content highlight-cyan interactive-timeline">
           <h3>4. Vía Judicial</h3>
           <p>Ante la justicia laboral de Tierra del Fuego, exigimos reparación íntegra apoyada en estricta evidencia científica.</p>
-        </div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -105,6 +105,18 @@
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: block;
+  text-decoration: none;
+}
+
+.interactive-timeline {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.interactive-timeline:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 .timeline-content h3 {

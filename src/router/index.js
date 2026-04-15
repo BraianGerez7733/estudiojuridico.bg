@@ -18,6 +18,12 @@ const Recursos = () => import('@/pages/Recursos.vue');
 const Perfil = () => import('@/pages/Perfil.vue');
 const Herramientas = () => import('@/pages/Herramientas.vue');
 
+// Timeline Process Pages
+const Hechos = () => import('@/pages/Hechos.vue');
+const SRT = () => import('@/pages/SRT.vue');
+const Impugnacion = () => import('@/pages/Impugnacion.vue');
+const ViaJudicial = () => import('@/pages/ViaJudicial.vue');
+
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -33,7 +39,11 @@ const routes = [
   { path: '/almanaque', name: 'Almanaque', component: Almanaque },
   { path: '/recursos', name: 'Recursos', component: Recursos },
   { path: '/perfil', name: 'Perfil', component: Perfil },
-  { path: '/herramientas', name: 'Herramientas', component: Herramientas }
+  { path: '/herramientas', name: 'Herramientas', component: Herramientas },
+  { path: '/hechos', name: 'Hechos', component: Hechos },
+  { path: '/srt', name: 'SRT', component: SRT },
+  { path: '/impugnacion', name: 'Impugnacion', component: Impugnacion },
+  { path: '/via-judicial', name: 'ViaJudicial', component: ViaJudicial }
 ];
 
 const router = createRouter({
