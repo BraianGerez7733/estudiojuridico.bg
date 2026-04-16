@@ -21,7 +21,7 @@
       <div class="footer-col">
         <h4>Institucional</h4>
         <ul>
-          <li><router-link to="/">Nosotros</router-link></li>
+          <li><router-link to="/perfil">Nosotros</router-link></li>
           <li><router-link to="/">Equipo</router-link></li>
           <li><router-link to="/donde-estamos">¿Dónde estamos?</router-link></li>
         </ul>
