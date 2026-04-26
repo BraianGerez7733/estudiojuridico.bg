@@ -7,10 +7,14 @@
 
     <div class="timeline">
       <div class="timeline-container t-left">
-        <router-link to="/hechos" class="timeline-content interactive-timeline">
+        <button
+          type="button"
+          class="timeline-content interactive-timeline timeline-button"
+          @click="showHechoVideo = true"
+        >
           <h3>1. El Hecho</h3>
           <p>Se produce el accidente o se detecta la enfermedad profesional.</p>
-        </router-link>
+        </button>
       </div>
       <div class="timeline-container t-right">
         <router-link to="/srt" class="timeline-content interactive-timeline">
@@ -31,8 +35,39 @@
         </router-link>
       </div>
     </div>
+
+    <div
+      v-if="showHechoVideo"
+      class="video-modal-backdrop"
+      @click.self="showHechoVideo = false"
+    >
+      <div class="video-modal" role="dialog" aria-modal="true" aria-label="Video explicativo sobre el hecho">
+        <button
+          type="button"
+          class="close-modal"
+          aria-label="Cerrar video"
+          @click="showHechoVideo = false"
+        >
+          ×
+        </button>
+        <div class="short-video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/nlMDM5YjMEY?autoplay=1&rel=0&modestbranding=1"
+            title="Short explicativo: El Hecho"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+
+const showHechoVideo = ref(false);
+</script>
 
 <style scoped>
 .timeline-wrapper {
@@ -109,6 +144,13 @@
   text-decoration: none;
 }
 
+.timeline-button {
+  width: 100%;
+  border: 0;
+  text-align: left;
+  font-family: inherit;
+}
+
 .interactive-timeline {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
@@ -137,6 +179,59 @@
 }
 .highlight-cyan h3 {
   color: #00b4d8;
+}
+
+.video-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.78);
+}
+
+.video-modal {
+  position: relative;
+  width: min(420px, 94vw);
+  background: #111111;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.45);
+}
+
+.close-modal {
+  position: absolute;
+  top: -14px;
+  right: -10px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #111111;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.short-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000000;
+}
+
+.short-video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 /* Responsive */
