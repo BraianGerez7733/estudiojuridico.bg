@@ -43,7 +43,7 @@
     "nombre": "Medidas cautelares contra la ART",
     "descripcion": "Acciones urgentes para garantizar tratamiento médico inmediato.",
     "contenido": "<p>Cuando la ART no brinda el tratamiento médico correspondiente o lo interrumpe de manera indebida, puede solicitarse una medida cautelar a fin de garantizar la continuidad de la atención en forma inmediata.</p><p>Estas medidas tienen por objeto asegurar, con carácter urgente, el acceso a estudios, intervenciones, medicación y tratamientos necesarios para la recuperación del trabajador, aun antes de que se resuelva el fondo del reclamo.</p><p>Su finalidad es evitar el agravamiento del cuadro clínico, prevenir secuelas irreversibles y garantizar la tutela efectiva del derecho a la salud mientras se desarrolla el proceso principal.</p><p>Para su procedencia, resulta indispensable contar con un certificado médico que determine: 1) un diagnóstico preciso de la patología o afección de salud; 2) la indicación del tratamiento en forma clara y concreta; y 3) la existencia de riesgo de irreversibilidad del cuadro o la urgencia de la medida.</p><p>Ante la negativa o demora de la ART, podés contactarte con nosotros para evaluar tu caso y promover las acciones necesarias a fin de asegurar el acceso inmediato al tratamiento correspondiente.</p>",
-    "image": "/assets/hero-bg.png",
+    "image": "/assets/file_00000000877c720e9857b68543fe4ca3.png",
     "categoria": "reclamo-art",
     "etapa": "judicial"
   },
@@ -63,7 +63,7 @@
     "nombre": "Demanda por enfermedad profesional",
     "descripcion": "Acción judicial para acreditar el origen laboral de la enfermedad y obtener las prestaciones correspondientes.",
     "contenido": "<p>Cuando la ART rechaza una enfermedad profesional o niega su origen laboral, y dicho rechazo es confirmado por la Comisión Médica, corresponde promover la acción judicial a fin de acreditar la relación causal o concausal con las tareas desarrolladas.</p><p>En esta instancia, el proceso se orienta a una evaluación integral del caso, donde se analizan las condiciones de trabajo, la exposición a agentes de riesgo y la evolución clínica del trabajador. La <strong>prueba médica y pericial</strong> adquiere un rol central, ya que permite determinar la existencia de la patología, su vinculación con la actividad laboral y el grado de incapacidad resultante.</p><p>Asimismo, pueden producirse otras medidas probatorias, tales como prueba documental, informativa y testimonial, destinadas a acreditar las tareas efectivamente realizadas y las condiciones ergonómicas del puesto.</p><p>El proceso judicial permite obtener tanto la cobertura médica adecuada —incluyendo estudios, tratamientos y rehabilitación— como la indemnización correspondiente por incapacidad laboral, conforme a la normativa vigente.</p><p>Se recomienda contar previamente con los recibos de sueldo y la historia laboral emitida por ANSES, a fin de acreditar ingresos, antigüedad y demás datos relevantes para la determinación de las prestaciones.</p><p>En caso de necesidad, también pueden solicitarse medidas cautelares a fin de garantizar el acceso inmediato a prestaciones médicas, evitando el agravamiento del cuadro clínico mientras se desarrolla el proceso.</p>",
-    "image": "/assets/consulta-enfermedad-profesional.svg",
+    "image": "/assets/file_000000004678720eb190576c0bc2510d.png",
     "categoria": "enfermedades",
     "etapa": "judicial"
   }
