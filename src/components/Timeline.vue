@@ -97,7 +97,6 @@ const showHechoVideo = ref(false);
   margin: 0 auto;
 }
 
-/* Base Line */
 .timeline::after {
   content: '';
   position: absolute;
@@ -116,7 +115,6 @@ const showHechoVideo = ref(false);
   width: 50%;
 }
 
-/* Circles */
 .timeline-container::after {
   content: '';
   position: absolute;
@@ -132,7 +130,6 @@ const showHechoVideo = ref(false);
 
 .t-left { left: 0; }
 .t-right { left: 50%; }
-
 .t-right::after { left: -16px; }
 
 .timeline-content {
@@ -173,13 +170,8 @@ const showHechoVideo = ref(false);
   line-height: 1.5;
 }
 
-/* Highlights exactly as in the photo */
-.highlight-yellow h3 {
-  color: #f7c70a;
-}
-.highlight-cyan h3 {
-  color: #00b4d8;
-}
+.highlight-yellow h3 { color: #f7c70a; }
+.highlight-cyan h3 { color: #00b4d8; }
 
 .video-modal-backdrop {
   position: fixed;
@@ -189,32 +181,32 @@ const showHechoVideo = ref(false);
   align-items: center;
   justify-content: center;
   padding: 18px;
-  background: rgba(0, 0, 0, 0.78);
+  background: rgba(0, 0, 0, 0.72);
 }
 
 .video-modal {
   position: relative;
-  width: min(420px, 94vw);
+  width: min(300px, 78vw);
   background: #111111;
-  border-radius: 16px;
-  padding: 18px;
-  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.45);
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.42);
 }
 
 .close-modal {
   position: absolute;
-  top: -14px;
-  right: -10px;
-  width: 36px;
-  height: 36px;
+  top: -12px;
+  right: -8px;
+  width: 30px;
+  height: 30px;
   border: 0;
   border-radius: 50%;
   background: #ffffff;
   color: #111111;
-  font-size: 1.8rem;
+  font-size: 1.45rem;
   line-height: 1;
   cursor: pointer;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.3);
 }
 
 .short-video-frame {
@@ -222,7 +214,7 @@ const showHechoVideo = ref(false);
   width: 100%;
   aspect-ratio: 9 / 16;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 10px;
   background: #000000;
 }
 
@@ -234,21 +226,19 @@ const showHechoVideo = ref(false);
   border: 0;
 }
 
-/* Responsive */
 @media screen and (max-width: 768px) {
-  .timeline::after {
-    left: 45px;
-  }
+  .timeline::after { left: 45px; }
   .timeline-container {
     width: 100%;
     padding-left: 90px;
     padding-right: 20px;
   }
-  .timeline-container::after {
-    left: 31px;
-  }
-  .t-right {
-    left: 0%;
+  .timeline-container::after { left: 31px; }
+  .t-right { left: 0%; }
+
+  .video-modal {
+    width: min(260px, 72vw);
+    padding: 8px;
   }
 }
 </style>
