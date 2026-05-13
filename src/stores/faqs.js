@@ -48,7 +48,7 @@ export const useFaqStore = defineStore('faqs', {
           categoria: 'Accidentes',
           pregunta: '¿El número de siniestro que me dieron es el número completo?',
           respuesta:
-            'Habitualmente, el número que se informa al trabajador en comunicaciones, constancias o altas médicas funciona como una referencia abreviada del siniestro. Por lo general, se consignan los primeros siete dígitos para facilitar su identificación. El número administrativo completo puede contener más dígitos y ser utilizado por la ART en sus registros internos o actuaciones administrativas.'
+            'Habitualmente, el número que se informa al trabajador en comunicaciones, constancias o altas médicas funciona como una referencia abreviada del siniestro. Generalmente se informan únicamente los primeros siete (7) números para facilitar su identificación y evitar una numeración extensa. El número administrativo completo puede contener más dígitos y ser utilizado por la ART en sus registros internos o actuaciones administrativas.'
         }
       ];
     }
