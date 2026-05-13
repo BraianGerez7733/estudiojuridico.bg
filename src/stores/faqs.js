@@ -49,6 +49,13 @@ export const useFaqStore = defineStore('faqs', {
           pregunta: '¿El número de siniestro que me dieron es el número completo?',
           respuesta:
             'Habitualmente, el número que se informa al trabajador en comunicaciones, constancias o altas médicas funciona como una referencia abreviada del siniestro. Generalmente se informan únicamente los primeros siete (7) números para facilitar su identificación y evitar una numeración extensa. El número administrativo completo puede contener más dígitos y ser utilizado por la ART en sus registros internos o actuaciones administrativas.'
+        },
+        {
+          id: 7,
+          categoria: 'Comisión Médica',
+          pregunta: '¿Cuánto demora el dictamen médico luego de la audiencia en Comisión Médica?',
+          respuesta:
+            'El plazo legal para emitir el dictamen suele ser de quince (15) días hábiles desde la audiencia médica o desde que el expediente queda en estado de resolver. Sin embargo, en la práctica administrativa, muchas veces el trámite puede demorar aproximadamente treinta (30) días corridos, dependiendo de estudios pendientes, complejidad del caso o carga administrativa de la Comisión Médica.'
         }
       ];
     }
