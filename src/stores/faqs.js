@@ -42,6 +42,13 @@ export const useFaqStore = defineStore('faqs', {
           pregunta: '¿Cuánto tiempo tiene la ART para responder?',
           respuesta:
             'La ART debe expedirse sobre la aceptación o rechazo del siniestro en diez días hábiles desde la denuncia.'
+        },
+        {
+          id: 6,
+          categoria: 'Accidentes',
+          pregunta: '¿El número de siniestro que me dieron es el número completo?',
+          respuesta:
+            'Habitualmente, el número que se informa al trabajador en comunicaciones, constancias o altas médicas funciona como una referencia abreviada del siniestro. Por lo general, se consignan los primeros siete dígitos para facilitar su identificación. El número administrativo completo puede contener más dígitos y ser utilizado por la ART en sus registros internos o actuaciones administrativas.'
         }
       ];
     }
