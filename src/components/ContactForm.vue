@@ -173,6 +173,7 @@ function submitForm() {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  min-width: 0;
 }
 
 label {
@@ -192,6 +193,10 @@ textarea,
   color: #2d3748;
   font-family: inherit;
   transition: all 0.3s;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 input:focus,

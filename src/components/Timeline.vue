@@ -109,6 +109,7 @@ const showHechoVideo = ref(false);
 }
 
 .timeline-container {
+  box-sizing: border-box;
   padding: 10px 40px;
   position: relative;
   background-color: transparent;

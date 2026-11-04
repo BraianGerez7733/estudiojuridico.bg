@@ -79,7 +79,8 @@ export const routeSeo = {
     description:
       'Cómo trata el estudio los datos personales que se envían por el formulario de contacto (Ley 25.326).'
   },
-  NotFound: { title: 'Página no encontrada', description: DEFAULT_DESCRIPTION, noindex: true }
+  // La 404 pone su propio noindex (NotFound.vue).
+  NotFound: { title: 'Página no encontrada', description: DEFAULT_DESCRIPTION }
 };
 
 function setMeta(attr, key, content) {
@@ -154,7 +155,7 @@ export async function seoForRoute(to) {
           path: to.path
         });
       } else {
-        applySeo({ ...routeSeo.NotFound, path: to.path });
+        applySeo({ ...routeSeo.NotFound, noindex: true, path: to.path });
       }
     } catch {
       /* si falla la carga queda el SEO genérico */
