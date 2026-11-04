@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import { seoForRoute } from './seo';
 
 // Lazy load page components to enable code‑splitting. Each route
 // corresponds to a top‑level view. Dynamic imports automatically
@@ -55,6 +56,11 @@ const router = createRouter({
   scrollBehavior() {
     return { top: 0 };
   }
+});
+
+// SEO por página (título, descripción, canonical, og:url).
+router.afterEach((to) => {
+  seoForRoute(to);
 });
 
 export default router;
