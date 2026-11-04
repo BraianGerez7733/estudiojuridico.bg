@@ -85,9 +85,14 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Estudio Jurídico Accidentes Laborales – Braian Geréz",
-        "telephone": "+54-2964-540752",
+        "@type": ["LegalService", "Attorney"],
+        "@id": "https://estudiojuridicobg.vercel.app/#estudio",
+        "name": "Estudio Jurídico Dr. Braian Geréz",
+        "description": "Estudio jurídico laboralista: accidentes de trabajo, enfermedades profesionales y reclamos ante la ART en Río Grande, Tierra del Fuego.",
+        "url": "https://estudiojuridicobg.vercel.app/",
+        "image": "https://estudiojuridicobg.vercel.app/assets/og-image.jpg",
+        "telephone": "+54 9 2964 540752",
+        "email": "estudiojuridicobg.clientes@gmail.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Don Bosco 715",
@@ -95,7 +100,30 @@
           "addressRegion": "Tierra del Fuego",
           "postalCode": "V9420",
           "addressCountry": "AR"
-        }
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Río Grande" },
+          { "@type": "State", "name": "Tierra del Fuego, Antártida e Islas del Atlántico Sur" }
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ],
+        "knowsAbout": ["Accidentes de trabajo", "Enfermedades profesionales", "Riesgos del trabajo", "Derecho laboral"],
+        "founder": {
+          "@type": "Person",
+          "name": "Braian Isaac Geréz",
+          "jobTitle": "Abogado"
+        },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=100063453618182",
+          "https://www.instagram.com/estudiojuridicobg",
+          "https://www.linkedin.com/in/braian-gerez-28a982202/"
+        ]
       }
     </script>
   </head>
