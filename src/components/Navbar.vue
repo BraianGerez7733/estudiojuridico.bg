@@ -5,7 +5,7 @@
         <router-link to="/veredicta" title="Acceso Administrativo">
           <div class="navbar-video-crop">
             <video autoplay muted loop playsinline class="brand-video">
-              <source src="/assets/Logo-3-[remix].mp4" type="video/mp4" />
+              <source src="/assets/Logo-3-remix.mp4" type="video/mp4" />
             </video>
           </div>
         </router-link>

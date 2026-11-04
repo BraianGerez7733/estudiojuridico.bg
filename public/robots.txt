@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /veredicta
+
+Sitemap: https://estudiojuridicobg.vercel.app/sitemap.xml

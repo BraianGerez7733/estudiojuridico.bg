@@ -5,7 +5,7 @@
       <div v-if="showSplash" class="splash-screen">
         <div class="splash-video-crop">
           <video autoplay muted playsinline class="splash-video">
-            <source src="/assets/Logo-3-[remix].mp4" type="video/mp4" />
+            <source src="/assets/Logo-3-remix.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
