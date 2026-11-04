@@ -5,9 +5,10 @@
         v-model="searchQuery"
         type="text"
         placeholder="Buscar artículos..."
+        aria-label="Buscar artículos"
         class="articles-search"
       />
-      <select v-model="selectedCategory" class="articles-select">
+      <select v-model="selectedCategory" class="articles-select" aria-label="Filtrar por categoría">
         <option value="">Todas las categorías</option>
         <option v-for="cat in categories" :key="cat" :value="cat">
           {{ cat }}

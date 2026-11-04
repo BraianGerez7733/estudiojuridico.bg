@@ -41,10 +41,10 @@
         <p>Cel/WhatsApp: +54 2964 540752</p>
         <p>Email: <a href="mailto:estudiojuridicobg.clientes@gmail.com">estudiojuridicobg.clientes@gmail.com</a></p>
         <div class="social-icons">
-          <a href="https://wa.me/5492964540752" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="https://www.facebook.com/profile.php?id=100063453618182" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.instagram.com/estudiojuridicobg" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/braian-gerez-28a982202/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://wa.me/5492964540752" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100063453618182" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/estudiojuridicobg" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/braian-gerez-28a982202/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>

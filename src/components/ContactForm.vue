@@ -22,8 +22,8 @@
     </div>
 
     <div class="form-field">
-      <label>¿Qué tipo de caso tienes? *</label>
-      <select v-model="form.caseType" required class="form-select">
+      <label for="caseType">¿Qué tipo de caso tienes? *</label>
+      <select id="caseType" v-model="form.caseType" required class="form-select">
         <option value="" disabled>Seleccione una opción</option>
         <option value="accidente">Tuve un accidente en el trabajo o yendo al trabajo</option>
         <option value="enfermedad">Tengo una enfermedad por causa de mi trabajo</option>
@@ -35,12 +35,12 @@
 
     <div class="form-row" v-if="form.caseType && form.caseType !== 'otro'">
       <div class="form-field">
-        <label>¿A qué ART te encuentras afiliado/a? (Si aplica)</label>
-        <input v-model="form.artName" placeholder="Ej. Provincia ART, Prevención ART, etc." />
+        <label for="artName">¿A qué ART te encuentras afiliado/a? (Si aplica)</label>
+        <input id="artName" v-model="form.artName" placeholder="Ej. Provincia ART, Prevención ART, etc." />
       </div>
       <div class="form-field">
-        <label>¿Ya pasaste por Comisión Médica?</label>
-        <select v-model="form.medicalBoard" class="form-select">
+        <label for="medicalBoard">¿Ya pasaste por Comisión Médica?</label>
+        <select id="medicalBoard" v-model="form.medicalBoard" class="form-select">
           <option value="no">No, aún no</option>
           <option value="en_tramite">En trámite</option>
           <option value="finalizado">Con dictamen final</option>

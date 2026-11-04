@@ -27,25 +27,28 @@
         <a
           href="https://wa.me/5492964540752"
           target="_blank"
+          rel="noopener noreferrer"
           class="cta-btn"
         >
-          <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Consultar por WhatsApp
         </a>
 
         <a
           href="https://www.facebook.com/profile.php?id=100063453618182&locale=es_LA"
           target="_blank"
+          rel="noopener noreferrer"
           class="fb-btn"
         >
-          <i class="fab fa-facebook"></i> Facebook
+          <i class="fab fa-facebook" aria-hidden="true"></i> Facebook
         </a>
 
         <a
           href="https://www.linkedin.com/in/braian-gerez-28a982202/"
           target="_blank"
+          rel="noopener noreferrer"
           class="linkedin-btn"
         >
-          <i class="fab fa-linkedin"></i> LinkedIn
+          <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
         </a>
       </div>
     </section>
@@ -77,6 +80,7 @@
 
         <div class="location-map">
           <iframe
+            title="Mapa: Estudio Jurídico Dr. Braian Geréz, Don Bosco 715, Río Grande"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d294.6742145241244!2d-67.7096846!3d-53.7824798!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbc4b17000e2de44f%3A0xc6fa507670c04e59!2sEstudio%20Jur%C3%ADdico%20Braian%20Ger%C3%A9z!5e0!3m2!1ses-419!2sar!4v1774364355363!5m2!1ses-419!2sar"
             width="100%"
             height="350"

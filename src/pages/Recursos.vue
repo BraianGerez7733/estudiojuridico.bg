@@ -9,8 +9,8 @@
     <!-- Panel de carga (Solo visible para el admin) -->
     <div v-if="isAdmin" class="admin-panel">
       <h3>Panel de Admin: Subir al Muro</h3>
-      <input type="text" v-model="newTitle" placeholder="Título de la imagen" class="admin-input" />
-      <input type="file" @change="handleFileUpload" accept="image/*" class="admin-input" />
+      <input type="text" v-model="newTitle" placeholder="Título de la imagen" aria-label="Título de la imagen" class="admin-input" />
+      <input type="file" @change="handleFileUpload" accept="image/*" aria-label="Imagen a subir" class="admin-input" />
       <button :disabled="uploading" @click="uploadImage" class="admin-btn">
         <i class="fas" :class="uploading ? 'fa-spinner fa-spin' : 'fa-upload'"></i> 
         {{ uploading ? 'Subiendo...' : 'Publicar en el Muro' }}

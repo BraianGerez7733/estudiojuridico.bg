@@ -28,7 +28,7 @@
     <!-- Área Principal -->
     <main class="dashboard-main">
       <header class="main-header">
-        <button class="icon-btn header-toggle"><i class="fas fa-outdent"></i></button>
+        <button class="icon-btn header-toggle" aria-label="Mostrar u ocultar menú"><i class="fas fa-outdent"></i></button>
       </header>
       
       <div class="content-container">

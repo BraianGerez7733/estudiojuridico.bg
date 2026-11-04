@@ -11,7 +11,7 @@
         <span class="logo-text">Veredicta Admin</span>
       </div>
       <p>Acceso restringido al panel privado.</p>
-      <input type="password" v-model="passwordInput" placeholder="Contraseña de administrador" class="login-input" @keyup.enter="login" />
+      <input type="password" v-model="passwordInput" placeholder="Contraseña de administrador" aria-label="Contraseña" class="login-input" @keyup.enter="login" />
       <button @click="login" class="login-btn">Ingresar</button>
       <p v-if="authError" class="error-msg">Contraseña incorrecta.</p>
     </div>
@@ -49,9 +49,9 @@
 
     <main class="dashboard-main">
       <header class="main-header">
-        <button class="icon-btn header-toggle"><i class="fas fa-outdent"></i></button>
+        <button class="icon-btn header-toggle" aria-label="Mostrar u ocultar menú"><i class="fas fa-outdent"></i></button>
         <div class="header-actions">
-          <button class="icon-btn"><i class="far fa-bell"></i></button>
+          <button class="icon-btn" aria-label="Notificaciones"><i class="far fa-bell" aria-hidden="true"></i></button>
         </div>
       </header>
       

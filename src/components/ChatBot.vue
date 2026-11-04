@@ -41,8 +41,8 @@
             placeholder="Escribe tu respuesta..." 
             aria-label="Mensaje"
           />
-          <button type="submit" :disabled="!userInput.trim()">
-            <i class="fas fa-paper-plane"></i>
+          <button type="submit" :disabled="!userInput.trim()" aria-label="Enviar mensaje">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
           </button>
         </form>
       </div>
@@ -113,7 +113,7 @@ function processBotReply(input) {
     } else if (input === '2') {
       reply = "Redirigiendo a WhatsApp... 📲";
       setTimeout(() => {
-        window.open("https://wa.me/5492964540752?text=Hola,%20quisiera%20hacer%20una%20consulta.", '_blank');
+        window.open("https://wa.me/5492964540752?text=Hola,%20quisiera%20hacer%20una%20consulta.", '_blank', 'noopener,noreferrer');
       }, 1000);
     } else {
       reply = "Por favor, escribe **1** o **2**.";
@@ -179,7 +179,7 @@ function processBotReply(input) {
       + `\n*Detalles:* ${formData.message}`;
     
     setTimeout(() => {
-      window.open(`https://wa.me/5492964540752?text=${encodeURIComponent(text)}`, '_blank');
+      window.open(`https://wa.me/5492964540752?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
       // Reset chatbot form optional
       step.value = 0;
     }, 1000);

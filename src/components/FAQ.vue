@@ -5,9 +5,10 @@
         v-model="searchQuery"
         type="text"
         placeholder="Buscar..."
+        aria-label="Buscar en las preguntas frecuentes"
         class="faq-search"
       />
-      <select v-model="selectedCategory" class="faq-select">
+      <select v-model="selectedCategory" class="faq-select" aria-label="Filtrar por categoría">
         <option value="">Todas las categorías</option>
         <option
           v-for="cat in categories"
@@ -74,7 +75,7 @@ const filteredFaqs = computed(() => {
 });
 
 function openWhatsApp() {
-  window.open('https://wa.me/5492964540752', '_blank');
+  window.open('https://wa.me/5492964540752', '_blank', 'noopener,noreferrer');
 }
 
 onMounted(() => {

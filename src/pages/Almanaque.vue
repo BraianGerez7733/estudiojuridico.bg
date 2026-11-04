@@ -2,9 +2,9 @@
   <div class="calendar-page">
     <div class="container">
       <div class="calendar-header">
-        <button @click="prevMonth" class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+        <button @click="prevMonth" class="nav-btn" aria-label="Mes anterior"><i class="fas fa-chevron-left"></i></button>
         <h1 class="month-title">{{ monthName }} {{ currentYear }}</h1>
-        <button @click="nextMonth" class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+        <button @click="nextMonth" class="nav-btn" aria-label="Mes siguiente"><i class="fas fa-chevron-right"></i></button>
       </div>
 
       <div class="calendar-grid">
@@ -46,7 +46,7 @@
       <div class="modal-content fade-in">
         <div class="modal-header">
           <h2>Eventos del <span class="highlight">{{ selectedDate }}</span> de {{ monthName.toLowerCase() }}</h2>
-          <button @click="closeDayModal" class="icon-btn-close"><i class="fas fa-times"></i></button>
+          <button @click="closeDayModal" class="icon-btn-close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
         </div>
         
         <div class="modal-events-list">
@@ -56,12 +56,12 @@
           </div>
           <div class="modal-event-item" v-for="(event, idx) in getEvents(selectedDate)" :key="event.id || idx">
             <span class="modal-event-text">{{ event.text }}</span>
-            <button class="delete-event-btn" @click="removeEvent(selectedDate, idx)" title="Borrar tarea"><i class="fas fa-trash-alt"></i></button>
+            <button class="delete-event-btn" @click="removeEvent(selectedDate, idx)" title="Borrar tarea" aria-label="Borrar tarea"><i class="fas fa-trash-alt"></i></button>
           </div>
         </div>
 
         <div class="modal-add-form">
-          <input type="text" v-model="newEventText" placeholder="Escribe una nueva nota, tarea o audiencia..." @keyup.enter="addNewEvent" class="modern-input" />
+          <input type="text" v-model="newEventText" placeholder="Escribe una nueva nota, tarea o audiencia..." aria-label="Nueva nota" @keyup.enter="addNewEvent" class="modern-input" />
           <button @click="addNewEvent" class="add-note-btn"><i class="fas fa-plus"></i> Añadir Nota</button>
         </div>
       </div>
