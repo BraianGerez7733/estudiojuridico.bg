@@ -23,6 +23,7 @@ const Hechos = () => import('@/pages/Hechos.vue');
 const SRT = () => import('@/pages/SRT.vue');
 const Impugnacion = () => import('@/pages/Impugnacion.vue');
 const ViaJudicial = () => import('@/pages/ViaJudicial.vue');
+const NotFound = () => import('@/pages/NotFound.vue');
 
 
 const routes = [
@@ -43,7 +44,9 @@ const routes = [
   { path: '/hechos', name: 'Hechos', component: Hechos },
   { path: '/srt', name: 'SRT', component: SRT },
   { path: '/impugnacion', name: 'Impugnacion', component: Impugnacion },
-  { path: '/via-judicial', name: 'ViaJudicial', component: ViaJudicial }
+  { path: '/via-judicial', name: 'ViaJudicial', component: ViaJudicial },
+  // Cualquier otra URL: página 404 (con noindex).
+  { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound }
 ];
 
 const router = createRouter({
