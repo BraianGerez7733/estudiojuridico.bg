@@ -67,7 +67,7 @@
     <transition name="fade">
       <div v-if="submitted" class="success-message">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="success-icon"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-        <span>¡Gracias por contactarnos! Tu caso ha sido recibido y un abogado del estudio se comunicará contigo a la brevedad.</span>
+        <span>¡Gracias! Se abrió WhatsApp con tu consulta ya escrita: tocá «Enviar» para que nos llegue y un abogado del estudio te responderá a la brevedad.</span>
       </div>
     </transition>
   </form>
@@ -92,28 +92,34 @@ const isSubmitting = ref(false);
 
 function submitForm() {
   isSubmitting.value = true;
-  
-  // Simulación de envío
+
+  // Envía la consulta al WhatsApp del estudio con los datos cargados (antes era sólo una simulación).
+  const lineas = [
+    'Hola, quiero hacer una consulta desde la web.',
+    `Nombre: ${form.name}`,
+    `Teléfono: ${form.phone}`,
+    form.email ? `Email: ${form.email}` : '',
+    form.caseType ? `Tipo de caso: ${form.caseType}` : '',
+    form.medicalBoard ? `¿Pasó por Comisión Médica?: ${form.medicalBoard}` : '',
+    form.artName ? `ART: ${form.artName}` : '',
+    form.medicalStudies ? `Estudios médicos: ${form.medicalStudies}` : '',
+    form.message ? `Detalle: ${form.message}` : ''
+  ].filter(Boolean);
+  window.location.href = `https://wa.me/5492964540752?text=${encodeURIComponent(lineas.join('\n'))}`;
+
+  isSubmitting.value = false;
+  submitted.value = true;
   setTimeout(() => {
-    isSubmitting.value = false;
-    submitted.value = true;
-
-    // Aquí se podría integrar la lógica de enviar el form por WP de forma automatizada:
-    // const text = `Hola! Mi nombre es ${form.name}. Motivo: ${form.caseType}. \nDetalle: ${form.message}`;
-    // window.open(`https://wa.me/5492964540752?text=${encodeURIComponent(text)}`);
-
-    setTimeout(() => {
-      form.name = '';
-      form.email = '';
-      form.phone = '';
-      form.caseType = '';
-      form.medicalBoard = 'no';
-      form.artName = '';
-      form.medicalStudies = '';
-      form.message = '';
-      submitted.value = false;
-    }, 5000);
-  }, 1000);
+    form.name = '';
+    form.email = '';
+    form.phone = '';
+    form.caseType = '';
+    form.medicalBoard = 'no';
+    form.artName = '';
+    form.medicalStudies = '';
+    form.message = '';
+    submitted.value = false;
+  }, 5000);
 }
 </script>
 
