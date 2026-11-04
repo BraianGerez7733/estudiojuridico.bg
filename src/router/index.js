@@ -24,6 +24,7 @@ const Hechos = () => import('@/pages/Hechos.vue');
 const SRT = () => import('@/pages/SRT.vue');
 const Impugnacion = () => import('@/pages/Impugnacion.vue');
 const ViaJudicial = () => import('@/pages/ViaJudicial.vue');
+const Privacidad = () => import('@/pages/Privacidad.vue');
 const NotFound = () => import('@/pages/NotFound.vue');
 
 
@@ -46,6 +47,7 @@ const routes = [
   { path: '/srt', name: 'SRT', component: SRT },
   { path: '/impugnacion', name: 'Impugnacion', component: Impugnacion },
   { path: '/via-judicial', name: 'ViaJudicial', component: ViaJudicial },
+  { path: '/privacidad', name: 'Privacidad', component: Privacidad },
   // Cualquier otra URL: página 404 (con noindex).
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound }
 ];
@@ -53,7 +55,8 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  scrollBehavior() {
+  scrollBehavior(to) {
+    if (to.hash) return { el: to.hash, top: 100 };
     return { top: 0 };
   }
 });

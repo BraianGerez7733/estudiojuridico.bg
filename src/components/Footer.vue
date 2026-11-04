@@ -51,9 +51,8 @@
     <div class="footer-bottom">
       <p>Estudio jurídico especializado en accidentes de trabajo y enfermedades profesionales en Río Grande, Tierra del Fuego, Argentina.</p>
       <div class="legal-links">
-        <router-link to="/">Política de privacidad</router-link>
-        <router-link to="/">Aviso legal</router-link>
-        <router-link to="/">Cookies</router-link>
+        <router-link to="/privacidad">Política de privacidad</router-link>
+        <router-link to="/privacidad#cookies">Cookies</router-link>
       </div>
     </div>
   </footer>

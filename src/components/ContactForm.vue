@@ -62,6 +62,9 @@
       <button type="submit" class="submit-button" :disabled="isSubmitting">
         {{ isSubmitting ? 'Enviando...' : 'Solicitar Evaluación Gratuita' }}
       </button>
+      <p class="privacy-note">
+        Al enviar, aceptás la <router-link to="/privacidad">política de privacidad</router-link>.
+      </p>
     </div>
 
     <transition name="fade">
@@ -202,6 +205,17 @@ textarea:focus,
 
 .submit-container {
   margin-top: 10px;
+}
+
+.privacy-note {
+  margin: 10px 0 0;
+  font-size: 0.85rem;
+  color: #555;
+  text-align: center;
+}
+
+.privacy-note a {
+  text-decoration: underline;
 }
 
 .submit-button {
