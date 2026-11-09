@@ -40,24 +40,68 @@
         </p>
 
         <ul v-else class="lista">
-          <li v-for="f in resultados" :key="f.id" class="fallo">
+          <li v-for="f in visibles" :key="f.id" class="fallo">
             <p class="cita">
-              <strong>CSJN</strong>, autos «{{ f.k }}», {{ formatearFecha(f.d) }}.
+              <strong>CSJN</strong>, autos «{{ f.k }}», {{ formatearFecha(f.d) }}<span v-if="f.f">, {{ f.f }}</span>.
             </p>
             <p v-if="f.r" class="resultado">Resultado: {{ f.r }}</p>
+            <button type="button" class="abrir" @click="alternar(f.id)">
+              {{ abierto === f.id ? 'Cerrar' : 'Leer ficha y fallo' }}
+            </button>
+
+            <div v-if="abierto === f.id" class="detalle">
+              <p v-if="cargando" class="estado">Cargando…</p>
+              <p v-else-if="errorDetalle" class="error">No se pudo cargar este fallo.</p>
+              <template v-else-if="detalle">
+                <h3>Ficha</h3>
+                <p class="aviso-ficha">Ficha orientativa elaborada por el estudio. Lo que vale es el texto del fallo.</p>
+                <pre class="texto">{{ detalle.ficha }}</pre>
+                <button type="button" class="abrir" @click="verTexto = !verTexto">
+                  {{ verTexto ? 'Ocultar fallo completo' : 'Ver fallo completo' }}
+                </button>
+                <pre v-if="verTexto" class="texto fallo-completo">{{ detalle.texto }}</pre>
+              </template>
+            </div>
           </li>
         </ul>
+        <button v-if="resultados.length > limite" type="button" class="abrir mas" @click="limite += 30">
+          Ver más fallos ({{ resultados.length - limite }} restantes)
+        </button>
       </section>
     </template>
   </main>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue';
 
 const datos = ref(null);
 const error = ref(false);
 const consulta = ref('');
+const abierto = ref(null);
+const detalle = ref(null);
+const cargando = ref(false);
+const errorDetalle = ref(false);
+const verTexto = ref(false);
+const limite = ref(30);
+
+async function alternar(id) {
+  if (abierto.value === id) { abierto.value = null; return; }
+  abierto.value = id;
+  detalle.value = null;
+  verTexto.value = false;
+  errorDetalle.value = false;
+  cargando.value = true;
+  try {
+    const r = await fetch(`/data/csjn/${id}.json`);
+    if (!r.ok) throw new Error(String(r.status));
+    detalle.value = await r.json();
+  } catch {
+    errorDetalle.value = true;
+  } finally {
+    cargando.value = false;
+  }
+}
 
 const sugeridos = [
   'accidente de trabajo',
@@ -93,6 +137,9 @@ const resultados = computed(() => {
     .map((i) => ({ id: i, ...datos.value.fallos[i] }))
     .sort((a, b) => (a.d < b.d ? 1 : -1));
 });
+
+const visibles = computed(() => resultados.value.slice(0, limite.value));
+watch(consulta, () => { limite.value = 30; abierto.value = null; });
 
 function formatearFecha(iso) {
   const [y, m, d] = iso.split('-');
@@ -138,5 +185,28 @@ h1 { font-size: 1.5rem; margin: 0 0 12px; }
 .cita { margin: 0; line-height: 1.5; }
 .resultado { margin: 4px 0 0; font-size: 0.85rem; color: #555; }
 .estado, .error { margin-top: 16px; }
+.abrir {
+  margin-top: 8px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #f5c400;
+  color: #111;
+  font-weight: 700;
+  cursor: pointer;
+}
+.mas { display: block; margin: 16px auto 0; }
+.detalle { margin-top: 12px; padding: 16px; border-radius: 10px; background: #f7f7f7; }
+.detalle h3 { margin: 0 0 4px; font-size: 1rem; }
+.aviso-ficha { margin: 0 0 8px; font-size: 0.85rem; color: #555; }
+.texto {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+.fallo-completo { max-height: 70vh; overflow-y: auto; background: #fff; padding: 12px; border-radius: 8px; border: 1px solid #e3e3e3; }
 .error { color: #9b1c1c; }
 </style>
