@@ -58,6 +58,16 @@
       <ServicesGrid />
     </section>
 
+    <!-- Herramienta: buscador de jurisprudencia de la CSJN por concepto -->
+    <section class="section">
+      <h2 class="section-title">Herramienta de jurisprudencia</h2>
+      <router-link to="/herramientas/jurisprudencia-csjn" class="tool-card">
+        <h3>Jurisprudencia de la Corte Suprema por concepto</h3>
+        <p>Escriba un concepto jurídico (por ejemplo, «accidente de trabajo» o «costas») y vea los fallos de la CSJN que lo tratan.</p>
+        <span class="tool-link">Ir a la herramienta →</span>
+      </router-link>
+    </section>
+
     <!-- Nuevo Dashboard con Enlaces Externos -->
     <Dashboard />
 
@@ -258,4 +268,22 @@ import Timeline from '@/components/Timeline.vue';
     grid-template-columns: 1fr;
   }
 }
+</style>
+
+<style scoped>
+.tool-card {
+  display: block;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px;
+  border: 1px solid #d9dee6;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #1a1a1a;
+  text-decoration: none;
+}
+.tool-card h3 { margin: 0 0 8px; font-size: 1.2rem; }
+.tool-card p { margin: 0 0 12px; line-height: 1.5; }
+.tool-link { font-weight: 600; }
+.tool-card:hover { border-color: #1a1a1a; }
 </style>
