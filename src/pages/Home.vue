@@ -3,6 +3,17 @@
     <!-- Componente Hero original -->
     <HeroBlock />
 
+    <!-- Herramienta NUEVA: buscador de jurisprudencia de la CSJN por concepto -->
+    <section class="tool-section">
+      <router-link to="/herramientas/jurisprudencia-csjn" class="tool-card">
+        <span class="tool-badge">NUEVO</span>
+        <h2>Jurisprudencia de la Corte Suprema por concepto</h2>
+        <p>Escriba un concepto jurídico (por ejemplo, «accidente de trabajo» o «costas») y vea los fallos de la CSJN que lo tratan.</p>
+        <span class="tool-link">Probar la herramienta →</span>
+      </router-link>
+    </section>
+
+
     <section class="intro-section">
       <h2 class="intro-title">
         Asesoramiento integral en accidentes y enfermedades laborales
@@ -56,16 +67,6 @@
     <section class="section">
       <h2 class="section-title">Nuestros servicios</h2>
       <ServicesGrid />
-    </section>
-
-    <!-- Herramienta: buscador de jurisprudencia de la CSJN por concepto -->
-    <section class="section">
-      <h2 class="section-title">Herramienta de jurisprudencia</h2>
-      <router-link to="/herramientas/jurisprudencia-csjn" class="tool-card">
-        <h3>Jurisprudencia de la Corte Suprema por concepto</h3>
-        <p>Escriba un concepto jurídico (por ejemplo, «accidente de trabajo» o «costas») y vea los fallos de la CSJN que lo tratan.</p>
-        <span class="tool-link">Ir a la herramienta →</span>
-      </router-link>
     </section>
 
     <!-- Nuevo Dashboard con Enlaces Externos -->
@@ -271,19 +272,40 @@ import Timeline from '@/components/Timeline.vue';
 </style>
 
 <style scoped>
+.tool-section { padding: 24px 16px 8px; }
 .tool-card {
+  position: relative;
   display: block;
   max-width: 760px;
   margin: 0 auto;
-  padding: 24px;
-  border: 1px solid #d9dee6;
-  border-radius: 12px;
-  background: #ffffff;
-  color: #1a1a1a;
+  padding: 28px 24px 24px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #111111 0%, #2b2b2b 100%);
+  border: 2px solid #f5c400;
+  color: #ffffff;
   text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
-.tool-card h3 { margin: 0 0 8px; font-size: 1.2rem; }
-.tool-card p { margin: 0 0 12px; line-height: 1.5; }
-.tool-link { font-weight: 600; }
-.tool-card:hover { border-color: #1a1a1a; }
+.tool-badge {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #f5c400;
+  color: #111111;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+.tool-card h2 { margin: 0 0 10px; font-size: 1.4rem; line-height: 1.3; color: #ffffff; }
+.tool-card p { margin: 0 0 16px; line-height: 1.5; color: #e6e6e6; }
+.tool-link {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: #f5c400;
+  color: #111111;
+  font-weight: 700;
+}
+.tool-card:hover { box-shadow: 0 10px 28px rgba(245, 196, 0, 0.35); }
 </style>
