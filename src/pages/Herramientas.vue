@@ -37,6 +37,11 @@
           <p>Bienvenido al área de herramientas operativas de Estudio Jurídico BG.</p>
         </div>
 
+        <router-link to="/herramientas/jurisprudencia-csjn" class="development-card" style="display:block;text-decoration:none;color:inherit;margin-bottom:16px;">
+          <h2 style="margin:0 0 8px;">Jurisprudencia de la Corte Suprema</h2>
+          <p style="margin:0;">Buscá fallos de la CSJN por concepto jurídico.</p>
+        </router-link>
+
         <div class="development-card">
           <div class="icon-circle">
             <i class="fas fa-tools rocket-icon"></i>

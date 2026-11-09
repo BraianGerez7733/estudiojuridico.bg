@@ -18,6 +18,7 @@ const Almanaque = () => import('@/pages/Almanaque.vue');
 const Recursos = () => import('@/pages/Recursos.vue');
 const Perfil = () => import('@/pages/Perfil.vue');
 const Herramientas = () => import('@/pages/Herramientas.vue');
+const JurisprudenciaCsjn = () => import('@/pages/JurisprudenciaCsjn.vue');
 
 // Timeline Process Pages
 const Hechos = () => import('@/pages/Hechos.vue');
@@ -43,6 +44,7 @@ const routes = [
   { path: '/recursos', name: 'Recursos', component: Recursos },
   { path: '/perfil', name: 'Perfil', component: Perfil },
   { path: '/herramientas', name: 'Herramientas', component: Herramientas },
+  { path: '/herramientas/jurisprudencia-csjn', name: 'JurisprudenciaCsjn', component: JurisprudenciaCsjn },
   { path: '/hechos', name: 'Hechos', component: Hechos },
   { path: '/srt', name: 'SRT', component: SRT },
   { path: '/impugnacion', name: 'Impugnacion', component: Impugnacion },
