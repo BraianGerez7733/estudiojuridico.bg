@@ -55,11 +55,11 @@
               <template v-else-if="detalle">
                 <h3>Ficha</h3>
                 <p class="aviso-ficha">Ficha orientativa elaborada por el estudio. Lo que vale es el texto del fallo.</p>
-                <pre class="texto">{{ detalle.ficha }}</pre>
+                <div class="texto"><p v-for="(l, i) in detalle.ficha" :key="i">{{ l }}</p></div>
                 <button type="button" class="abrir" @click="verTexto = !verTexto">
                   {{ verTexto ? 'Ocultar fallo completo' : 'Ver fallo completo' }}
                 </button>
-                <pre v-if="verTexto" class="texto fallo-completo">{{ detalle.texto }}</pre>
+                <div v-if="verTexto" class="texto fallo-completo"><p v-for="(l, i) in detalle.parrafos" :key="i">{{ l }}</p></div>
               </template>
             </div>
           </li>
@@ -200,13 +200,14 @@ h1 { font-size: 1.5rem; margin: 0 0 12px; }
 .detalle h3 { margin: 0 0 4px; font-size: 1rem; }
 .aviso-ficha { margin: 0 0 8px; font-size: 0.85rem; color: #555; }
 .texto {
-  white-space: pre-wrap;
-  word-break: break-word;
-  font-family: inherit;
-  font-size: 0.92rem;
-  line-height: 1.5;
+  font-size: 0.95rem;
+  line-height: 1.6;
   margin: 0 0 8px;
+  text-align: justify;
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
+.texto p { margin: 0 0 10px; }
 .fallo-completo { max-height: 70vh; overflow-y: auto; background: #fff; padding: 12px; border-radius: 8px; border: 1px solid #e3e3e3; }
 .error { color: #9b1c1c; }
 </style>
