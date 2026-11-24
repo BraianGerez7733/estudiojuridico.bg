@@ -24,15 +24,18 @@
 
     <div v-if="result !== null" class="result">
       <p><strong>Coeficiente de edad:</strong> {{ coeficienteEdad.toFixed(2) }}</p>
-      <p><strong>Indemnización (art. 14.2.a Ley 24.557):</strong> {{ formatCurrency(subtotal) }}</p>
+      <p><strong>Fórmula (53 × ingreso base × % × 65/edad):</strong> {{ formatCurrency(formula) }}</p>
+      <p><strong>Piso mínimo vigente ({{ PISO_TXT }}):</strong> {{ formatCurrency(piso) }}</p>
+      <p><strong>Indemnización (art. 14.2.a Ley 24.557, la mayor de las dos):</strong> {{ formatCurrency(subtotal) }}</p>
+      <p v-if="pisoVencido" class="aviso">El piso cargado venció el 28/02/2027: el monto actualizado puede ser mayor.</p>
       <p v-if="!itinere">
         <strong>Con el adicional del 20 % (art. 3 Ley 26.773):</strong>
         {{ formatCurrency(result) }}
       </p>
       <p v-else><em>En el accidente in itinere no corresponde el adicional del 20 % (art. 3 Ley 26.773).</em></p>
       <p v-if="percentage >= 66" class="aviso">Con una incapacidad del 66 % o más se considera <strong>total</strong>: el cálculo es distinto y corresponden además otras prestaciones. Consultanos.</p>
-      <p v-else-if="percentage > 50" class="aviso">Con una incapacidad mayor al 50 % corresponde además una <strong>prestación adicional de pago único</strong> (art. 11.4 Ley 24.557), que este cálculo no incluye.</p>
-      <small>* Cálculo orientativo con la fórmula legal (53 × ingreso base × % de incapacidad × 65/edad). No incluye intereses, ni la actualización hasta el pago, ni la comparación con el piso mínimo vigente, que puede ser mayor. Para un monto exacto, consultanos.</small>
+      <p v-else-if="percentage > 50" class="aviso">Con una incapacidad mayor al 50 % corresponde además una <strong>prestación adicional de pago único</strong> (art. 11.4.a Ley 24.557) de {{ formatCurrency(ADICIONAL_11_4_A) }} ({{ PISO_TXT }}).</p>
+      <small>* Cálculo orientativo con la fórmula legal (53 × ingreso base × % de incapacidad × 65/edad). No incluye intereses ni la actualización hasta el pago. Para un monto exacto, consultanos.</small>
     </div>
   </div>
 </template>
@@ -44,6 +47,13 @@ const salary = ref(0)
 const age = ref(0)
 const percentage = ref(0)
 const itinere = ref(false)
+// Res. SRT 39/2026 (B.O. 02/09/2026), vigente del 01/09/2026 al 28/02/2027
+const PISO_14_2 = 114354110
+const ADICIONAL_11_4_A = 50824055
+const PISO_TXT = 'Res. SRT 39/2026, 01/09/2026 al 28/02/2027'
+const pisoVencido = new Date() > new Date('2027-02-28T23:59:59-03:00')
+const formula = ref(0)
+const piso = ref(0)
 const coeficienteEdad = ref(0)
 const subtotal = ref(0)
 const result = ref(null)
@@ -59,7 +69,9 @@ function calculate() {
   coeficienteEdad.value = 65 / age.value
 
   // Subtotal según fórmula base
-  subtotal.value = salary.value * coeficienteEdad.value * (percentage.value / 100) * 53
+  formula.value = salary.value * coeficienteEdad.value * (percentage.value / 100) * 53
+  piso.value = PISO_14_2 * (percentage.value / 100)
+  subtotal.value = Math.max(formula.value, piso.value)
 
   // Adicional del 20 % (art. 3 Ley 26.773), salvo in itinere
   result.value = itinere.value ? subtotal.value : subtotal.value * 1.2
