@@ -19,7 +19,7 @@
       </router-link>
 
       <!-- Tarjeta: CSJN -->
-      <a href="https://www.csjn.gov.ar/" target="_blank" rel="noopener noreferrer" class="dash-card">
+      <a href="https://sjconsulta.csjn.gov.ar/sjconsulta/novedades/consulta.html" target="_blank" rel="noopener noreferrer" class="dash-card">
         <div class="card-icon csjn-icon">
           <i class="fas fa-university"></i>
         </div>
